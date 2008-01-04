@@ -12,7 +12,7 @@ html * {
 }
 
 body {
-    background: #fff;
+    background: #000000;
     color: #333;
     font: 11px verdana, arial, helvetica, sans-serif;
 }
@@ -24,9 +24,16 @@ a:link, a:visited, a:hover {
 } 
 
 h1 {
-    color: #006dba;
+    color: #FFFFFF;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 12px;
+    margin: .8em 0 .3em 0;
+}
+
+h2 {
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 14px;
     margin: .8em 0 .3em 0;
 }
 

@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title><g:layoutTitle default="lebenslänglich.ch - Die Hochzeit von Daniela Wangler und Stefan Dolder" /></title>
+        <link rel="stylesheet" href="${createLinkTo(dir:'css',file:'main.css')}" />
+        <link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
+        <g:layoutHead />
+        <g:javascript library="application" />				
+        <link href="../../../web-app/css/main.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="spinner" class="spinner" style="display:none;">
+            <img src="${createLinkTo(dir:'images',file:'spinner.gif')}" alt="Spinner" />
+        </div>	
+        <div class="logo"></div>
+        <div class="nav">
+            <span class="menuButton"><g:link class="home" action="list" controller="home"><a href="Kopie von main_1.htm">Home</a></g:link>
+            </span>
+            <span class="menuButton"><g:link action="list" controller="home"><a href="Daniela_und_Stefan.html">Daniela & Stefan</a></g:link>
+            </span>
+            <span class="menuButton"><g:link action="list" controller="home"><a href="Die Trauzeugen 1.htm">Die Trauzeugen</a></g:link>
+            </span>
+            <span class="menuButton"><g:link class="list" action="list" controller="giftItem">Wunschbuch</g:link></span>
+            <span class="menuButton"><g:link class="list" action="list" controller="guestbookEntry">Gästebuch</g:link></span>
+            <span class="menuButton"><g:link action="list" controller="guestbookEntry">Warenkorb</g:link></span>
+        </div>
+        <g:layoutBody />
+        <div>
+          <form name="form1" method="post" action="">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="center">
+                  <div align="center">
+                    <p><a href="../../../Inhalte/Urteil.pdf" target="_blank"><img src="../../../web-app/images/Homepagebilder/Startbild_klein.jpg" alt="Das Urteil" width="394" height="557" border="0">
+                        </a></p>
+                    <h1><a href="../../../Inhalte/Urteil.pdf" target="_blank">
+                      <h1>Bitte Klicken um das Bild zu vergr&ouml;ssern</h1>
+                    </a></h1>
+                  </div>                  
+                <h1>&nbsp;</h1></td>
+              </tr>
+            </table>
+          </form>
+          <p>Version </p>
+          <g:meta name="app.version"/> on Grails <g:meta name="app.grails.version" /></div>
+        <p>&nbsp;</p>
+    </body>	
+</html>

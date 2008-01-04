@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title><g:layoutTitle default="lebenslänglich.ch - Die Hochzeit von Daniela Wangler und Stefan Dolder" /></title>
+        <link rel="stylesheet" href="${createLinkTo(dir:'css',file:'main.css')}" />
+        <link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
+        <g:layoutHead />
+        <g:javascript library="application" />
+        <style type="text/css">
+<!--
+@import url("../../../web-app/css/main.css");
+-->
+        </style>
+</head>
+    <body>
+        <div id="spinner" class="spinner" style="display:none;">
+            <img src="${createLinkTo(dir:'images',file:'spinner.gif')}" alt="Spinner" />        </div>	
+        <div class="logo">
+          <div align="center"><img src="../../../web-app/images/Homepagebilder/Titelleistenbild_1.jpg" width="513" height="48"></div>
+        </div>
+        <div class="nav">
+            <span class="menuButton"><g:link class="home" action="list" controller="home"><a href="Kopie von main_1.htm">Home</a></g:link>
+            </span>
+            <span class="menuButton"><g:link action="list" controller="home"><a href="Daniela_und_Stefan.html">Daniela & Stefan</a></g:link>
+            </span>
+            <span class="menuButton"><g:link action="list" controller="home"><a href="Die Trauzeugen 1.htm">Die Trauzeugen</a></g:link>
+            </span>
+            <span class="menuButton"><g:link class="list" action="list" controller="giftItem">Wunschbuch</g:link></span>
+            <span class="menuButton"><g:link class="list" action="list" controller="guestbookEntry">Gästebuch</g:link></span>
+            <span class="menuButton"><g:link action="list" controller="guestbookEntry">Warenkorb</g:link></span>
+        </div>
+        <g:layoutBody />
+        <div>
+          <form name="form1" method="post" action="">
+            <p>&nbsp;</p>
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td colspan="2"><h2><strong>Landei und Grossstadtg&ouml;re  haben sich gefunden</strong></h2></td>
+              </tr>
+              <tr>
+                <td rowspan="3"><h1>
+                  <p>Stefan Dolder aus Zweidlen bei Glattfelden  und Daniela Wangler aus Z&uuml;rich-Albisrieden trafen sich zum ersten Mal rein  zuf&auml;llig Ende April 2004.</p>
+                  <p>&nbsp;</p>
+                  <p>Eigentlich wollten beide nur schnell am  Abend noch weg um Freunde zu treffen. Aus &bdquo;nur schnell&ldquo; wurde Morgenfr&uuml;h. Man  hat sich halt immer viel zu erz&auml;hlen, wenn man sich kennen lernt.</p>
+                  <p>&nbsp;</p>
+                  <p>Vorgestellt wurden die beiden durch die  gemeinsame Freundin Amanda, welche schon immer behauptet hat, dass beide  optimal zu einander passen. Wie man sieht, hat Amanda daf&uuml;r ein gutes Gef&uuml;hl&hellip;</p></h1></td>
+                <td><img src="file:///C|/Dokumente und Einstellungen/Dolder Stefan/Desktop/Hochzeitspage/Daniela_Straefling_kleiner.jpg" width="512" height="96">
+                <h1>Daniela</h1></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td><img src="file:///C|/Dokumente und Einstellungen/Dolder Stefan/Desktop/Hochzeitspage/Stefan_Straefling_kleiner.jpg" width="512" height="96">
+                <h1>Stefan</h1></td>
+              </tr>
+            </table>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </form>
+          <p>Version </p>
+          <g:meta name="app.version"/> on Grails <g:meta name="app.grails.version" /></div>
+        <p>&nbsp;</p>
+    </body>	
+</html>

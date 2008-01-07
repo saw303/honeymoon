@@ -6,10 +6,10 @@ class GiftItem
   Integer price
   Boolean active = Boolean.TRUE;
   
-  /*
-  Allenfalls soll ein Wunschbucheintrag einem Thema zugehören. D.h. dass es Themen wie 'Las Vegas', 'New York', etc. vorhanden sind
-  und die Wunschbucheinträge danach gefiltert werden können.
-  /*
+  
+  //Allenfalls soll ein Wunschbucheintrag einem Thema zugehören. D.h. dass es Themen wie 'Las Vegas', 'New York', etc. vorhanden sind
+  //und die Wunschbucheinträge danach gefiltert werden können.
+  
 
   // static hasMany = []
   // static belongsTo = []

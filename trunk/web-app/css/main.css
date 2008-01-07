@@ -152,7 +152,7 @@ td, th {
     vertical-align: top;
 }
 th {
-    background: #fff url(../images/skin/shadow.jpg);
+    background: #d52525 url(../images/skin/shadow.jpg);
     color: #666;
     font-size: 11px;
     font-weight: bold;
@@ -199,7 +199,7 @@ th.desc a {
 /* PAGINATION */
 
 .paginateButtons {
-    background: #fff url(../images/skin/shadow.jpg) bottom repeat-x;
+    background: #d52525 url(../images/skin/shadow.jpg) bottom repeat-x;
     border: 1px solid #ccc;
     border-top: 0;
     color: #666;
@@ -241,7 +241,7 @@ th.desc a {
 /* ACTION BUTTONS */
 
 .buttons {
-    background: #fff url(../images/skin/shadow.jpg) bottom repeat-x;
+    background: #d52525 url(../images/skin/shadow.jpg) bottom repeat-x;
     border: 1px solid #ccc;
     color: #666;
     font-size: 10px;

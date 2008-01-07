@@ -12,24 +12,17 @@
                 <td colspan="2"><h2><strong>Landei und Grossstadtg&ouml;re  haben sich gefunden</strong></h2></td>
               </tr>
               <tr>
-                <td rowspan="3"><h1>
+                <td><h1>
                   <p>Stefan Dolder aus Zweidlen bei Glattfelden und Daniela Wangler aus Z&uuml;rich-Albisrieden trafen sich zum ersten Mal rein  zuf&auml;llig Ende April 2004.</p>
                   <p>&nbsp;</p>
                   <p>Eigentlich wollten beide nur schnell am Abend noch weg um Freunde zu treffen. Aus &bdquo;nur schnell&ldquo; wurde Morgenfr&uuml;h. Man  hat sich halt immer viel zu erz&auml;hlen, wenn man sich kennen lernt.</p>
                   <p>&nbsp;</p>
-                  <p>Vorgestellt wurden die beiden durch die gemeinsame Freundin Amanda, welche schon immer behauptet hat, dass beide  optimal zu einander passen. Wie man sieht, hat Amanda daf&uuml;r ein gutes Gef&uuml;hl&hellip;</p></h1></td>
+                  <p>Vorgestellt wurden die beiden durch die gemeinsame Freundin Amanda, welche schon immer behauptet hat, dass beide  optimal zu einander passen. Wie man sieht, hat Amanda daf&uuml;r ein gutes Gef&uuml;hl&hellip;</p>
+				  </h1>
+				 </td>
                 <td>
-				<img src="${createLinkTo(dir:'images/Homepagebilder',file:'Daniela_Straefling_kleiner_mit Negativrand.jpg')}" alt="Daniela"/>				
-                <h1>Daniela</h1>
-				</td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-              </tr>
-              <tr>
-                <td>
-				<img src="${createLinkTo(dir:'images/Homepagebilder',file:'Stefan_Straefling_kleiner_mit Negativrand.jpg')}" alt="Stefan"/>				
-                <h1>Stefan</h1></td>
+					<img src="${createLinkTo(dir:'images/Homepagebilder',file:'Daniela_und_Stefan.jpg')}" alt="Daniela und Stefan, das Bild" title="Daniela und Stefan, das Bild"/>				
+                </td>
               </tr>
             </table>
         </div>

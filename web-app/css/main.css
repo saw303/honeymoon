@@ -11,6 +11,10 @@ html * {
     right: 0;
 }
 
+.logo {
+	text-align:center;
+}
+
 body {
     background: #000000;
     color: #333;
@@ -134,7 +138,7 @@ td.errors input {
 /* TABLES */
 
 table {
-    border: 1px solid #ccc;
+    border: 0px solid #ccc;
     width: 100%
 }
 tr {

@@ -73,7 +73,7 @@ input:focus, select:focus, textarea:focus {
 /* NAVIGATION MENU */
 
 .nav {
-    background: #fff url(../images/skin/shadow.jpg) bottom repeat-x;
+    background: #d52525 url(../images/skin/shadow.jpg) bottom repeat-x;
     border: 1px solid #ccc;
     border-style: solid none solid none;	
     margin-top: 5px;
@@ -138,7 +138,7 @@ td.errors input {
 /* TABLES */
 
 table {
-    border: 0px solid #ccc;
+    border: px solid #ccc;
     width: 100%
 }
 tr {

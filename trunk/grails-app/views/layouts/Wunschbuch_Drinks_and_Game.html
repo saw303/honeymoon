@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <title><g:layoutTitle default="lebenslänglich.ch - Die Hochzeit von Daniela Wangler und Stefan Dolder" /></title>
+        <link rel="stylesheet" href="${createLinkTo(dir:'css',file:'main.css')}" />
+        <link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
+        <g:layoutHead />
+        <g:javascript library="application" />				
+        <link href="../../../web-app/css/main.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="spinner" class="spinner" style="display:none;">
+            <img src="${createLinkTo(dir:'images',file:'spinner.gif')}" alt="Spinner" />
+        </div>	
+        <div class="logo">
+          <div align="center"><img src="../../../web-app/images/Homepagebilder/Titelleistenbild_1.jpg" width="513" height="48"></div>
+        </div>
+        <div class="nav">
+            <span class="menuButton"><g:link class="home" action="list" controller="home"><a href="Kopie von main_1.htm">Home</a></g:link>
+            </span>
+            <span class="menuButton"><g:link action="list" controller="home"><a href="Daniela_und_Stefan.html">Daniela & Stefan</a></g:link>
+            </span>
+            <span class="menuButton"><g:link action="list" controller="home"><a href="Die Trauzeugen 1.htm">Die Trauzeugen</a></g:link>
+            </span>
+            <span class="menuButton"><g:link class="list" action="list" controller="giftItem"><a href="Wunschbuch_Einband.html">Wunschbuch</a></g:link>
+            </span>
+            <span class="menuButton"><g:link class="list" action="list" controller="guestbookEntry">Gästebuch</g:link></span>
+            <span class="menuButton"><g:link action="list" controller="guestbookEntry">Warenkorb</g:link></span>
+        </div>
+        <g:layoutBody />
+        <div>
+          <form name="form1" method="post" action="">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="27%" rowspan="2" align="center"><p>
+                  <h2>Themenliste / Inhaltsverzewichnis </h2>
+                </p>
+                <p>&nbsp;</p>
+                <h1><a href="Wunschbuch_Flug.html">Flug</a></h1>
+                <p>&nbsp;</p>
+                <h1><a href="Wunschbuch_Hawaii.html">Hawaii</a></h1>
+                <p>&nbsp;</p>
+                <h1><a href="Wunschbuch_Las_Vegas.html">Las Vegas</a></h1>
+                <p>&nbsp;</p>
+                <p>
+                  <h1><a href="Wunschbuch_Mietauto.html">Mietauto</a></h1>
+                </p>
+                <p>&nbsp;</p>
+                <p>
+                  <h1><a href="Wunschbuch_Drinks_and_Game.html">Drinks und Spielbeitrag  </a></h1>
+                </p></td>
+                <td align="center"><p>
+                  <input type="image" name="imageField" src="../../../web-app/images/Homepagebilder/cocktail_1.jpg">
+                </p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>Text: Hier wird die Kurzbeschreibung sein</p>
+                <p>&nbsp;</p>
+                <p>Beitrag
+                  <input type="text" name="textfield">
+                </p>
+                <p>&nbsp;</p>
+                <p>
+                  <input type="submit" name="Submit" value="Warenkorb">
+                </p>
+                <p>&nbsp;</p></td>
+                <td align="center"><p>
+                  <input type="image" name="imageField2" src="../../../web-app/images/Homepagebilder/cocktail_2.jpg">
+                </p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>Text: Hier wird die Kurzbeschreibung sein</p>
+                <p>&nbsp;</p>
+                <p>Beitrag
+                  <input type="text" name="textfield2">
+                </p>
+                <p>&nbsp;</p>
+                <p>
+                  <input type="submit" name="Submit2" value="Warenkorb">
+</p></td>
+              </tr>
+              <tr>
+                <td align="center"><p>Rouletbild / Black Jack </p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>Text: Hier wird die Kurzbeschreibung sein</p>
+                <p>&nbsp;</p>
+                <p>Beitrag
+                  <input type="text" name="textfield3">
+                </p>
+                <p>&nbsp;</p>
+                <p>
+                  <input type="submit" name="Submit4" value="Warenkorb">
+</p></td>
+                <td align="center"><p>Rouletbild / Black Jack </p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>Text: Hier wird die Kurzbeschreibung sein</p>
+                <p>&nbsp;</p>
+                <p>Beitrag
+                  <input type="text" name="textfield4">
+                </p>
+                <p>&nbsp;</p>
+                <p>
+                  <input type="submit" name="Submit3" value="Warenkorb">
+</p></td>
+              </tr>
+            </table>
+          </form>
+          <p>Version </p>
+          <g:meta name="app.version"/> on Grails <g:meta name="app.grails.version" /></div>
+        <p>&nbsp;</p>
+    </body>	
+</html>

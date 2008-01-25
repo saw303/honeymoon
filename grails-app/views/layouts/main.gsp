@@ -23,6 +23,6 @@
             <span class="menuButton"><g:link action="list" controller="guestbookEntry">Warenkorb</g:link></span>
         </div>
         <g:layoutBody />
-        <div>Version <g:meta name="app.version"/> on Grails <g:meta name="app.grails.version" /></div>
+        <div><g:meta name="app.name"/> (Version <g:meta name="app.version"/>) powered by <a href="http://www.grails.org/">Grails</a> <g:meta name="app.grails.version" /></div>
     </body>	
 </html>

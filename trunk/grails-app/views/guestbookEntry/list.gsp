@@ -14,9 +14,9 @@
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
-            <div class="list">
+            <div>
                 <table>
-                    <thead>
+                    <!-- thead>
                         <tr>
                         
                    	        <g:sortableColumn property="author" title="Autor" />
@@ -28,10 +28,20 @@
                    	        <g:sortableColumn property="entryDate" title="Datum" />
                         
                         </tr>
-                    </thead>
+                    </thead -->
                     <tbody>
                     <g:each in="${guestbookEntryList}" status="i" var="guestbookEntry">
-                        <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
+						<tr>
+							<td>${guestbookEntry.title?.encodeAsHTML()} 
+								<br/>von ${guestbookEntry.author?.encodeAsHTML()} (${guestbookEntry.authorEmail?.encodeAsHTML()})
+								geschrieben am ${guestbookEntry.entryDate?.encodeAsHTML()}
+							</td>
+						</tr>						
+						<tr>
+							<td>${guestbookEntry.message?.encodeAsHTML()}</td>
+						</tr>
+					
+                        <!-- tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
 
                             <td>${guestbookEntry.author?.encodeAsHTML()}</td>
                         
@@ -41,7 +51,7 @@
                         
                             <td>${guestbookEntry.entryDate?.encodeAsHTML()}</td>
                         
-                        </tr>
+                        </tr -->
                     </g:each>
                     </tbody>
                 </table>

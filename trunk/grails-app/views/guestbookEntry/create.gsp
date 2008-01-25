@@ -7,7 +7,7 @@
     </head>
     <body>        
         <div class="body">
-            <h1>Create GuestbookEntry</h1>
+            <h1>Erstellen Sie einen neuen G&auml;stebucheintrag</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -23,7 +23,7 @@
                         
                             <tr class='prop'>
                                 <td valign='top' class='name'>
-                                    <label for='author'>Autor:</label>
+                                    <label for='author'>Ihr Name:</label>
                                 </td>
                                 <td valign='top' class='value ${hasErrors(bean:guestbookEntry,field:'author','errors')}'>
                                     <input type="text" id='author' name='author' value="${fieldValue(bean:guestbookEntry,field:'author')}"/>
@@ -32,7 +32,7 @@
                         
                             <tr class='prop'>
                                 <td valign='top' class='name'>
-                                    <label for='authorEmail'>Email:</label>
+                                    <label for='authorEmail'>Ihre Email:</label>
                                 </td>
                                 <td valign='top' class='value ${hasErrors(bean:guestbookEntry,field:'authorEmail','errors')}'>
                                     <input type="text" id='authorEmail' name='authorEmail' value="${fieldValue(bean:guestbookEntry,field:'authorEmail')}"/>
@@ -41,7 +41,7 @@
                         
                             <tr class='prop'>
                                 <td valign='top' class='name'>
-                                    <label for='title'>Titel:</label>
+                                    <label for='title'>Titel des Eintrags:</label>
                                 </td>
                                 <td valign='top' class='value ${hasErrors(bean:guestbookEntry,field:'title','errors')}'>
                                     <input type="text" id='title' name='title' value="${fieldValue(bean:guestbookEntry,field:'title')}"/>
@@ -50,27 +50,17 @@
                         
                             <tr class='prop'>
                                 <td valign='top' class='name'>
-                                    <label for='message'>Nachricht:</label>
+                                    <label for='message'>Ihre Nachricht:</label>
                                 </td>
                                 <td valign='top' class='value ${hasErrors(bean:guestbookEntry,field:'message','errors')}'>
-                                    <input type="text" id='message' name='message' value="${fieldValue(bean:guestbookEntry,field:'message')}"/>
+									<g:textArea name="message" value="${fieldValue(bean:guestbookEntry,field:'message')}" rows="5" cols="40"/>                                    
                                 </td>
-                            </tr> 
-                            <!--
-                            <tr class='prop'>
-                                <td valign='top' class='name'>
-                                    <label for='entryDate'>Entry Date:</label>
-                                </td>
-                                <td valign='top' class='value ${hasErrors(bean:guestbookEntry,field:'entryDate','errors')}'>
-                                    <g:datePicker name='entryDate' value="${guestbookEntry?.entryDate}" ></g:datePicker>
-                                </td>
-                            </tr> 
-                            -->
+                            </tr>                             
                         </tbody>
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><input class="save" type="submit" value="Create"></input></span>
+                    <span class="button"><input class="save" type="submit" value="Ins G&auml;stebuch eintragen"></input></span>
                 </div>
             </g:form>
         </div>

@@ -76,8 +76,6 @@ class GiftItemController {
 		
 		def absolutePath = "${path}${File.separator}${file.originalFilename}"
 		
-		println(absolutePath)
-		
 		def ioFile = new File(absolutePath)
 		
 		if (ioFile.exists())
@@ -90,7 +88,7 @@ class GiftItemController {
 		giftItem.image = "images/items/${file.originalFilename}"
 
         if(giftItem.save()) {
-            flash.message = "GiftItem ${giftItem.id} created."
+            flash.message = "Wunsch (Interne ID: ${giftItem.id}) wurde ins Wunschbuch eingetragen."
             redirect(action:show,id:giftItem.id)
         }
         else {

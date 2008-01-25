@@ -70,9 +70,24 @@ class GiftItemController {
         giftItem.properties = params
 
         def file = request.getFile('image');
-
+		
         ServletContext ctx =  request.getSession().getServletContext()
-        def path = ctx.getRealPath('/WEB-INF/')
+        def path = ctx.getRealPath('/images/items')
+		
+		def absolutePath = "${path}${File.separator}${file.originalFilename}"
+		
+		println(absolutePath)
+		
+		def ioFile = new File(absolutePath)
+		
+		if (ioFile.exists())
+		{
+			println "deleting file ${ioFile.absolutePath}"
+			ioFile.delete()
+		}		
+		file.transferTo(ioFile)
+		
+		giftItem.image = "images/items/${file.originalFilename}"
 
         if(giftItem.save()) {
             flash.message = "GiftItem ${giftItem.id} created."

@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" />
-        <title>Home</title>         
+        <title>Homepage &uuml;ber die Hochzeit von Daniela Wangler und Stefan Dolder</title>         
     </head>
     <body>        
         <div class="body">

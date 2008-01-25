@@ -24,7 +24,7 @@ class GuestbookEntryController {
         def guestbookEntry = new GuestbookEntry()
         guestbookEntry.properties = params
         if(guestbookEntry.save()) {
-            flash.message = "GuestbookEntry ${guestbookEntry.id} created."
+            flash.message = "Ihre Nachricht wurde ins Gästebuch eingetragen. Besten Dank"
             redirect(action:show,id:guestbookEntry.id)
         }
         else {

@@ -32,7 +32,7 @@
                         <tr class="prop">
                             <td valign="top" class="name">Bild:</td>
                             
-                            <td valign="top" class="value"><img src="/lebenslaenglich/images/items/fish.jpg" alt="a fish is a fish" /><br/>${giftItem.image}</td>
+                            <td valign="top" class="value"><img src="/lebenslaenglich/${giftItem.image}" alt="a fish is a fish" /><br/>Pfad: ${giftItem.image}</td>
                             
                         </tr>
                     

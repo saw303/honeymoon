@@ -7,7 +7,7 @@
     </head>
     <body>
         <div class="nav">            
-            <span class="menuButton"><g:link class="create" action="create">Neuer Gästebucheintrag</g:link></span>
+            <span class="menuButton"><g:link class="create" action="create">Tragen Sie sich auch ins G&auml;stebuch ein</g:link></span>
         </div>
         <div class="body">
             <h1>Unser Gästebuch</h1>

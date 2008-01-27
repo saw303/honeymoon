@@ -32,7 +32,7 @@
                     <tbody>
                     <g:each in="${guestbookEntryList}" status="i" var="guestbookEntry">
 						<tr>
-							<td>${guestbookEntry.title?.encodeAsHTML()} 
+							<td>${++i}. ${guestbookEntry.title?.encodeAsHTML()} 
 								<br/>von ${guestbookEntry.author?.encodeAsHTML()} (${guestbookEntry.authorEmail?.encodeAsHTML()})
 								geschrieben am ${guestbookEntry.entryDate?.encodeAsHTML()}
 							</td>

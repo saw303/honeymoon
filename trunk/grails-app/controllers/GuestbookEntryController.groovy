@@ -7,7 +7,7 @@ class GuestbookEntryController {
 
     def list = {
         if(!params.max)params.max = 10
-        [ guestbookEntryList: GuestbookEntry.list( params ) ]
+        [ guestbookEntryList: GuestbookEntry.listOrderByEntryDate( max: params.max , order:"desc") ]
     }
 
     def show = {
@@ -23,13 +23,24 @@ class GuestbookEntryController {
     def save = {
         def guestbookEntry = new GuestbookEntry()
         guestbookEntry.properties = params
-        if(guestbookEntry.save()) {
-            flash.message = "Ihre Nachricht wurde ins Gästebuch eingetragen. Besten Dank"
-            redirect(action:show,id:guestbookEntry.id)
-        }
-        else {
-            render(view:'create',model:[guestbookEntry:guestbookEntry])
-        }
+		
+		println("Codeeingabe: ${params.captcha}, Session: ${session.captcha}" )
+		
+		if (params.captcha && params.captcha.toUpperCase() == session.captcha) {			
+			
+			if(guestbookEntry.save()) {
+	            flash.message = "Ihre Nachricht wurde ins Gästebuch eingetragen. Besten Dank"
+	            redirect(action:show,id:guestbookEntry.id)
+	        }
+	        else {
+	            render(view:'create',model:[guestbookEntry:guestbookEntry])
+	        }
+		}
+		else
+		{
+	        flash.message = "Bitte geben Sie den Code auf dem Bild an, um einen Eintrag ins Gästebuch zu machen"
+			render(view:'create',model:[guestbookEntry:guestbookEntry])
+		}
     }
 
     def delete = {

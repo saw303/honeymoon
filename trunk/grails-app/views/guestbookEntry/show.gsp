@@ -53,12 +53,6 @@
                     </tbody>
                 </table>
             </div>
-            <div class="buttons">
-                <g:form controller="guestbookEntry">
-                    <input type="hidden" name="id" value="${guestbookEntry?.id}" />                    
-                    <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Löschen" action="delete"/></span>
-                </g:form>
-            </div>
         </div>
     </body>
 </html>

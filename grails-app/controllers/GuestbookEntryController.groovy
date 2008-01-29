@@ -24,21 +24,11 @@ class GuestbookEntryController {
         def guestbookEntry = new GuestbookEntry()
         guestbookEntry.properties = params
 		
-		println("Codeeingabe: ${params.captcha}, Session: ${session.captcha}" )
-		
-		if (params.captcha && params.captcha.toUpperCase() == session.captcha) {			
-			
-			if(guestbookEntry.save()) {
-	            flash.message = "Ihre Nachricht wurde ins Gästebuch eingetragen. Besten Dank"
-	            redirect(action:show,id:guestbookEntry.id)
-	        }
-	        else {
-	            render(view:'create',model:[guestbookEntry:guestbookEntry])
-	        }
+		if(guestbookEntry.save()) {
+			flash.message = "Ihre Nachricht wurde ins Gästebuch eingetragen. Besten Dank"
+			redirect(action:show,id:guestbookEntry.id)
 		}
-		else
-		{
-	        flash.message = "Bitte geben Sie den Code auf dem Bild an, um einen Eintrag ins Gästebuch zu machen"
+		else {
 			render(view:'create',model:[guestbookEntry:guestbookEntry])
 		}
     }

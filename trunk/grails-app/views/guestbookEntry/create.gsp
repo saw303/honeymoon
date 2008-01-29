@@ -55,17 +55,7 @@
                                 <td valign='top' class='value ${hasErrors(bean:guestbookEntry,field:'message','errors')}'>
 									<g:textArea name="message" value="${fieldValue(bean:guestbookEntry,field:'message')}" rows="5" cols="40"/>                                    
                                 </td>
-                            </tr>
-
-							<tr class='prop'>
-                                <td valign='top' class='name'>
-                                    <label for='message'>Bitte geben Sie den Code an:</label>
-                                </td>
-                                <td valign='top' class='value '>
-									<input type="text" name="captcha" value=""/>
-									<img src="${createLink(controller:'captcha', action:'index')}" />
-                                </td>
-                            </tr>							
+                            </tr>						
                         </tbody>
                     </table>
                 </div>

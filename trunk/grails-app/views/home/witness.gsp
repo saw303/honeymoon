@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" />
-        <title>Home</title>         
+        <title>Die Trauzeugen</title>         
     </head>
     <body>        
         <div class="body">
@@ -25,9 +25,9 @@
                 - Parkierm&ouml;glichkeit und Transport der geladenen G&auml;ste<br>
                 - W&uuml;nsche und Bed&uuml;rfnisse des Br&auml;utigams<br></h1>
                 <h1>&nbsp;</h1>
-                <h1>Einfach das Kontaktformular ausf&uuml;llen und Matthias wird sich mit euch in Verbindung setzen.     </h1>
+                <h1>Einfach das Kontaktformular ausf&uuml;llen und Matthias wird sich mit euch in Verbindung setzen.</h1>
                 <h1>&nbsp;</h1>
-              <h1><u>Kontaktformular</u></h1></td>
+              <h1><g:link controller="contact" action="bestMan"><u>Kontaktformular</u></g:link></h1></td>
               <td><h1>Carmen Tschopp<br>
                 von Langnau am Albis</h1>
                 <h1>&nbsp;</h1>
@@ -40,7 +40,7 @@
                 <h1>&nbsp;</h1>
                 <h1>Einfach das Kontaktformular ausf&uuml;llen und  Carmen wird sich mit euch in Verbindung setzen.</h1>
                 <h1>&nbsp;</h1>
-              <h1><u>Kontaktformular</u></h1></td>
+              <h1><g:link controller="contact" action="witness"><u>Kontaktformular</u></g:link></h1></td>
             </tr>
           </table>
         </div>

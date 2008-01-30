@@ -7,9 +7,15 @@
     </head>
     <body>        
         <div class="body">
-            <h1>Einen Trauzeugen kontaktieren ${type}</h1>
-            <g:form action="save" method="post" >
+            <h1>Einen Trauzeugen kontaktieren</h1>
+			<g:hasErrors bean="${command}">
+	            <div class="errors">
+	                <g:renderErrors bean="${command}" as="list" />
+	            </div>
+            </g:hasErrors>
+            <g:form action="send" method="post" >
                 <div class="dialog">
+					<g:hiddenField name="redir" value="${redir}" />
                     <table>
                         <tbody>
                         
@@ -17,42 +23,33 @@
                                 <td valign='top' class='name'>
                                     <label for='author'>Ihr Name:</label>
                                 </td>
-                                <td valign='top' class='value ${hasErrors(bean:guestbookEntry,field:'author','errors')}'>
-                                    <input type="text" id='author' name='author' value="${fieldValue(bean:guestbookEntry,field:'author')}"/>
+                                <td valign='top' class='value '>
+                                    <input type="text" id='name' name='name' value="${fieldValue(bean:command,field:'name')}"/>
                                 </td>
                             </tr> 
                         
                             <tr class='prop'>
                                 <td valign='top' class='name'>
-                                    <label for='authorEmail'>Ihre Email:</label>
+                                    <label for='email'>Ihre Emailadresse:</label>
                                 </td>
-                                <td valign='top' class='value ${hasErrors(bean:guestbookEntry,field:'authorEmail','errors')}'>
-                                    <input type="text" id='authorEmail' name='authorEmail' value="${fieldValue(bean:guestbookEntry,field:'authorEmail')}"/>
+                                <td valign='top' class='value '>
+                                    <input type="text" id='email' name='email' value="${fieldValue(bean:command,field:'email')}"/>
                                 </td>
-                            </tr> 
-                        
-                            <tr class='prop'>
-                                <td valign='top' class='name'>
-                                    <label for='title'>Titel des Eintrags:</label>
-                                </td>
-                                <td valign='top' class='value ${hasErrors(bean:guestbookEntry,field:'title','errors')}'>
-                                    <input type="text" id='title' name='title' value="${fieldValue(bean:guestbookEntry,field:'title')}"/>
-                                </td>
-                            </tr> 
+                            </tr>
                         
                             <tr class='prop'>
                                 <td valign='top' class='name'>
                                     <label for='message'>Ihre Nachricht:</label>
                                 </td>
-                                <td valign='top' class='value ${hasErrors(bean:guestbookEntry,field:'message','errors')}'>
-									<g:textArea name="message" value="${fieldValue(bean:guestbookEntry,field:'message')}" rows="5" cols="40"/>                                    
+                                <td valign='top' class='value '>
+									<g:textArea id='message' name="message" value="${fieldValue(bean:command,field:'message')}" rows="5" cols="40"/>                                    
                                 </td>
                             </tr>						
                         </tbody>
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><input class="save" type="submit" value="Ins G&auml;stebuch eintragen"></input></span>
+                    <span class="button"><input class="save" type="submit" value="Trauzeuge kontaktieren"></input></span>
                 </div>
             </g:form>
         </div>

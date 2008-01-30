@@ -1,15 +1,52 @@
 class ContactController {    
 	
-	def allowedMethods = [bestMan:'GET', witness:'GET']
-	def types = [bestman:1, witness: 2]
+	def allowedMethods = [bestMan:'GET', witness:'GET', send:'POST']	
 	
 	def bestMan = {	
-		render( view:'contact', model:[type:types['bestman']])
+		render( view:'contact', model:[redir:'bestMan'])
 	}
 	
 	def witness = {	
-		render( view:'contact', model:[type:types['witness']])
+		render( view:'contact', model:[redir:'witness'])
 	}
 	
+	def send = { ContactCommand cmd ->
 	
+		println(cmd)
+		
+		if (cmd.hasErrors())
+		{
+			println("fehler. Redirect to action: ${params.redir}")
+			if (params.redir == 'bestMan')
+			{
+				redirect(controller:"contact",action:"bestMan")				
+			}
+			else
+			{
+				redirect(controller:"contact",action:"witness")				
+			}
+		}
+		else
+		{
+			println("keine fehler")
+			render(view:'success')
+		}
+	}
+}
+
+class ContactCommand {
+	String name
+	String email
+	String message
+	
+	static constraints = {
+		name(blank: false)
+		email(email: true)
+		message(blank:false)
+	}
+	
+	public String toString()
+	{
+		return "${name} - ${email} - ${message}"
+	}
 }

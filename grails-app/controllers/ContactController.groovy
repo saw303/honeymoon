@@ -1,4 +1,6 @@
-class ContactController {    
+class ContactController {
+
+    MailService mailService		
 	
 	def allowedMethods = [bestMan:'GET', witness:'GET', send:'POST']	
 	
@@ -13,6 +15,7 @@ class ContactController {
 	def send = { ContactCommand cmd ->
 	
 		println(cmd)
+		println("MailService got injected? ${mailService != null}")
 		
 		if (cmd.hasErrors())
 		{
@@ -22,14 +25,21 @@ class ContactController {
 				redirect(controller:"contact",action:"bestMan")				
 			}
 			else
-			{
+			{				
 				redirect(controller:"contact",action:"witness")				
 			}
 		}
 		else
 		{
 			println("keine fehler")
-			render(view:'success')
+			// send mail
+			try {
+				mailService.sendMail(cmd.email, "silvio.wangler@gmail.com", 'test', 'noch ein test')
+				render(view:'success')
+			}
+			catch(Exception e) {			
+				render(view:'failed')
+			}
 		}
 	}
 }

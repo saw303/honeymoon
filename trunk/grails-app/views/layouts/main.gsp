@@ -21,6 +21,12 @@
             <span class="menuButton"><g:link class="list" action="list" controller="giftItem">Wunschbuch</g:link></span>
             <span class="menuButton"><g:link class="list" action="list" controller="guestbookEntry">Gästebuch</g:link></span>
             <span class="menuButton"><g:link action="list" controller="guestbookEntry">Warenkorb</g:link></span>
+			<g:if test="${session.user != null}">
+				<span class="menuButton"><g:link action="logout" controller="login">Abmelden</g:link></span>
+			</g:if>
+			<g:if test="${session.user == null}">
+				<span class="menuButton"><g:link controller="login">Anmelden</g:link></span>
+			</g:if>
         </div>
         <g:layoutBody />
         <div><g:meta name="app.name"/> (Version <g:meta name="app.version"/>) powered by <a href="http://www.grails.org/">Grails</a> <g:meta name="app.grails.version" /></div>

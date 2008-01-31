@@ -40,6 +40,11 @@
 						<tr>
 							<td>${guestbookEntry.message?.encodeAsHTML()}</td>
 						</tr>
+						<g:if test="${session.user != null}">
+							<tr>
+								<td><a href="<g:createLink action="delete" id="${guestbookEntry.id}" />">L&ouml;schen</a></td>
+							</tr>
+						</g:if>
 					
                         <!-- tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
 

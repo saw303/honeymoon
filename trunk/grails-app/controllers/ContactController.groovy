@@ -34,10 +34,10 @@ class ContactController {
 			println("keine fehler")
 			// send mail
 			try {
-				mailService.sendMail(cmd.email, "silvio.wangler@gmail.com", 'test', 'noch ein test')
+				mailService.sendMail("saw@silviowangler.ch", "silvio.wangler@gmail.com", "Mail von ${cmd.email}", "${params.message}")
 				render(view:'success')
 			}
-			catch(Exception e) {			
+			catch(Exception e) {					
 				render(view:'failed')
 			}
 		}

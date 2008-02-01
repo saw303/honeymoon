@@ -9,13 +9,14 @@ class MailService {
 	
     boolean transactional = false
 
-    public synchronized void sendMail(String sender, String recepient, String subject, String message) throws MailException {
+    public void sendMail(String sender, String recepient, String subject, String message) throws MailException {
 	
 		def recepients = [recepient]
 	
 		SimpleMailMessage msg = new SimpleMailMessage()
 		msg.to = recepients
 		msg.from = sender
+		msg.replyTo = sender
 		msg.subject = subject
 		msg.text = message
 		

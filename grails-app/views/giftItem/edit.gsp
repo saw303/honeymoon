@@ -27,50 +27,59 @@
                     <table>
                         <tbody>
                         
-                            <tr class='prop'>
-                                <td valign='top' class='name'>
-                                    <label for='name'>Name:</label>
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="name">Name:</label>
                                 </td>
-                                <td valign='top' class='value ${hasErrors(bean:giftItem,field:'name','errors')}'>
-                                    <input type="text" id='name' name='name' value="${fieldValue(bean:giftItem,field:'name')}"/>
-                                </td>
-                            </tr> 
-                        
-                            <tr class='prop'>
-                                <td valign='top' class='name'>
-                                    <label for='description'>Description:</label>
-                                </td>
-                                <td valign='top' class='value ${hasErrors(bean:giftItem,field:'description','errors')}'>
-                                    <input type="text" id='description' name='description' value="${fieldValue(bean:giftItem,field:'description')}"/>
+                                <td valign="top" class="value ${hasErrors(bean:giftItem,field:'name','errors')}">
+                                    <input type="text" id="name" name="name" value="${fieldValue(bean:giftItem,field:'name')}"/>
                                 </td>
                             </tr> 
                         
-                            <tr class='prop'>
-                                <td valign='top' class='name'>
-                                    <label for='image'>Image:</label>
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="description">Description:</label>
                                 </td>
-                                <td valign='top' class='value ${hasErrors(bean:giftItem,field:'image','errors')}'>
-                                    <input type="text" id='image' name='image' value="${fieldValue(bean:giftItem,field:'image')}"/>
+                                <td valign="top" class="value ${hasErrors(bean:giftItem,field:'description','errors')}">
+                                    <input type="text" id="description" name="description" value="${fieldValue(bean:giftItem,field:'description')}"/>
                                 </td>
                             </tr> 
                         
-                            <tr class='prop'>
-                                <td valign='top' class='name'>
-                                    <label for='price'>Price:</label>
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="image">Image:</label>
                                 </td>
-                                <td valign='top' class='value ${hasErrors(bean:giftItem,field:'price','errors')}'>
-                                    <input type='text' id='price' name='price' value="${fieldValue(bean:giftItem,field:'price')}" />
+                                <td valign="top" class="value ${hasErrors(bean:giftItem,field:'image','errors')}">
+                                    <input type="text" id="image" name="image" value="${fieldValue(bean:giftItem,field:'image')}"/>
                                 </td>
-                            </tr>
-
-                            <tr class='prop'>
-                                <td valign='top' class='name'>
-                                    <label for='price'>Status:</label>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="price">Price:</label>
                                 </td>
-                                <td valign='top' class='value ${hasErrors(bean:giftItem,field:'active','errors')}'>
-                                    <g:checkBox name='active' value='${fieldValue(bean:giftItem,field:'active')}' />
+                                <td valign="top" class="value ${hasErrors(bean:giftItem,field:'price','errors')}">
+                                    <g:select from="${0..1000000}" id="price" name="price" value="${giftItem?.price}" ></g:select>
                                 </td>
-                            </tr>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="active">Active:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:giftItem,field:'active','errors')}">
+                                    <g:checkBox name="active" value="${giftItem?.active}" ></g:checkBox>
+                                </td>
+                            </tr> 
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="category">Category:</label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean:giftItem,field:'category','errors')}">
+                                    <g:select optionKey="id" from="${Category.list()}" name="category.id" value="${giftItem?.category?.id}" ></g:select>
+                                </td>
+                            </tr> 
                         
                         </tbody>
                     </table>

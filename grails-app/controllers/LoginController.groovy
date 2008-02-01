@@ -10,7 +10,7 @@ class LoginController {
 		{
 			User u = User.findByNickname(params.name)
 			
-			if (u && u.password == params.password) 
+			if (u && u.password == params.password && ! u.locked) 
 			{
 				session.user = u
 				render(view:'success')

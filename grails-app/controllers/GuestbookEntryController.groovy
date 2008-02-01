@@ -2,8 +2,7 @@ class GuestbookEntryController {
 
     def index = { redirect(action:list,params:params) }
 
-    // the delete, save and update actions only accept POST requests
-    def allowedMethods = [delete:'GET', save:'POST', update:'POST']
+    def allowedMethods = [delete:'GET', save:'POST']
 
     def list = {
         if(!params.max)params.max = 10

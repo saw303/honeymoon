@@ -16,8 +16,8 @@
               <td><div align="center"></div>
                 <div align="center"><img src="${createLinkTo(dir:'images/Homepagebilder',file:'Carmen_fuer_Homepage.jpg')}" alt="Carmen Tschopp" title="Carmen Tschopp" width="121" height="189"></div></td>
               <td><div align="center"></div>
-                <h1>Carmen Tschopp<br>
-                  von Langnau am Albis</h1>
+                <p>Carmen Tschopp<br>
+                  von Langnau am Albis</p>
                 <h1>&nbsp;</h1>
                 <h1>Carmen und Daniela lernten sich 2004 bei  der Arbeit am Flughafen kennen. Und sind von da an treue Wegbegleiterinnen, die  sich nicht scheuen sogar in der sibirischen K&auml;lte des hohen Nordens zusammen  durch Schnee uns Eis zu gehen!</h1>
                 <p>&nbsp;</p>

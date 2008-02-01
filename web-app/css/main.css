@@ -52,6 +52,14 @@ ul {
     padding-left: 15px;	
 }
 
+li {
+	color: #FFFFFF;
+	font-weight: normal;
+	font-size: 12px;
+	margin: .8em 0 .3em 0;
+	list-style-type:square;
+}
+
 input, select, textarea {
     background-color: #fcfcfc;
     border: 1px solid #ccc;
@@ -296,12 +304,4 @@ th.desc a {
 .buttons input.save {
     background: transparent url(../images/skin/database_save.png) 5px 50% no-repeat;
     padding-left: 28px;
-}
-
-li {
-	color: #FFFFFF;
-	font-weight: normal;
-	font-size: 12px;
-	margin: .8em 0 .3em 0;
-	list-style-type:square;
 }

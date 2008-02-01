@@ -9,4 +9,6 @@ class HomeController {
 	def birdalcouple = { render(view:'couple') }
 	
 	def witness = { render(view:'witness') }
+	
+	def wedding = { render(view:'wedding')}
 }

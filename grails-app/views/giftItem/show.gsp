@@ -6,15 +6,16 @@
         <title>Show GiftItem</title>
     </head>
     <body>
-        <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-            <span class="menuButton"><g:link class="list" action="list">GiftItem List</g:link></span>
-            <span class="menuButton"><g:link class="create" action="create">New GiftItem</g:link></span>
-        </div>
+		<g:if test="${session.user != null}">
+	        <div class="nav">	            
+	            <span class="menuButton"><g:link class="list" action="list">Alle Wunschbucheintr&auml;ge anzeigen</g:link></span>
+	            <span class="menuButton"><g:link class="create" action="create">Neuer Wunsch eintragen</g:link></span>
+	        </div>
+		</g:if>
         <div class="body">
-            <h1>Show GiftItem</h1>
+            <h1>Eines der schönen W&uuml;nsche</h1>
             <g:if test="${flash.message}">
-            <div class="message">${flash.message}</div>
+	            <div class="message">${flash.message}</div>
             </g:if>
             <div class="dialog">
                 <table>
@@ -28,36 +29,43 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Name:</td>
+                            <td valign="top" class="name">Titel / Überschrift:</td>
                             
                             <td valign="top" class="value">${giftItem.name}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Description:</td>
+                            <td valign="top" class="name">Bezeichnung:</td>
                             
                             <td valign="top" class="value">${giftItem.description}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Image:</td>
+                            <td valign="top" class="name">Bild:</td>
+                            
+                            <td valign="top" class="value"><img src="/lebenslaenglich/${giftItem.image}" alt="${giftItem.name}" /></td>
+                            
+                        </tr>
+						
+						<tr class="prop">
+                            <td valign="top" class="name">Pfad:</td>
                             
                             <td valign="top" class="value">${giftItem.image}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name">Price:</td>
+                            <td valign="top" class="name">Preis:</td>
                             
                             <td valign="top" class="value">${giftItem.price}</td>
                             
                         </tr>
-                    
+
                         <tr class="prop">
-                            <td valign="top" class="name">Active:</td>
-                            
+                            <td valign="top" class="name">Status:</td>
+
                             <td valign="top" class="value">${giftItem.active}</td>
                             
                         </tr>
@@ -72,13 +80,15 @@
                     </tbody>
                 </table>
             </div>
-            <div class="buttons">
-                <g:form controller="giftItem">
-                    <input type="hidden" name="id" value="${giftItem?.id}" />
-                    <span class="button"><g:actionSubmit class="edit" value="Edit" /></span>
-                    <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
-                </g:form>
-            </div>
+			<g:if test="${session.user != null}">
+	            <div class="buttons">
+	                <g:form controller="giftItem">
+	                    <input type="hidden" name="id" value="${giftItem?.id}" />
+	                    <span class="button"><g:actionSubmit class="edit" value="Bearbeiten" action="edit"/></span>
+	                    <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Sind Sie sicher?');" value="Löschen" action="delete" /></span>
+	                </g:form>
+	            </div>
+			</g:if>
         </div>
     </body>
 </html>

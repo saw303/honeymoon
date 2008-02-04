@@ -8,7 +8,7 @@ class GiftItemController {
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
     def list = {
-        if(!params.max)params.max = 10
+        if(!params.max) params.max = 10
         [ giftItemList: GiftItem.list( params ) ]
     }
 
@@ -33,8 +33,8 @@ class GiftItemController {
         def giftItem = GiftItem.get( params.id )
 
         if(!giftItem) {
-                flash.message = "GiftItem not found with id ${params.id}"
-                redirect(action:list)
+	        flash.message = "GiftItem not found with id ${params.id}"
+	        redirect(action:list)
         }
         else {
             return [ giftItem : giftItem ]
@@ -44,9 +44,9 @@ class GiftItemController {
     def update = {
         def giftItem = GiftItem.get( params.id )
         if(giftItem) {
-             giftItem.properties = params
-            if(giftItem.save()) {
-                flash.message = "GiftItem ${params.id} updated."
+            giftItem.properties = params
+            if(!giftItem.hasErrors() && giftItem.save()) {
+                flash.message = "GiftItem ${params.id} updated"
                 redirect(action:show,id:giftItem.id)
             }
             else {
@@ -60,14 +60,13 @@ class GiftItemController {
     }
 
     def create = {
-      def giftItem = new GiftItem()
-      giftItem.properties = params
-      return ['giftItem':giftItem]
+        def giftItem = new GiftItem()
+        giftItem.properties = params
+        return ['giftItem':giftItem]
     }
 
     def save = {
-        def giftItem = new GiftItem()
-        giftItem.properties = params
+        def giftItem = new GiftItem(params)
 
         def file = request.getFile('image');
 		
@@ -87,7 +86,7 @@ class GiftItemController {
 		
 		giftItem.image = "images/items/${file.originalFilename}"
 
-        if(giftItem.save()) {
+        if(!giftItem.hasErrors() && giftItem.save()) {
             flash.message = "Wunsch (Interne ID: ${giftItem.id}) wurde ins Wunschbuch eingetragen."
             redirect(action:show,id:giftItem.id)
         }
@@ -95,5 +94,4 @@ class GiftItemController {
             render(view:'create',model:[giftItem:giftItem])
         }
     }
-
 }

@@ -11,6 +11,6 @@ class Category {
 	}
 	
 	public String toString() {
-		return "Alignment ${alignment}: ${name}"
+		return "Kategorie: ${name} (Id: ${alignment})"
 	}
 }

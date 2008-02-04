@@ -36,11 +36,11 @@ class GuestbookEntryController {
         def guestbookEntry = GuestbookEntry.get( params.id )
         if(guestbookEntry) {
             guestbookEntry.delete()
-            flash.message = "GiftItem ${params.id} deleted."
+            flash.message = "Gästebucheintrag ${params.id} gelöscht."
             redirect(action:list)
         }
         else {
-            flash.message = "GuestbookEntry not found with id ${params.id}"
+            flash.message = "Es konnte keine Gästebucheintrag mit der ID ${params.id} gefunden werden."
             redirect(action:list)
         }
     }

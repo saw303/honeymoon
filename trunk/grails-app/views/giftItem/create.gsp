@@ -11,7 +11,7 @@
             <span class="menuButton"><g:link class="list" action="list">GiftItem List</g:link></span>
         </div>
         <div class="body">
-            <h1>Create GiftItem</h1>
+            <h1>Etwas in Wunschbuch schreiben...</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -20,14 +20,14 @@
                 <g:renderErrors bean="${giftItem}" as="list" />
             </div>
             </g:hasErrors>
-            <g:form action="save" method="post" >
+            <g:form action="save" method="post" enctype="multipart/form-data">
                 <div class="dialog">
                     <table>
                         <tbody>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="name">Name:</label>
+                                    <label for='name'>Titel / Überschrift:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:giftItem,field:'name','errors')}">
                                     <input type="text" id="name" name="name" value="${fieldValue(bean:giftItem,field:'name')}"/>
@@ -36,16 +36,16 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="description">Description:</label>
+                                    <label for="description">Beschreibung:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:giftItem,field:'description','errors')}">
-                                    <input type="text" id="description" name="description" value="${fieldValue(bean:giftItem,field:'description')}"/>
+									<g:textArea name="description" value="${fieldValue(bean:giftItem,field:'description')}" rows="5" cols="40"/>                                    
                                 </td>
                             </tr> 
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="image">Image:</label>
+                                    <label for="image">Bild:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:giftItem,field:'image','errors')}">
                                     <input type="text" id="image" name="image" value="${fieldValue(bean:giftItem,field:'image')}"/>
@@ -54,7 +54,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="price">Price:</label>
+                                    <label for="price">Preis:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:giftItem,field:'price','errors')}">
                                     <g:select from="${0..1000000}" id="price" name="price" value="${giftItem?.price}" ></g:select>
@@ -63,7 +63,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="active">Active:</label>
+                                    <label for="active">Status:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:giftItem,field:'active','errors')}">
                                     <g:checkBox name="active" value="${giftItem?.active}" ></g:checkBox>
@@ -83,7 +83,7 @@
                     </table>
                 </div>
                 <div class="buttons">
-                    <span class="button"><input class="save" type="submit" value="Create" /></span>
+                    <span class="button"><input class="save" type="submit" value="Eintragen"></input></span>
                 </div>
             </g:form>
         </div>

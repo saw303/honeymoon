@@ -44,11 +44,11 @@ class BootStrap {
 		}
 		
 		Category cat = new Category(name:'Flug', alignment: 1)
-		cat.save()
+		cat.save(flush:true)
 
         5.times {
             new GuestbookEntry(author:"Silvio Wangler-${it}", authorEmail:'silvio@silviowangler.ch', title:"hello you-${it}", message:'wicked stuff').save();
-            new GiftItem(name:"Wunsch-${it}", description:'Irgendein Wunsch', price: 1, active:true, image:'images/items/hugo.jpg', category: cat).save();
+            new GiftItem(name:"Wunsch-${it}", description:'Irgendein Wunsch', price: 1, active:true, image:'images/items/hugo.jpg', category: cat).save(flush:true);
         }
      }
      def destroy = {

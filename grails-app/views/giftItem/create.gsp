@@ -57,7 +57,7 @@
                                     <label for="price">Preis:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:giftItem,field:'price','errors')}">
-                                    <g:select from="${0..1000000}" id="price" name="price" value="${giftItem?.price}" ></g:select>
+									<input type="price" id="price" name="price" value="${fieldValue(bean:giftItem,field:'price')}"/>                                    
                                 </td>
                             </tr> 
                         

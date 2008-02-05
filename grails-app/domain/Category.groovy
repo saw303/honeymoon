@@ -1,9 +1,9 @@
 class Category {
 
+	static hasMany = [ giftItems : GiftItem ]
+	
 	String name
 	Integer alignment
-	
-	static hasMany = [ giftItems : GiftItem ]
 	
 	static constraints = {
 		name(nullable:false, blank:false, size:1..100)

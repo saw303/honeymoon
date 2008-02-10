@@ -6,15 +6,16 @@
         <title>GiftItem List</title>
     </head>
     <body>
-        <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-            <span class="menuButton"><g:link class="create" action="create">New GiftItem</g:link></span>
-        </div>
+        <g:if test="${session.user != null}">
+            <div class="nav">
+                <span class="menuButton"><g:link class="create" action="create">New GiftItem</g:link></span>
+            </div>
+        </g:if>
         <div class="body">
             <h1>Unser Wunschbuch</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
-            </g:if>
+            </g:if>            
             <div class="list">
                 <table>
                     <thead>

@@ -2,14 +2,35 @@ import javax.servlet.ServletContext;
 
 class GiftItemController {
     
-    def index = { redirect(action:list,params:params) }
+    def index = {        
+        render(view:'index', model:[categories: Category.list(sort:"alignment", order:"asc")])
+    }
 
     // the delete, save and update actions only accept POST requests
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
     def list = {
         if(!params.max) params.max = 10
-        [ giftItemList: GiftItem.list( params ) ]
+
+        if (params.category)
+        {
+            def category = Category.findByName(params.category)
+
+            if (category)
+            {
+                def gifts = GiftItem.findAllByCategory(category)
+                return [ giftItemList: gifts ]
+            }
+            else
+            {
+                flash.message = "GiftItem not found with category ${params.category}"
+                return [ giftItemList: GiftItem.list( params ) ]
+            }
+        }
+        else
+        {            
+            return [ giftItemList: GiftItem.list( params ) ]
+        }
     }
 
     def show = {

@@ -6,7 +6,7 @@ class Category {
 	Integer alignment
 	
 	static constraints = {
-		name(nullable:false, blank:false, size:1..100)
+		name(nullable:false, blank:false, size:1..100, unique:true)
 		alignment(nullable:false, blank:false, unique:true, range:1..100)
 	}
 	

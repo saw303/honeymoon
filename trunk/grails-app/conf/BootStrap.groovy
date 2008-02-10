@@ -46,9 +46,17 @@ class BootStrap {
 		Category cat = new Category(name:'Flug', alignment: 1)
 		cat.save(flush:true)
 
+		Category cat2 = new Category(name:'Drinx', alignment: 2)
+		cat2.save(flush:true)
+
         5.times {
             new GuestbookEntry(author:"Silvio Wangler-${it}", authorEmail:'silvio@silviowangler.ch', title:"hello you-${it}", message:'wicked stuff').save();
-            new GiftItem(name:"Wunsch-${it}", description:'Irgendein Wunsch', price: 1, active:true, image:'images/items/hugo.jpg', category: cat).save(flush:true);
+
+            if (it % 2 == 0)
+                new GiftItem(name:"Wunsch-${it}", description:'Irgendein Wunsch', price: 1, active:true, image:'images/items/hugo.jpg', category: cat).save(flush:true);
+            else
+                new GiftItem(name:"Wunsch-${it}", description:'Irgendein Wunsch', price: 1, active:true, image:'images/items/hugo.jpg', category: cat2).save(flush:true);
+
         }
      }
      def destroy = {

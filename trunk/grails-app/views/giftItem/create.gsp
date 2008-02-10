@@ -48,7 +48,7 @@
                                     <label for="image">Bild:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:giftItem,field:'image','errors')}">
-                                    <input type="text" id="image" name="image" value="${fieldValue(bean:giftItem,field:'image')}"/>
+                                    <input type="file" id='image' name='image' value="${fieldValue(bean:giftItem,field:'image')}"/>
                                 </td>
                             </tr> 
                         

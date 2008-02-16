@@ -1,8 +1,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="layout" content="main"/>
-    <title>GiftItem List</title>
+    <meta name="layout" content="main"/>    
 </head>
 <body>
 <div class="body">
@@ -15,7 +14,7 @@
             <td width="27%" rowspan="4" align="center"><h2>Themenliste / Inhaltsverzeichnis
             </h2>
                 <p>&nbsp;</p>
-                <h2><a href="${createLink(action:'intro')}">Einleitung</a></h2>
+                <h2><a href="${createLink(controller:'giftItem')}">Einleitung</a></h2>
                 <h2>&nbsp;</h2>
                 <g:each in="${categories}" status="i" var="cat">
                     <h2><g:link action="list" params="[category:cat.name]">${cat.name}</g:link></h2>

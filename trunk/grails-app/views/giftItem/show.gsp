@@ -2,8 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="layout" content="main" />
-        <title>Show GiftItem</title>
+        <meta name="layout" content="main" />        
     </head>
     <body>
 		<g:if test="${session.user != null}">

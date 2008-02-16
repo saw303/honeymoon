@@ -10,7 +10,12 @@ class GiftItemController {
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
     def list = {
-        if(!params.max) params.max = 10
+
+        // TODO: Active flag wird für das Auslesen der Einträge nicht berücksichtigt.
+        if(!params.max) params.max = 2
+        if(!params.offset || params.offset < 0) params.offset = 0
+
+        println("Current max param is ${params.max}, current offset is ${params.offset}")
 
         if (params.category)
         {
@@ -18,18 +23,18 @@ class GiftItemController {
 
             if (category)
             {
-                def gifts = GiftItem.findAllByCategory(category)
-                return [ giftItemList: gifts ]
+                def gifts = GiftItem.findAllByCategory(category, params)
+                return [ giftItemList: gifts, categories: Category.list(sort:"alignment", order:"asc"), currentCategory: params.category, total: GiftItem.findAllByCategory(category).size(), lastOffset: params.offset ]
             }
             else
             {
                 flash.message = "GiftItem not found with category ${params.category}"
-                return [ giftItemList: GiftItem.list( params ) ]
+                return [ giftItemList: GiftItem.list( params ), categories: Category.list(sort:"alignment", order:"asc"), currentCategory: 'Alle Kategorien' ]
             }
         }
         else
         {            
-            return [ giftItemList: GiftItem.list( params ) ]
+            return [ giftItemList: GiftItem.list( params ), currentCategory: 'Alle Kategorien', total: params.max ]
         }
     }
 

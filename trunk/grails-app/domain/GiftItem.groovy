@@ -18,6 +18,6 @@ class GiftItem
 
   String toString ()
   {
-    return "Wunscheintrag: ${name}, ${price}. Status: ${active ? 'aktiv' : 'inaktiv'}"
+    return "Wunscheintrag: ${name}, ${price} Franken. Status: ${active ? 'aktiv' : 'inaktiv'}"
   }
 }

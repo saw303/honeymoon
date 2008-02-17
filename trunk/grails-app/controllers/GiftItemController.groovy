@@ -7,7 +7,7 @@ class GiftItemController {
     }
 
     // the delete, save and update actions only accept POST requests
-    def allowedMethods = [delete:'POST', save:'POST', update:'POST']
+    def allowedMethods = [delete:'POST', save:'POST', update:'POST', addToChart:'POST']
 
     def list = {
 
@@ -125,6 +125,66 @@ class GiftItemController {
         }
         else {
             render(view:'create',model:[giftItem:giftItem])
+        }
+    }
+
+    def addToChart = {
+
+        if (!params.id && params.id.isInteger())
+        {
+            log.error('beim hinzufügen in den warenkorb war keine Id vorhanden oder es war keine zahl :(')
+            flash.message = 'Leider konnte ihr Beitrag nicht gespeichert werden.'
+            render(view: 'index')
+        }
+        else
+        {
+            log.debug("versuche giftitem id ${params.id} zu lesen. der kunden spendet einen betrag von ${params.amount} franken.")
+            GiftItem item = GiftItem.get(params.id)
+
+            if (item)
+            {
+                log.debug("Item gefunden --> ${item}")
+                log.info("Suche Warenkorb mit Session ID ${session.id}")
+                ShoppingCart cart = ShoppingCart.findBySessionId(session.id)
+
+                if (cart) {
+                    log.info("Warenkorb wurde aus der Datenbank geholt (${cart})")
+                }
+                else {
+                    log.info("Warenkorb wird neu für session id ${session.id} angelegt")
+                    cart = new ShoppingCart(sessionId: session.id)
+                }
+
+                if (params.amount && params.amount.isInteger() && params.amount.toInteger() > 0)
+                {
+                    // cartItem erstellen
+                    CartItem cartItem = new CartItem(amount: params.amount.toInteger(), giftItem: item);
+                    cartItem.save()
+                    cart.items << cartItem
+
+                    if (cart.save())
+                    {
+                        log.debug('Warenkorb erfolgreich gespeichert')
+                    }
+                    else {
+                        log.error('Fehler beim speichern des Warenkorbs')
+                    }
+                }
+                else
+                {
+                    log.warn("Der Betrag ist ungültig (Usereingabe: ${params.amount})")
+                }
+
+
+                redirect(view:'index', model:[categories: Category.list(sort:"alignment", order:"asc")])
+            }
+            else
+            {
+                flash.message = "item ${params.id} nicht gefunden. kann es nicht in den warenkorb legen."
+                log.warn("item ${params.id} nicht gefunden. kann es nicht in den warenkorb legen.")
+                render(view:'show')
+            }
+
         }
     }
 }

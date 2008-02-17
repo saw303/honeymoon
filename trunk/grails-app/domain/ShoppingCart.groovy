@@ -2,7 +2,7 @@ class ShoppingCart {
 
     String sessionId
     Customer customer
-    LinkedList items
+    LinkedList items = new LinkedList()
     Boolean sold = Boolean.FALSE
 
     static hasMany = [items: CartItem]
@@ -12,6 +12,10 @@ class ShoppingCart {
         sold(nullable:false)
         items(nullable:true)
         customer(nullable:true)
+    }
+
+    public String toString() {
+        return "Warenkorb von Session ${sessionId}, ${items.size()} Einträge, ${sold ? 'Verkauft' : 'noch in Bearbeitung'}, Kunde: ${customer != null ? customer : 'unbekannt'}";
     }
 
 }

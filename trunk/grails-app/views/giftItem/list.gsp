@@ -37,7 +37,8 @@
                 <g:each in="${giftItemList}" status="i" var="giftItem">
 
                     <td align="center">
-                        <form method="post" name="form${i}">
+                        <g:form name="form${i}" action="addToChart">
+                            <g:hiddenField name="id" value="${giftItem.id}" />
                             <p>
                                 <img src="/lebenslaenglich/${giftItem.image}" alt="${giftItem.name?.encodeAsHTML()}" title="${giftItem.name?.encodeAsHTML()}"/>
                             </p>
@@ -56,13 +57,13 @@
                             <p>${giftItem.description?.encodeAsHTML()}</p>
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
-                            <p>Ihr Beitrag: <input type="text" name="${giftItem.name}" maxlength="${giftItem.price.toString().length()}" size="6"> Franken</p>
+                            <p>Ihr Beitrag: <input type="text" name="amount" maxlength="${giftItem.price.toString().length()}" size="6"> Franken</p>
                             <p>&nbsp;</p>
 
                             <p>
                                 <input type="submit" name="Submit" value="In den Warenkorb legen">
-                            </p>
-                        </form>
+                            </p>                        
+                        </g:form>
                     </td>
                 </g:each>
             </tr>

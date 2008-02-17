@@ -12,7 +12,8 @@
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
-            <div>Willkommen in Ihrem Warenkorb. Sollte ihr Warenkorb noch leer sein, dann können Sie ihn beim Durchst&ouml;bern des Wunschbuchs auff&uuml;llen.</div>
+            <div>Willkommen in Ihrem Warenkorb. Sollte ihr Warenkorb noch leer sein, dann k&ouml;nnen Sie ihn beim Durchst&ouml;bern des <g:link controller="giftItem">Wunschbuchs</g:link> auff&uuml;llen.</div>
+
             <div class="list">
                 <table>
                     <thead>

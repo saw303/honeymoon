@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="blackhole" name="GuestbookEntryTests" tests="1" time="0.0070" timestamp="2008-02-17T13:22:33">
+  <properties />
+  <testcase classname="GuestbookEntryTests" name="testSomething" time="0.0" />
+  <system-out><![CDATA[--Output from testSomething--
+]]></system-out>
+  <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+</testsuite>

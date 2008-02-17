@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="blackhole" name="HomeControllerTests" tests="1" time="0.0060" timestamp="2008-02-17T13:22:33">
+  <properties />
+  <testcase classname="HomeControllerTests" name="testSomething" time="0.0010" />
+  <system-out><![CDATA[--Output from testSomething--
+]]></system-out>
+  <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+</testsuite>

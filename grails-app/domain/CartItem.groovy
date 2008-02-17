@@ -1,10 +1,10 @@
 class CartItem {
 
+    static belongsTo = [giftItem: GiftItem]
+
     Integer amount
-    GiftItem giftItem
 
     static constraints = {
         amount(nullable: false, blank:false)
     }
-
 }

@@ -1,0 +1,10 @@
+Testsuite: CartItemTests
+Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 1.71 sec
+------------- Standard Output ---------------
+--Output from testSave--
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+--Output from testSave--
+------------- ---------------- ---------------
+
+Testcase: testSave took 1.521 sec

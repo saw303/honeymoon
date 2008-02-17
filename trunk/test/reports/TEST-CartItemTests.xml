@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="blackhole" name="CartItemTests" tests="1" time="1.71" timestamp="2008-02-17T13:22:31">
-  <properties />
-  <testcase classname="CartItemTests" name="testSave" time="1.522" />
-  <system-out><![CDATA[--Output from testSave--
-]]></system-out>
-  <system-err><![CDATA[--Output from testSave--
-]]></system-err>
-</testsuite>

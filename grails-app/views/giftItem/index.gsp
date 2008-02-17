@@ -4,8 +4,7 @@
     <meta name="layout" content="main"/>    
 </head>
 <body>
-<div class="body">
-    <h1>Unser Wunschbuch</h1>
+<div class="body">    
     <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
     </g:if>

@@ -4,11 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="layout" content="main" />        
     </head>
-    <body>
-        <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-            <span class="menuButton"><g:link class="list" action="list">GiftItem List</g:link></span>
-        </div>
+    <body>        
         <div class="body">
             <h1>Etwas in Wunschbuch schreiben...</h1>
             <g:if test="${flash.message}">
@@ -65,7 +61,7 @@
                                     <label for="active">Status:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:giftItem,field:'active','errors')}">
-                                    <g:checkBox name="active" value="${giftItem?.active}" ></g:checkBox>
+                                    <g:checkBox name="active" value="${giftItem?.active}" ></g:checkBox> Gesetzter Haken = Aktiv, f&uuml;r den Besucher sichtbar.
                                 </td>
                             </tr> 
                         

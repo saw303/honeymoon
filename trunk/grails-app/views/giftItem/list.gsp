@@ -6,7 +6,7 @@
 <body>
 <g:if test="${session.user != null}">
     <div class="nav">
-        <span class="menuButton"><g:link class="create" action="create">New GiftItem</g:link></span>
+        <span class="menuButton"><g:link class="create" action="create">Neuer Wunsch eintragen</g:link></span>
     </div>
 </g:if>
 <div class="body">
@@ -17,7 +17,7 @@
     <div>
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
-                <td width="27%" rowspan="4">
+                <td width="27%" rowspan="3">
                     <h2>Themenliste / Inhaltsverzeichnis</h2>
                     <p>&nbsp;</p>
                     <h2><a href="${createLink(controller: 'giftItem')}">Einleitung</a></h2>
@@ -48,6 +48,9 @@
                             <h1>${giftItem.name?.encodeAsHTML()} (Wert: ${giftItem.price?.encodeAsHTML()} Franken)</h1>
 
                             <p>&nbsp;</p>
+                            <g:if test="${session.user}">
+                                <p><g:link action="edit" id="${giftItem.id}">Wunsch bearbeiten</g:link></p>
+                            </g:if>
                             <p>&nbsp;</p>
 
                             <p>${giftItem.description?.encodeAsHTML()}</p>
@@ -68,18 +71,9 @@
                 pagination
                 Total items: ${total}
             -->
-                <g:if test="${lastOffset - 2 >= 0}">
-                    <td><g:link action="list" params="[category: currentCategory, offset: lastOffset - 2]">vorherige</g:link></td>
-                </g:if>
-                <g:else>
-                    <td>&nbsp;</td>
-                </g:else>
-                <g:if test="${total >= lastOffset + 2}">
-                    <td><g:link action="list" params="[category: currentCategory, offset: lastOffset + 2]">n&auml;chste</g:link></td>
-                </g:if>
-                <g:else>
-                    <td>&nbsp;</td>
-                </g:else>
+                <td class="paginateButtons" colspan="3">
+                    <g:paginate total="${total}" params="${[category: currentCategory]}"/>
+                </td>
             </tr>
         </table>
     </div>

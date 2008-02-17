@@ -19,7 +19,7 @@ log4j {
  	appender.'stdout.layout.ConversionPattern'='[%r] %c{2} %m%n'
     rootLogger="error,stdout"
     logger {
-        grails="error,stdout"
+        grails="debug,stdout"
         org {
             codehaus.groovy.grails.web.servlet="error,stdout"  //  controllers
             codehaus.groovy.grails.web.errors="error,stdout"  //  web layer errors            

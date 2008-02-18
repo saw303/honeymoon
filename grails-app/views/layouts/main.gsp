@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title><g:layoutTitle default="lebenslänglich.ch - Die Hochzeit von Daniela Wangler und Stefan Dolder" /></title>
+        <title><g:layoutTitle default="lebensl&auml;nglich.ch - Die Hochzeit von Daniela Wangler und Stefan Dolder" /></title>
         <link rel="stylesheet" href="${createLinkTo(dir:'css',file:'main.css')}" />
         <link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
         <g:layoutHead />

@@ -20,7 +20,7 @@
 			<span class="menuButton"><g:link action="wedding" controller="home">Die Trauung</g:link></span>
             <span class="menuButton"><g:link action="witness" controller="home">Die Trauzeugen</g:link></span>			
             <span class="menuButton"><g:link class="list" controller="giftItem">Wunschbuch</g:link></span>
-            <span class="menuButton"><g:link class="list" action="list" controller="guestbookEntry">Gästebuch</g:link></span>
+            <span class="menuButton"><g:link class="list" action="list" controller="guestbookEntry">G&auml;stebuch</g:link></span>
             <span class="menuButton"><g:link action="list" controller="shoppingCart">Warenkorb</g:link></span>
 			<g:if test="${session.user != null}">
 				<span class="menuButton"><g:link action="logout" controller="login">Abmelden</g:link></span>

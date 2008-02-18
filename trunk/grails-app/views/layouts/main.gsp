@@ -30,6 +30,6 @@
 			</g:if>
         </div>
         <g:layoutBody />
-        <div><g:meta name="app.name"/> (Version <g:meta name="app.version"/>) powered by <a href="http://www.grails.org/">Grails</a> <g:meta name="app.grails.version" /></div>
+        <div class="footer"><g:meta name="app.name"/> (Version <g:meta name="app.version"/>) powered by <a href="http://www.grails.org/">Grails</a> <g:meta name="app.grails.version" /></div>
     </body>	
 </html>

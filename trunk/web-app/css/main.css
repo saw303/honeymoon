@@ -17,8 +17,8 @@ html * {
 
 body {
     background: #000000;
-    color: #333;
-    font: 11px verdana, arial, helvetica, sans-serif;
+    color: #FFFFFF;
+    font: 12px verdana, arial, helvetica, sans-serif;
 }
 
 a:link, a:visited, a:hover {
@@ -29,38 +29,41 @@ a:link, a:visited, a:hover {
 
 h1 {
     color: #FFFFFF;
-    font-weight: normal;
-    font-size: 12px;
+    font-weight: bold;
+    font-size: 25px;
     margin: .8em 0 .3em 0;
 }
 
 h2 {
     color: #FFFFFF;
-    font-weight: bolder;
-    font-size: 14px;
+    font-weight: bold;
+    font-size: 18px;
     margin: .8em 0 .3em 0;
 }
 
 h3 {
     color: #FFFFFF;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 14px;
     margin: .8em 0 .3em 0;
 }
 
 h4 {
-    color: #000000;
+    color: #FFFFFF;
     font-weight: bold;
     font-size: 12px;
     margin: .8em 0 .3em 0;
+}
+
+p {
+    font-size: 12px;    
 }
 
 ul {
     padding-left: 15px;	
 }
 
-li {
-	color: #FFFFFF;
+li {	
 	font-weight: normal;
 	font-size: 12px;
 	margin: .8em 0 .3em 0;
@@ -177,7 +180,7 @@ td.errors input {
 /* TABLES */
 
 table {
-    border: px solid #ccc;
+    border: 0px solid #ccc;
     width: 100%
 }
 tr {
@@ -311,4 +314,11 @@ th.desc a {
 .buttons input.save {
     background: transparent url(../images/skin/database_save.png) 5px 50% no-repeat;
     padding-left: 28px;
+}
+
+.footer {
+    font: 9px verdana, arial, helvetica, sans-serif;
+    color: #FFFFFF;
+    float: left;
+    margin: 0 15px 10px 15px;
 }

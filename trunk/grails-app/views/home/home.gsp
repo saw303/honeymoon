@@ -12,7 +12,7 @@
                 <td rowspan="2" align="center">
                   <div align="center">
 					<a href="${createLinkTo(dir:'pdf',file:'Urteil.pdf')}" target="_blank">
-                      <h1>Bitte Klicken um das Bild zu vergr&ouml;ssern</h1>
+                      <p>Bitte Klicken Sie auf das Bild um es zu vergr&ouml;ssern<br/>&nbsp;</p>
                     </a>
                     <p>
 						<a href="${createLinkTo(dir:'pdf',file:'Urteil.pdf')}" target="_blank">

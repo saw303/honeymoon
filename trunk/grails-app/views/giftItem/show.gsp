@@ -12,7 +12,7 @@
 	        </div>
 		</g:if>
         <div class="body">
-            <h1>Eines der schönen W&uuml;nsche</h1>
+            <h1>Eines der sch&ouml;nen W&uuml;nsche</h1>
             <g:if test="${flash.message}">
 	            <div class="message">${flash.message}</div>
             </g:if>
@@ -84,7 +84,7 @@
 	                <g:form controller="giftItem">
 	                    <input type="hidden" name="id" value="${giftItem?.id}" />
 	                    <span class="button"><g:actionSubmit class="edit" value="Bearbeiten" action="edit"/></span>
-	                    <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Sind Sie sicher?');" value="Löschen" action="delete" /></span>
+	                    <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Sind Sie sicher?');" value="L&ouml;schen" action="delete" /></span>
 	                </g:form>
 	            </div>
 			</g:if>

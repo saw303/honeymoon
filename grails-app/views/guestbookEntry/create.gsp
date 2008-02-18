@@ -7,7 +7,7 @@
     </head>
     <body>        
         <div class="body">
-            <h1>Erstellen Sie einen neuen G&auml;stebucheintrag</h1>
+            <h2>Erstellen Sie einen neuen G&auml;stebucheintrag</h2>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>

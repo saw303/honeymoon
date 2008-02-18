@@ -18,19 +18,19 @@
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
                 <td width="27%" rowspan="3">
-                    <h2>Themenliste / Inhaltsverzeichnis</h2>
+                    <h3>Themenliste / Inhaltsverzeichnis</h3>
                     <p>&nbsp;</p>
-                    <h2><a href="${createLink(controller: 'giftItem')}">Einleitung</a></h2>
+                    <p><a href="${createLink(controller: 'giftItem')}">Einleitung</a></p>
                     <p>&nbsp;</p>
                     <g:each in="${categories}" status="i" var="cat">
-                        <h2><g:link action="list" params="[category:cat.name]">${cat.name}</g:link></h2>
+                        <p><g:link action="list" params="[category:cat.name]">${cat.name}</g:link></p>
                         <p>&nbsp;</p>
                     </g:each>
                 </td>
             </tr>
             <tr>
                 <!-- 2nd row: category title -->
-                <td align="center" colspan="3"><h2>Kategorie: ${currentCategory}</h2></td>
+                <td align="center" colspan="3"><h3>Kategorie: ${currentCategory}</h3></td>
             </tr>
             <tr id="book">
             <!-- 3rd row: giftItem -->
@@ -46,7 +46,7 @@
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
 
-                            <h1>${giftItem.name?.encodeAsHTML()} (Wert: ${giftItem.price?.encodeAsHTML()} Franken)</h1>
+                            <h4>${giftItem.name?.encodeAsHTML()}</h4>
 
                             <p>&nbsp;</p>
                             <g:if test="${session.user}">

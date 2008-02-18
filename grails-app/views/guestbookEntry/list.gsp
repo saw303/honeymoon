@@ -10,7 +10,7 @@
             <span class="menuButton"><g:link class="create" action="create">Tragen Sie sich auch ins G&auml;stebuch ein</g:link></span>
         </div>
         <div class="body">
-            <h1>Unser Gästebuch</h1>
+            <h2>Unser G&auml;stebuch</h2>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>

@@ -32,11 +32,11 @@
                 <!-- 2nd row: category title -->
                 <td align="center" colspan="3"><h3>Kategorie: ${currentCategory}</h3></td>
             </tr>
-            <tr id="book">
+            <tr class="book">
             <!-- 3rd row: giftItem -->
                 <g:each in="${giftItemList}" status="i" var="giftItem">
 
-                    <td align="center">
+                    <td class="${(i % 2 == 0) ? 'left' : 'right'}">
                         <g:form name="form${i}" action="addToChart">
                             <g:hiddenField name="id" value="${giftItem.id}" />
                             <p>

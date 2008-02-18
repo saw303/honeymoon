@@ -9,7 +9,7 @@
         <div class="body">
             <h1>Show GuestbookEntry</h1>
             <g:if test="${flash.message}">
-            <div class="message">${flash.message}</div>
+            <div class="message">${flash.message?.encodeAsHTML()}</div>
             </g:if>
             <div class="dialog">
                 <table>

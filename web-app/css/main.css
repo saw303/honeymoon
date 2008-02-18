@@ -177,6 +177,23 @@ td.errors input {
     border: 1px solid red;
 }
 
+tr.book {
+    background: url(../images/Homepagebilder/openPage.jpg) 95% 0% no-repeat;
+    height:600px;
+}
+
+td.left {
+
+    padding-left: 5%;
+    padding-top: 50px;
+
+}
+
+td.right {
+    padding-top: 50px;
+    padding-right: 5%;
+}
+
 /* TABLES */
 
 table {

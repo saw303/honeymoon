@@ -178,20 +178,25 @@ td.errors input {
 }
 
 tr.book {
-    background: url(../images/Homepagebilder/openPage.jpg) 95% 0% no-repeat;
     height:600px;
+    color: #000000;
+    border: 0;
 }
 
 td.left {
-
     padding-left: 5%;
-    padding-top: 50px;
-
+    padding-top: 150px;
+    background: url(../images/Homepagebilder/openPage_left.jpg) 0% 0% no-repeat;
+    background-position: right;
+    width:318px;
 }
 
 td.right {
-    padding-top: 50px;
-    padding-right: 5%;
+    text-align: right;
+    padding-top: 150px;
+    padding-right: 12%;
+    background: url(../images/Homepagebilder/openPage_right.jpg) 0% 0% no-repeat;
+    background-position: left;
 }
 
 /* TABLES */

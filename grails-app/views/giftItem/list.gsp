@@ -2,6 +2,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="layout" content="main"/>
+	<g:javascript library="prototype" />
 </head>
 <body>
 <g:if test="${session.user != null}">
@@ -37,7 +38,9 @@
                 <g:each in="${giftItemList}" status="i" var="giftItem">
 
                     <td class="${(i % 2 == 0) ? 'left' : 'right'}">
-                        <g:form name="form${i}" action="addToChart">
+					
+						<g:formRemote url="[controller:'giftItem', action:'addToChart']" name="form${i}">					
+                        
                             <g:hiddenField name="id" value="${giftItem.id}" />
                             <p>
                                 <img src="/lebenslaenglich/${giftItem.image}" alt="${giftItem.name?.encodeAsHTML()}" title="${giftItem.name?.encodeAsHTML()}"/>
@@ -63,7 +66,7 @@
                             <p>
                                 <input type="submit" name="Submit" value="In den Warenkorb legen">
                             </p>                        
-                        </g:form>
+                        </g:formRemote>
                     </td>
                 </g:each>
             </tr>

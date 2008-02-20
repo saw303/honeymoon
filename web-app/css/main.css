@@ -253,9 +253,16 @@ th.desc a {
 .list table {
     border-collapse: collapse;
 }
-.list th, .list td {
+.list th {
     border-left: 1px solid #ddd;
+	color: #FFFFFF;
 }
+
+.list td {
+    border-left: 1px solid #ddd;
+	color: #000;
+}
+
 .list th:hover, .list tr:hover {
     background: #b2d1ff;
 }

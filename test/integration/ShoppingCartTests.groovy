@@ -14,9 +14,9 @@ class ShoppingCartTests extends GroovyTestCase {
         def y = new GiftItem(name: 'dsfa', description:'adsf', price: 3, category: drinx)
         assert y.save()
 
-        ShoppingCart cart = new ShoppingCart(sessionId: sessionId)
-
+        ShoppingCart cart = new ShoppingCart(sessionId: sessionId, items: [])
         CartItem myCartItem = new CartItem(amount: 4, giftItem: y)        
+
         cart.items << myCartItem
 
         assert cart.save(flush:true)

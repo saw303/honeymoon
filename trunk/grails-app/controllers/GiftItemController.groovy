@@ -152,14 +152,13 @@ class GiftItemController {
                 }
                 else {
                     log.info("Warenkorb wird neu für session id ${session.id} angelegt")
-                    cart = new ShoppingCart(sessionId: session.id)
+                    cart = new ShoppingCart(sessionId: session.id, items: [])
                 }
 
                 if (params.amount && params.amount.isInteger() && params.amount.toInteger() > 0)
                 {
                     // cartItem erstellen
-                    CartItem cartItem = new CartItem(amount: params.amount.toInteger(), giftItem: item);
-                    cartItem.save()
+                    CartItem cartItem = new CartItem(amount: params.amount.toInteger(), giftItem: item);                    
                     cart.items << cartItem
 
                     if (cart.save())

@@ -1,9 +1,9 @@
 class ShoppingCart {
 
     String sessionId
-    Customer customer
-    LinkedList items = new LinkedList()
+    Customer customer    
     Boolean sold = Boolean.FALSE
+	List items
 
     static hasMany = [items: CartItem]
 

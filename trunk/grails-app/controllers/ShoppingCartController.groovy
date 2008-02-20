@@ -5,10 +5,27 @@ class ShoppingCartController {
 
     // the delete, save and update actions only accept POST requests
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
+	
 
     def list = {
-        if(!params.max) params.max = 10
-        [ shoppingCartList: ShoppingCart.list( params ) ]
+		def cart = ShoppingCart.findBySessionId(session.id)
+		
+		def sum = 0
+		
+		if (cart) {
+		
+			cart.items.each {
+				sum += it.amount
+			}
+		
+			log.debug("Warenkorb gefunden: ${cart}")
+			return [items: cart.items, total: sum ]
+		}
+		else
+		{
+			log.debug("Für die Session ${session.id} ist kein Warenkorb vorhanden.")
+			return [items: [], total: sum]
+		}
     }
 
     def show = {

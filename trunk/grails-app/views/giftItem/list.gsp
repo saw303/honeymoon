@@ -57,7 +57,7 @@
                             <p>${giftItem.description?.encodeAsHTML()}</p>
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
-                            <p>Ihr Beitrag: <input type="text" name="amount" maxlength="${giftItem.price.toString().length()}" size="6"> Franken</p>
+                            <p>Ihr Beitrag: <input type="text" name="amount" size="6"> Franken</p>
                             <p>&nbsp;</p>
 
                             <p>

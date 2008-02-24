@@ -179,13 +179,14 @@ td.errors input {
 
 tr.book {
     height:600px;
+    width:685px;
     color: #000000;
     border: 0;
 }
 
 td.left {
 	width:318px;
-	text-align:center;
+	text-align:right;
     padding-left: 0%;
     padding-top: 80px;
     background: url(../images/Homepagebilder/openPage_left.jpg) 0px 0px no-repeat;
@@ -195,7 +196,7 @@ td.left {
 
 td.right {
 	width:340px;
-	text-align:center;
+	text-align:left;
 	padding-right: 0%;
     padding-top: 80px;   
     background: url(../images/Homepagebilder/openPage_right.jpg) 0px 0px no-repeat;

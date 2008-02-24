@@ -184,28 +184,31 @@ tr.book {
 }
 
 td.left {
+	width:318px;
 	text-align:center;
     padding-left: 0%;
     padding-top: 80px;
-    background: url(../images/Homepagebilder/openPage_left.jpg) 0% 0% no-repeat;
+    background: url(../images/Homepagebilder/openPage_left.jpg) 0px 0px no-repeat;
     background-position: right;
-    width:318px;
+    
 }
 
 td.right {
+	width:340px;
 	text-align:center;
 	padding-right: 0%;
     padding-top: 80px;   
-    background: url(../images/Homepagebilder/openPage_right.jpg) 0% 0% no-repeat;
+    background: url(../images/Homepagebilder/openPage_right.jpg) 0px 0px no-repeat;
     background-position: left;
-	width:340px;	
+		
 }
 
 /* TABLES */
 
 table {
     border: 0px solid #ccc;
-    width: 100%
+	table-layout:auto;	
+	
 }
 tr {
     border: 0;

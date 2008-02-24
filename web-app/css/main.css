@@ -179,13 +179,14 @@ td.errors input {
 
 tr.book {
     height:600px;
-    width:685px;
+    width:800px;
     color: #000000;
     border: 0;
 }
 
 td.left {
 	width:318px;
+	overflow:visible;
 	text-align:right;
     padding-left: 0%;
     padding-top: 80px;
@@ -196,6 +197,7 @@ td.left {
 
 td.right {
 	width:340px;
+	overflow:visible;
 	text-align:left;
 	padding-right: 0%;
     padding-top: 80px;   
@@ -215,6 +217,7 @@ tr {
     border: 0;
 }
 td, th { 
+	width:100px;
     font: 11px verdana, arial, helvetica, sans-serif;
     line-height: 12px;
     padding: 5px 6px;

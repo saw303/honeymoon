@@ -39,6 +39,10 @@ class ShoppingCartController {
     }
 
     def remove = {
+        render "hello world"
+    }
+
+    def remove2 = {
         def shoppingCart = ShoppingCart.findBySessionId(session.id)
         if(shoppingCart) {
             def item = CartItem.get(params.id)

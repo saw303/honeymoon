@@ -63,7 +63,6 @@
                                 <p><g:link action="edit" id="${giftItem.id}">Wunsch bearbeiten</g:link></p>
                             </g:if>
                             <p>&nbsp;</p>
-
                             <div id="button-${i}">
                                 <p>${giftItem.description?.encodeAsHTML()}</p>
                                 <p>&nbsp;</p>
@@ -72,9 +71,10 @@
                                 <p>&nbsp;</p>
                                 <p><input type="submit" name="Submit" value="In den Warenkorb legen"></p>
                             </div>
-                            <div id="spinner${i}" class="spinner" style="display:none">
+                            <div id="spinner${i}" style="display:none">
                                 <img src="${createLinkTo(dir: 'images', file:'spinner.gif')}" alt="spinner" title="spinner" />
                             </div>
+
                         </g:formRemote>
                     </td>
                 </g:each>

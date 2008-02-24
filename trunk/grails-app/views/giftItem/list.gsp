@@ -3,6 +3,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="layout" content="main"/>
 	<g:javascript library="prototype" />
+
+    <script type="text/javascript">
+        function toggleSpinner(elementName, status) {            
+            document.getElementById(elementName).style.display = status ? 'inline':'none';
+        }
+    </script>
 </head>
 <body>
 <g:if test="${session.user != null}">
@@ -37,9 +43,10 @@
             <!-- 3rd row: giftItem -->
                 <g:each in="${giftItemList}" status="i" var="giftItem">
 
-                    <td class="${(i % 2 == 0) ? 'left' : 'right'}">
+                    <td class="${(i % 2 == 0) ? 'left' : 'right'}" id="cell${i}">
 					
-						<g:formRemote url="[controller:'giftItem', action:'addToChart']" name="form${i}">					
+						<g:formRemote url="[controller:'giftItem', action:'addToChart']" name="form${i}"                                
+                                update="button-${i}" before="toggleSpinner('spinner${i}', true);" after="toggleSpinner('spinner${i}', false);">					
                         
                             <g:hiddenField name="id" value="${giftItem.id}" />
                             <p>
@@ -57,15 +64,17 @@
                             </g:if>
                             <p>&nbsp;</p>
 
-                            <p>${giftItem.description?.encodeAsHTML()}</p>
-                            <p>&nbsp;</p>
-                            <p>&nbsp;</p>
-                            <p>Ihr Beitrag: <input type="text" name="amount" size="6"> Franken</p>
-                            <p>&nbsp;</p>
-
-                            <p>
-                                <input type="submit" name="Submit" value="In den Warenkorb legen">
-                            </p>                        
+                            <div id="button-${i}">
+                                <p>${giftItem.description?.encodeAsHTML()}</p>
+                                <p>&nbsp;</p>
+                                <p>&nbsp;</p>
+                                <p>Ihr Beitrag: <input type="text" name="amount" size="6"> Franken</p>
+                                <p>&nbsp;</p>
+                                <p><input type="submit" name="Submit" value="In den Warenkorb legen"></p>
+                            </div>
+                            <div id="spinner${i}" class="spinner" style="display:none">
+                                <img src="${createLinkTo(dir: 'images', file:'spinner.gif')}" alt="spinner" title="spinner" />
+                            </div>
                         </g:formRemote>
                     </td>
                 </g:each>

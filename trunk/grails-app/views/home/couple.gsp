@@ -9,7 +9,7 @@
     <p>&nbsp;</p>
     <table width="100%" border="0" cellpadding="0" cellspacing="0">
         <tr>
-            <td colspan="2"><h2><strong>Landei und Grossstadtg&ouml;re  haben sich gefunden</strong></h2></td>
+            <td colspan="2"><h2>Landei und Grossstadtg&ouml;re  haben sich gefunden</h2></td>
         </tr>
         <tr>
             <td>

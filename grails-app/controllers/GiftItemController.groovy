@@ -133,12 +133,13 @@ class GiftItemController {
         if (!params.id && params.id.isInteger())
         {
             log.error('beim hinzufügen in den warenkorb war keine Id vorhanden oder es war keine zahl :(')
-            flash.message = 'Leider konnte ihr Beitrag nicht gespeichert werden.'
-            render(view: 'index')
+            render {
+                p "Leider konnte ihr Beitrag nicht gespeichert werden."
+            }
         }
         else
         {
-            log.debug("versuche giftitem id ${params.id} zu lesen. der kunden spendet einen betrag von ${params.amount} franken.")
+            log.debug("versuche giftitem id ${params.id} zu lesen. der kunde spendet einen betrag von ${params.amount} franken.")
             GiftItem item = GiftItem.get(params.id)
 
             if (item)
@@ -164,18 +165,25 @@ class GiftItemController {
                     if (cart.save())
                     {
                         log.debug('Warenkorb erfolgreich gespeichert')
+                        render{
+                            p item.description?.encodeAsHTML()                            
+                            p "Ihr Beitrag von ${params.amount} Franken wurde in den Warenkorb gelegt."?.encodeAsHTML()
+                        }
                     }
                     else {
                         log.error('Fehler beim speichern des Warenkorbs')
+                        render{
+                            p "Fehler beim Speichern ihrer Bestellung. Bitte versuchen Sie es erneut und bei weiteren Problemen wenden Sie sich bitte an die Trauzeugen."
+                        }
                     }
                 }
                 else
                 {
                     log.warn("Der Betrag ist ungültig (Usereingabe: ${params.amount})")
+                    render {
+                        p "Bitte geben Sie einen Betrag groesser Null an."
+                    }
                 }
-
-
-                redirect(view:'index', model:[categories: Category.list(sort:"alignment", order:"asc")])
             }
             else
             {

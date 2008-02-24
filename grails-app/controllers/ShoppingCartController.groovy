@@ -38,16 +38,44 @@ class ShoppingCartController {
         else { return [ shoppingCart : shoppingCart ] }
     }
 
-    def delete = {
-        def shoppingCart = ShoppingCart.get( params.id )
+    def remove = {
+        def shoppingCart = ShoppingCart.findBySessionId(session.id)
         if(shoppingCart) {
-            shoppingCart.delete()
-            flash.message = "ShoppingCart ${params.id} deleted"
-            redirect(action:list)
+            def item = CartItem.get(params.id)
+
+            if (item) {
+
+                if (shoppingCart.items.contains(item))
+                {
+                    log.info("Lösche item ${item} aus Warenkorb ${shoppingCart}")
+                    assert shoppingCart.items.remove(item)
+                    assert shoppingCart.save()
+
+                    item.delete()
+
+                    render {
+                        div(class:'message') {
+                            "Der Eintrag wurde erfolgreich geloescht."
+                        }
+                    }
+                }
+                else
+                {
+                    log.warn("Das ausgewählte Item ${item} ist nicht im Warenkorb enthalten und wird daher nicht gelöscht.")
+                }
+            }
+            else
+            {
+                log.info("Das item mit der Id ${params.id} wurde nicht gefunden.")
+            }
         }
-        else {
-            flash.message = "ShoppingCart not found with id ${params.id}"
-            redirect(action:list)
+        else
+        {
+            render {
+                div(class:'message') {
+                    "Der Eintrag konnte nicht geloescht werden."
+                }
+            }
         }
     }
 

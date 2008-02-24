@@ -1,9 +1,17 @@
-
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="layout" content="main" />        
+        <meta name="layout" content="main" />
+
+        <script type="text/javascript">
+            function remove(elementName) {
+            
+                function remove(elementName) {
+                    var nodeToDelete = document.getElementById(elementName);                    
+                    nodeToDelete.parentNode.removeChild(nodeToDelete);
+                }                
+            }
+        </script>
     </head>
     <body>        
         <div class="body">
@@ -14,7 +22,7 @@
             <div>Willkommen in Ihrem Warenkorb. Sollte ihr Warenkorb noch leer sein, dann k&ouml;nnen Sie ihn beim Durchst&ouml;bern des <g:link controller="giftItem">Wunschbuchs</g:link> auff&uuml;llen.<br/>&nbsp;</div>
 
             <div class="list">
-                <table>
+                <table id="cartList">
                     <thead>
                         <tr>
                             <th>Warenkorbeintr&auml;ge</th>
@@ -24,10 +32,12 @@
                     </thead>
                     <tbody>
                     <g:each in="${items}" status="i" var="item">
-                        <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">                        
+                        <tr id="${i}" class="${(i % 2) == 0 ? 'odd' : 'even'}">
                             <td>${item.giftItem.name?.encodeAsHTML()}</td>
 							<td>${item.amount?.encodeAsHTML()} Franken</td>
-							<td>Betrag anpassen, L&ouml;schen</td>
+							<td>Betrag anpassen, <g:remoteLink action="remove" id="${item.id}"
+                                    onSuccess="remove(${i});"
+                                    onFailure="alter('Der Eintrag konnte nicht entfernt werden. Bitte aktualisieren Sie die Liste.');">L&ouml;schen</g:remoteLink></td>
                         </tr>
                     </g:each>
                     </tbody>

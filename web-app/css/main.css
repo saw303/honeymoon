@@ -186,7 +186,7 @@ tr.book {
 td.left {
 	text-align:center;
     padding-left: 0%;
-    padding-top: 120px;
+    padding-top: 80px;
     background: url(../images/Homepagebilder/openPage_left.jpg) 0% 0% no-repeat;
     background-position: right;
     width:318px;
@@ -195,7 +195,7 @@ td.left {
 td.right {
 	text-align:center;
 	padding-right: 0%;
-    padding-top: 120px;   
+    padding-top: 80px;   
     background: url(../images/Homepagebilder/openPage_right.jpg) 0% 0% no-repeat;
     background-position: left;
 	width:340px;	

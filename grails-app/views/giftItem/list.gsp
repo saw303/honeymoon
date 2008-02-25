@@ -50,7 +50,7 @@
                         
                             <g:hiddenField name="id" value="${giftItem.id}" />
                             <p>
-                                <img src="/lebenslaenglich/${giftItem.image}" alt="${giftItem.name?.encodeAsHTML()}" title="${giftItem.name?.encodeAsHTML()}"/>
+                                <img src="/lebenslaenglich/${giftItem.image}" alt="${giftItem.name?.encodeAsHTML()}" title="${giftItem.name?.encodeAsHTML()}"'}"/>
                             </p>
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>

@@ -41,7 +41,7 @@
                         <tbody>
                         <g:each in="${items}" status="i" var="item">
                             <tr id="row-${i}" class="${(i % 2) == 0 ? 'odd' : 'even'}">
-                                <td>${item.giftItem.name?.encodeAsHTML()}</td>
+                                <td>${item.giftItem.name?.encodeAsHTML()} (${item.id?.encodeAsHTML()})</td>
                                 <td>${item.amount?.encodeAsHTML()} Franken</td>
                                 <td>Betrag anpassen, <g:remoteLink action="remove" id="${item.id}"
                                         update="info" class="blackLink"

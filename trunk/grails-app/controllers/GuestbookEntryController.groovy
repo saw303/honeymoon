@@ -5,8 +5,9 @@ class GuestbookEntryController {
     def allowedMethods = [delete:'GET', save:'POST']
 
     def list = {
-        if(!params.max)params.max = 10
-        [ guestbookEntryList: GuestbookEntry.listOrderByEntryDate( max: params.max , order:"desc") ]
+        if(!params.max)params.max = 5
+        if(!params.offset)params.offset = 0
+        [ guestbookEntryList: GuestbookEntry.listOrderByEntryDate( max: params.max, offset: params.offset , order:"desc") ]
     }
 
     def show = {

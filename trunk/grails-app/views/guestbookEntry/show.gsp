@@ -2,12 +2,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="layout" content="main" />
-        <title>Show GuestbookEntry</title>
+        <meta name="layout" content="main" />        
     </head>
     <body>
         <div class="body">
-            <h1>Show GuestbookEntry</h1>
+            <h2>Ihr G&auml;stebucheintrag</h2>
             <g:if test="${flash.message}">
             <div class="message">${flash.message?.encodeAsHTML()}</div>
             </g:if>

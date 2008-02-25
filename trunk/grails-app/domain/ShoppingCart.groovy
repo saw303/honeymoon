@@ -17,5 +17,4 @@ class ShoppingCart {
     public String toString() {
         return "Warenkorb von Session ${sessionId}, ${items.size()} Einträge, ${sold ? 'Verkauft' : 'noch in Bearbeitung'}, Kunde: ${customer != null ? customer : 'unbekannt'}";
     }
-
 }

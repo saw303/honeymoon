@@ -279,7 +279,7 @@ th.desc a {
     background: #d52525 url(../images/skin/shadow.jpg) bottom repeat-x;
     border: 1px solid #ccc;
     border-top: 0;
-    color: #666;
+    color: #000;
     font-size: 10px;
     overflow: hidden;
     padding: 10px 3px;
@@ -288,12 +288,14 @@ th.desc a {
     background: #fff;
     border: 1px solid #ccc;
     border-color: #ccc #aaa #aaa #ccc;
-    color: #666;
+    color: #000;
     margin: 0 3px;
     padding: 2px 6px;
 }
+
 .paginateButtons span {
     padding: 2px 3px;
+    color: #000;
 }
 
 /* DIALOG */

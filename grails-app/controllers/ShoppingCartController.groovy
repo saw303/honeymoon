@@ -12,7 +12,7 @@ class ShoppingCartController {
 		
 		if (cart) {
 		
-			log.debug("Warenkorb gefunden: ${cart}")
+			log.debug("Warenkorb gefunden: ${cart}.")
 			return [items: cart.items, total: sumUp(cart) ]
 		}
 		else
@@ -51,9 +51,13 @@ class ShoppingCartController {
 
                 if (shoppingCart.items.contains(item))
                 {
+                    log.debug("Der Warenkorb beinhaltet vor der Löschung ${shoppingCart.items.size()}.")
                     log.info("Lösche item ${item} aus Warenkorb ${shoppingCart}")
-                    shoppingCart.items.remove(item)
+                    assert shoppingCart.items.remove(item)
                     shoppingCart.save(flush:true)
+                    item.delete(flush:true)
+                    shoppingCart = ShoppingCart.findBySessionId(session.id)
+                    log.debug("Nach der Löschung sind noch ${shoppingCart.items.size()} items im Warenkorb.")
                 }
                 else
                 {

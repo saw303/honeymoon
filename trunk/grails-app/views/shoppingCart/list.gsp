@@ -6,16 +6,9 @@
 
         <script type="text/javascript">
             
-            function remove(rowNumber) {
-                /*
-                alert('Calling out loud: ' + elementName);
+            function remove(elementName) {                
                 var nodeToDelete = document.getElementById(elementName);
-
-                alert('Parent Nodename: ' + nodeToDelete.parentNode.nodeName);
                 nodeToDelete.parentNode.removeChild(nodeToDelete);
-                */
-
-				document.all.cartList.deleteRow(rowNumber);
             }
 
         </script>
@@ -45,7 +38,7 @@
                                 <td>${item.amount?.encodeAsHTML()} Franken</td>
                                 <td>Betrag anpassen, <g:remoteLink action="remove" id="${item.id}"
                                         update="info" class="blackLink"
-                                        after="remove(${++i})">L&ouml;schen</g:remoteLink></td>
+                                        after="remove('row-${i}')">L&ouml;schen</g:remoteLink></td>
                             </tr>
                         </g:each>
                         </tbody>

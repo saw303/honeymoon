@@ -151,7 +151,7 @@ input:focus, select:focus, textarea:focus {
 .message {
     background: #f3f8fc url(../images/skin/information.png) 8px 50% no-repeat;
     border: 1px solid #b2d1ff;
-    color: #000000;
+    color: #006dba;
     margin: 10px 0 5px 0;
     padding: 5px 5px 5px 30px;
 }
@@ -203,21 +203,18 @@ td.right {
     padding-top: 80px;   
     background: url(../images/Homepagebilder/openPage_right.jpg) 0px 0px no-repeat;
     background-position: left;
-		
 }
 
 /* TABLES */
 
 table {
     border: 0px solid #ccc;
-	table-layout:auto;	
-	
+    width: 100%
 }
 tr {
     border: 0;
 }
 td, th { 
-	width:100px;
     font: 11px verdana, arial, helvetica, sans-serif;
     line-height: 12px;
     padding: 5px 6px;

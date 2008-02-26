@@ -4,7 +4,7 @@ class ShoppingCartController {
     def index = { redirect(action:list,params:params) }
 
     // the delete, save and update actions only accept POST requests
-    def allowedMethods = [delete:'POST', save:'POST', update:'POST', checkout:'POST']
+    def allowedMethods = [delete:'POST', save:'POST', update:'POST', checkout:'POST', changeAmount:'POST']
 	
 
     def list = {
@@ -153,6 +153,38 @@ class ShoppingCartController {
 		else
 		{
 			log.warn("Checkout wurde aufgerufen. Für die Session-Id ${session.id} konnte kein Warenkorb ermittelt werden.")
+		}
+	}
+	
+	def changeAmount = {
+		
+		log.debug("Params: ${params}")
+		
+		ShoppingCart cart = ShoppingCart.findBySessionIdAndSold(session.id, Boolean.FALSE)
+		
+		if (cart)
+		{
+			log.info("Suche nach CartItem ${params.id}")
+			def item = CartItem.get(params.id)
+			log.info("Suche nach dem Item im Warenkorb")
+			
+			if (item) 
+			{
+				log.info("Versuche CartItem Amount von ${item.amount} Franken auf ${params.value} Franken zu setzen.")
+				item.amount = params.value.toInteger()
+				item.save(flush:true)
+				log.info("CartItem erfolgreich gespeichert.")
+			}
+			else 
+			{
+				log.error("CartItem ${params.id} existiert nicht")
+			}
+			render("Total: ${sumUp(cart)} Franken")
+		}
+		else 
+		{
+			log.warn("Zu Session-ID ${session.id} konnte kein Warenkorb gefunden werden.")
+			render("Total: 0 Franken")
 		}
 	}
 }

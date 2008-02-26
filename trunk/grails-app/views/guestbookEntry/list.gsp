@@ -13,7 +13,7 @@
     </head>
     <body>
         <div class="nav">            
-            <span class="menuButton"><g:link class="create" action="home">Tragen Sie sich auch ins G&auml;stebuch ein</g:link></span>
+            <span class="menuButton"><g:link class="create" action="create">Tragen Sie sich auch ins G&auml;stebuch ein</g:link></span>
         </div>
         <div class="body">
             <h2>Unser G&auml;stebuch</h2>

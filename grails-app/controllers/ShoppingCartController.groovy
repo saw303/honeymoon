@@ -1,5 +1,7 @@
             
 class ShoppingCartController {
+
+	MailService mailService	
     
     def index = { redirect(action:list,params:params) }
 

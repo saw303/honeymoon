@@ -6,7 +6,7 @@
 
         <script type="text/javascript">
             
-            function remove(elementName) {                
+            function removeFromTable(elementName) {                
                 var nodeToDelete = document.getElementById(elementName);
                 nodeToDelete.parentNode.removeChild(nodeToDelete);
             }
@@ -38,7 +38,7 @@
                                 <td>${item.amount?.encodeAsHTML()} Franken</td>
                                 <td>Betrag anpassen, <g:remoteLink action="remove" id="${item.id}"
                                         update="info" class="blackLink"
-                                        after="remove('row-${i}')">L&ouml;schen</g:remoteLink></td>
+                                        after="removeFromTable('row-${i}');">L&ouml;schen</g:remoteLink></td>
                             </tr>
                         </g:each>
                         </tbody>

@@ -1,5 +1,7 @@
 class Customer {
 
+	static belongsTo = [cart: ShoppingCart]
+	
     String firstName
     String lastName
     String email

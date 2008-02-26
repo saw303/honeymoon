@@ -47,7 +47,85 @@
                 <div id="info">
                     &nbsp;<br/>Total: ${total} Franken
                 </div>
+				<div>
+					<p>&nbsp;</p>
+					<p class="message">Sie k&ouml;nnen nun den Betrag &uuml;berweisen in dem Sie ihre pers&ouml;lichen Angaben im nachfolgenden Formular eingeben. Sie werden nach erfolgreicher &Uuml;bermittlung Ihrer Daten von den Trauzeugen benachrichtigt.</p>
+					<p>&nbsp;</p>
+					<g:hasErrors bean="${customer}">
+			            <div class="errors">
+			                <g:renderErrors bean="${customer}" as="list" />
+			            </div>
+		            </g:hasErrors>
+					<g:form action="checkout" method="post" >
+		                <div class="dialog">
+		                    <table>
+		                        <tbody>
+		                        
+		                            <tr class="prop">
+		                                <td valign="top" class="name">
+		                                    <label for="firstName">Vorname:</label>
+		                                </td>
+		                                <td valign="top" class="value ${hasErrors(bean:customer,field:'firstName','errors')}">
+		                                    <input type="text" maxlength="20" id="firstName" name="firstName" value="${fieldValue(bean:customer,field:'firstName')}"/>
+		                                </td>
+		                            </tr> 
+		                        
+		                            <tr class="prop">
+		                                <td valign="top" class="name">
+		                                    <label for="lastName">Nachname:</label>
+		                                </td>
+		                                <td valign="top" class="value ${hasErrors(bean:customer,field:'lastName','errors')}">
+		                                    <input type="text" maxlength="30" id="lastName" name="lastName" value="${fieldValue(bean:customer,field:'lastName')}"/>
+		                                </td>
+		                            </tr> 
+		                        
+		                            <tr class="prop">
+		                                <td valign="top" class="name">
+		                                    <label for="email">Email:</label>
+		                                </td>
+		                                <td valign="top" class="value ${hasErrors(bean:customer,field:'email','errors')}">
+		                                    <input type="text" id="email" name="email" value="${fieldValue(bean:customer,field:'email')}"/>
+		                                </td>
+		                            </tr> 
+		                        
+		                            <tr class="prop">
+		                                <td valign="top" class="name">
+		                                    <label for="adressLine">Strasse:</label>
+		                                </td>
+		                                <td valign="top" class="value ${hasErrors(bean:customer,field:'adressLine','errors')}">
+		                                    <input type="text" maxlength="50" id="adressLine" name="adressLine" value="${fieldValue(bean:customer,field:'adressLine')}"/>
+		                                </td>
+		                            </tr> 
+		                        
+		                            <tr class="prop">
+		                                <td valign="top" class="name">
+		                                    <label for="postCode">Postleitzahl:</label>
+		                                </td>
+		                                <td valign="top" class="value ${hasErrors(bean:customer,field:'postCode','errors')}">
+		                                    <input type="text" maxlength="10" id="postCode" name="postCode" value="${fieldValue(bean:customer,field:'postCode')}"/>
+		                                </td>
+		                            </tr> 
+		                        
+		                            <tr class="prop">
+		                                <td valign="top" class="name">
+		                                    <label for="city">Ort:</label>
+		                                </td>
+		                                <td valign="top" class="value ${hasErrors(bean:customer,field:'city','errors')}">
+		                                    <input type="text" maxlength="30" id="city" name="city" value="${fieldValue(bean:customer,field:'city')}"/>
+		                                </td>
+		                            </tr> 
+		                        
+		                        </tbody>
+		                    </table>
+		                </div>
+		                <div class="buttons">
+		                    <span class="button"><input class="save" type="submit" value="Beitrag an Trauzeugen senden" /></span>
+		                </div>
+		            </g:form>
+				</div>
+				
             </g:if>
         </div>
+		
     </body>
 </html>

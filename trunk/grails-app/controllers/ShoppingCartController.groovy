@@ -4,16 +4,16 @@ class ShoppingCartController {
     def index = { redirect(action:list,params:params) }
 
     // the delete, save and update actions only accept POST requests
-    def allowedMethods = [delete:'POST', save:'POST', update:'POST']
+    def allowedMethods = [delete:'POST', save:'POST', update:'POST', checkout:'POST']
 	
 
     def list = {
-		def cart = ShoppingCart.findBySessionId(session.id)
+		def cart = ShoppingCart.findBySessionIdAndSold(session.id, Boolean.FALSE)
 		
 		if (cart) {
 		
 			log.debug("Warenkorb gefunden: ${cart}.")
-			return [items: cart.items, total: sumUp(cart) ]
+			return [items: cart.items, total: sumUp(cart), customer: cart.customer]
 		}
 		else
 		{
@@ -118,4 +118,41 @@ class ShoppingCartController {
             render(view:'create',model:[shoppingCart:shoppingCart])
         }
     }
+	
+	def checkout = {
+		ShoppingCart cart = ShoppingCart.findBySessionIdAndSold(session.id, Boolean.FALSE)
+		
+		if (cart)
+		{
+		
+			if (! cart.customer) {
+				log.debug("Es wird ein neuer Kunde für Warenkorb ${cart} angelegt.")
+				cart.customer = new Customer()
+			}
+			else
+			{
+				log.warn("Der Warenkorb ${cart} hat bereits eine existierenden Kunden!")
+			}
+			cart.customer.properties = params
+			
+			if (!cart.customer.hasErrors() && cart.save())
+			{
+				log.info("Versuche den Warenkorb ${cart} als verkauft zu markieren.")
+				cart.sold = Boolean.TRUE
+				cart.save(flush:true)
+				log.info("Verkauf für Warenkorb ${cart} erfolgreich durchgeführt.")
+				render(view:'success',model:[cart: cart, total: sumUp(cart)])
+			}
+			else
+			{
+				flash.message = 'Bitte kontrollieren Sie Ihre Eingabe.'
+				log.info("Customer hat Validierungsfehler")
+				render(view:'list', model:[items: cart.items, total: sumUp(cart), customer: cart.customer])
+			}
+		}
+		else
+		{
+			log.warn("Checkout wurde aufgerufen. Für die Session-Id ${session.id} konnte kein Warenkorb ermittelt werden.")
+		}
+	}
 }

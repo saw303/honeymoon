@@ -8,6 +8,11 @@
         function toggleSpinner(elementName, status) {            
             document.getElementById(elementName).style.display = status ? 'inline':'none';
         }
+		
+		function isThisNumeric(value) {
+			alert(value)
+			return !isNaN(value) && value.length > 0;
+		}
     </script>
 </head>
 <body>
@@ -59,7 +64,7 @@
                             <p>&nbsp;</p>
                             <p>&nbsp;</p>
 
-                            <h4>${giftItem.name?.encodeAsHTML()}</h4>
+                            <h4 class="black">${giftItem.name?.encodeAsHTML()}</h4>
 
                             <p>&nbsp;</p>
                             <g:if test="${session.user}">
@@ -72,7 +77,7 @@
                                 <p>&nbsp;</p>
                                 <p>Ihr Beitrag: <input type="text" name="amount" size="6"> Franken</p>
                                 <p>&nbsp;</p>
-                                <p><input type="submit" name="Submit" value="In den Warenkorb legen"></p>
+                                <p><input type="submit" name="submit${i}" value="In den Warenkorb legen"></p>
                             </div>
                             <div id="spinner${i}" style="display:none">
                                 <img src="${createLinkTo(dir: 'images', file:'spinner.gif')}" alt="spinner" title="spinner" />
@@ -81,6 +86,10 @@
                         </g:formRemote>
                     </td>
                 </g:each>
+				
+				<g:if test="${giftItemList.size() == 1}">
+					<td class="right" id="cell1" width="340">&nbsp;</td>
+				</g:if>
             </tr>
             <tr>
             <!--

@@ -49,7 +49,7 @@
                 </div>
 				<div>
 					<p>&nbsp;</p>
-					<p class="message">Sie k&ouml;nnen nun den Betrag &uuml;berweisen in dem Sie ihre pers&ouml;lichen Angaben im nachfolgenden Formular eingeben. Sie werden nach erfolgreicher &Uuml;bermittlung Ihrer Daten von den Trauzeugen benachrichtigt.</p>
+					<p class="message">Sie k&ouml;nnen nun den Betrag &uuml;berweisen in dem Sie ihre pers&ouml;nlichen Angaben im nachfolgenden Formular eingeben. Sie werden nach erfolgreicher &Uuml;bermittlung Ihrer Daten von den Trauzeugen benachrichtigt.</p>
 					<p>&nbsp;</p>
 					<g:hasErrors bean="${customer}">
 			            <div class="errors">

@@ -178,8 +178,7 @@ td.errors input {
 }
 
 tr.book {
-    height:600px;
-    width:800px;
+    height:600px;    
     color: #000000;
     border: 0;
 }
@@ -187,7 +186,7 @@ tr.book {
 td.left {
 	width:318px;
 	overflow:visible;
-	text-align:right;
+	text-align:center;
     padding-left: 0%;
     padding-top: 80px;
     background: url(../images/Homepagebilder/openPage_left.jpg) 0px 0px no-repeat;
@@ -198,7 +197,7 @@ td.left {
 td.right {
 	width:340px;
 	overflow:visible;
-	text-align:left;
+	text-align:center;
 	padding-right: 0%;
     padding-top: 80px;   
     background: url(../images/Homepagebilder/openPage_right.jpg) 0px 0px no-repeat;

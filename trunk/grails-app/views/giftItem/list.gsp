@@ -22,9 +22,15 @@
         <div class="message">${flash.message}</div>
     </g:if>
     <div>
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <table width="800" border="0" cellspacing="0" cellpadding="0">
             <tr>
-                <td width="27%" rowspan="3">
+                <!-- 2nd row: category title -->
+				<td>&nbsp;</td>
+                <td align="center" colspan="2"><h3>Kategorie: ${currentCategory}</h3></td>
+            </tr>
+			
+			<tr width="132">
+                <td rowspan="3">
                     <h3>Themenliste / Inhaltsverzeichnis</h3>
                     <p>&nbsp;</p>
                     <p><a href="${createLink(controller: 'giftItem')}">Einleitung</a></p>
@@ -35,15 +41,12 @@
                     </g:each>
                 </td>
             </tr>
-            <tr>
-                <!-- 2nd row: category title -->
-                <td align="center" colspan="3"><h3>Kategorie: ${currentCategory}</h3></td>
-            </tr>
+            
             <tr class="book">
             <!-- 3rd row: giftItem -->
                 <g:each in="${giftItemList}" status="i" var="giftItem">
 
-                    <td class="${(i % 2 == 0) ? 'left' : 'right'}" id="cell${i}">
+                    <td class="${(i % 2 == 0) ? 'left' : 'right'}" id="cell${i}" width="${(i % 2 == 0) ? '328' : '340'}">
 					
 						<g:formRemote url="[controller:'giftItem', action:'addToChart']" name="form${i}"                                
                                 update="button-${i}" before="toggleSpinner('spinner${i}', true);" after="toggleSpinner('spinner${i}', false);">					
@@ -63,7 +66,7 @@
                                 <p><g:link action="edit" id="${giftItem.id}">Wunsch bearbeiten</g:link></p>
                             </g:if>
                             <p>&nbsp;</p>
-                            <div id="button-${i}">
+                            <div id="button-${i}" style="word-wrap:break-word;" width="${(i % 2 == 0) ? '280' : '300'}">
                                 <p>${giftItem.description?.encodeAsHTML()}</p>
                                 <p>&nbsp;</p>
                                 <p>&nbsp;</p>

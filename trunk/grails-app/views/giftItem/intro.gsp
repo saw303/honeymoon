@@ -4,6 +4,12 @@
     <meta name="layout" content="main"/>
 </head>
 <body>
+<g:if test="${session.user != null}">
+    <div class="nav">
+        <span class="menuButton"><g:link class="create" action="create">Neuer Wunsch eintragen</g:link></span>
+        <span class="menuButton"><g:link class="create" action="create" controller="category">Neue Kategorie eintragen</g:link></span>
+    </div>
+</g:if>
 <div class="body">
     <g:if test="${flash.message}">
         <div class="message">${flash.message}</div>

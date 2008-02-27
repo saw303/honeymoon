@@ -37,8 +37,9 @@ class ContactController {
 				mailService.sendMail("saw@silviowangler.ch", "silvio.wangler@gmail.com", "Mail von ${cmd.email}", "${params.message}")
 				render(view:'success')
 			}
-			catch(Exception e) {					
-				render(view:'failed')
+			catch(Exception e) {
+                log.error("Mail konnte nicht versandt werden. ${e.getMessage()}")
+                render(view:'failed')
 			}
 		}
 	}

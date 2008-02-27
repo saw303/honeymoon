@@ -6,6 +6,10 @@ class GiftItemController {
         render(view:'index', model:[categories: Category.list(sort:"alignment", order:"asc")])
     }
 
+    def intro = {
+        render(view:'intro', model:[categories: Category.list(sort:"alignment", order:"asc")])        
+    }
+
     // the delete, save and update actions only accept POST requests
     def allowedMethods = [delete:'POST', save:'POST', update:'POST', addToChart:'POST']
 

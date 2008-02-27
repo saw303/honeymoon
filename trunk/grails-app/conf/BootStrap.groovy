@@ -37,7 +37,7 @@ class BootStrap {
 		if (! User.findByNickname('mats') )
 		{
 		    println("Saving Matthias")
-		    userList <<  new User(firstname:"Matthias", lastname:"Fröhlicher", nickname:"mats", email:"stefan.dolder@vonrollinova.ch", password:"mfroehlicher")
+		    userList <<  new User(firstname:"Matthias", lastname:"Fröhlicher", nickname:"mats", email:"mats@glattnet.ch", password:"mfroehlicher")
 		}
 
 		userList.each {

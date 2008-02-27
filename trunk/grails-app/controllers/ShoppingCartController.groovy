@@ -160,8 +160,6 @@ class ShoppingCartController {
 	
 	def changeAmount = {
 		
-		log.debug("Params: ${params}")
-		
 		ShoppingCart cart = ShoppingCart.findBySessionIdAndSold(session.id, Boolean.FALSE)
 		
 		if (cart)

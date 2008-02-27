@@ -7,7 +7,7 @@
         <div class="body">
             <h2>Gratulation</h2>
             
-            <div>Ihr Hochzeitsgeschenk konnte erfolgreich an die Trauzeugen &uum;bermittelt werden.</div>
+            <div>Ihr Hochzeitsgeschenk konnte erfolgreich an die Trauzeugen &uuml;bermittelt werden.</div>
 			
 			<div>
 				<table>					

@@ -36,7 +36,7 @@
                             <tr id="row-${i}" class="${(i % 2) == 0 ? 'odd' : 'even'}">
                                 <td>${item.giftItem.name?.encodeAsHTML()} (${item.id?.encodeAsHTML()})</td>
                                 <td><g:remoteField action="changeAmount" update="info"  name="amount" value="${item.amount}" id="${item.id}"/> Franken</td>
-                                <td>Betrag anpassen, <g:remoteLink action="remove" id="${item.id}"
+                                <td><g:remoteLink action="remove" id="${item.id}"
                                         update="info" class="blackLink"
                                         after="removeFromTable('row-${i}');">L&ouml;schen</g:remoteLink></td>
                             </tr>

@@ -38,7 +38,7 @@
                 <td rowspan="3">
                     <h3>Themenliste / Inhaltsverzeichnis</h3>
                     <p>&nbsp;</p>
-                    <p><a href="${createLink(controller: 'giftItem')}">Einleitung</a></p>
+                    <p><a href="${createLink(controller: 'giftItem', action: 'intro')}">Einleitung</a></p>
                     <p>&nbsp;</p>
                     <g:each in="${categories}" status="i" var="cat">
                         <p><g:link action="list" params="[category:cat.name]">${cat.name}</g:link></p>

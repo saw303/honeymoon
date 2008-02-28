@@ -33,34 +33,49 @@ class ContactController {
 		{
 			String subject = ""
 			String body = ""
+			String recepient = ""
 		
 			if (params.redir == 'bestMan') {
 				log.debug('Versuche Mailtexte für den Trauzeugen zu lesen')
 				body = message(code:'mail.contact.bestman', args:[])
 				subject = message(code:'mail.contact.bestman.subject', args:[cmd.email])				
+				recepient = User.findByNickname('mats').email
 			}
 			else
 			{
 				log.debug('Versuche Mailtexte für die Trauzeugin zu lesen')
 				body = message('mail.contact.witness', args:[])
 				subject = message('mail.contact.witness.subject', args:[cmd.email])
+				recepient = User.findByNickname('carmen').email
 			}
 			
+			log.debug("Emailadresse des Trauzeugen ist ${recepient}")
 			log.debug("Subject text ist: ${subject}")
 			log.debug("Mailbody ist: ${body}")
 			
-			// send mail
+			// send mail to witness/bestman
 			try 
 			{
-				mailService.sendMail("saw@silviowangler.ch", "silvio.wangler@gmail.com", subject, body)
-				log.info("mail erfolgreich versandt")
+				mailService.sendMail("saw@silviowangler.ch", recepient, subject, body)
+				log.info("Trauzeugen Mail erfolgreich versandt")
+				
+				// send mail to customer
+				log.info("Versuche Mail an den Kontakt zu schicken")
+				
+				body = message('mail.contact.customer', args:[])
+				subject = message('mail.contact.customer.subject', args:[])
+				recepient = cmd.email
+				
+				mailService.sendMail("saw@silviowangler.ch", recepient, subject, body)
+				log.info("Kontakt Mail erfolgreich versandt")
+				
 				render(view:'success')
 			}
 			catch(Exception e) 
 			{
                 log.error("Mail konnte nicht versandt werden. ${e.getMessage()}")
                 render(view:'failed')
-			}
+			}			
 		}
 	}
 }

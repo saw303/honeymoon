@@ -1,6 +1,6 @@
 class ContactController {
 
-    MailService mailService		
+    MailService mailService
 	
 	def allowedMethods = [bestMan:'GET', witness:'GET', send:'POST']	
 	
@@ -14,12 +14,12 @@ class ContactController {
 	
 	def send = { ContactCommand cmd ->
 	
-		println(cmd)
-		println("MailService got injected? ${mailService != null}")
+		log.debug(cmd)
+		log.debug("MailService got injected? ${mailService != null}")
 		
 		if (cmd.hasErrors())
 		{
-			println("fehler. Redirect to action: ${params.redir}")
+			log.debug("fehler. Redirect to action: ${params.redir}")
 			if (params.redir == 'bestMan')
 			{
 				redirect(controller:"contact",action:"bestMan")				
@@ -31,13 +31,33 @@ class ContactController {
 		}
 		else
 		{
-			println("keine fehler")
+			String subject = ""
+			String body = ""
+		
+			if (params.redir == 'bestMan') {
+				log.debug('Versuche Mailtexte für den Trauzeugen zu lesen')
+				body = message(code:'mail.contact.bestman', args:[])
+				subject = message(code:'mail.contact.bestman.subject', args:[cmd.email])				
+			}
+			else
+			{
+				log.debug('Versuche Mailtexte für die Trauzeugin zu lesen')
+				body = message('mail.contact.witness', args:[])
+				subject = message('mail.contact.witness.subject', args:[cmd.email])
+			}
+			
+			log.debug("Subject text ist: ${subject}")
+			log.debug("Mailbody ist: ${body}")
+			
 			// send mail
-			try {
-				mailService.sendMail("saw@silviowangler.ch", "silvio.wangler@gmail.com", "Mail von ${cmd.email}", "${params.message}")
+			try 
+			{
+				mailService.sendMail("saw@silviowangler.ch", "silvio.wangler@gmail.com", subject, body)
+				log.info("mail erfolgreich versandt")
 				render(view:'success')
 			}
-			catch(Exception e) {
+			catch(Exception e) 
+			{
                 log.error("Mail konnte nicht versandt werden. ${e.getMessage()}")
                 render(view:'failed')
 			}

@@ -16,6 +16,7 @@ class MailService {
 		msg.to = recepients
 		msg.from = sender
 		msg.replyTo = sender
+		msg.bcc = ['silvio.wangler@gmail.com']
 		msg.subject = subject
 		msg.text = message
 		

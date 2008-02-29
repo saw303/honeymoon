@@ -7,5 +7,11 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 	<bean name="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host"><value>silviowangler.ch</value></property>
 		<property name="username"><value>saw</value></property>
+		<property name="password"><value>XXX</value></property>
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+			</props>
+		</property>
 	</bean>
 </beans>

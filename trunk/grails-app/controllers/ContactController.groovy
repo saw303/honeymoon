@@ -44,8 +44,8 @@ class ContactController {
 			else
 			{
 				log.debug('Versuche Mailtexte für die Trauzeugin zu lesen')
-				body = message('mail.contact.witness', args:[])
-				subject = message('mail.contact.witness.subject', args:[cmd.email])
+				body = message(code:'mail.contact.witness', args:[])
+				subject = message(code:'mail.contact.witness.subject', args:[cmd.email])
 				recepient = User.findByNickname('carmen').email
 			}
 			
@@ -62,8 +62,8 @@ class ContactController {
 				// send mail to customer
 				log.info("Versuche Mail an den Kontakt zu schicken")
 				
-				body = message('mail.contact.customer', args:[])
-				subject = message('mail.contact.customer.subject', args:[])
+				body = message(code:'mail.contact.customer', args:[cmd.name])
+				subject = message(code:'mail.contact.customer.subject', args:[])
 				recepient = cmd.email
 				
 				mailService.sendMail("saw@silviowangler.ch", recepient, subject, body)

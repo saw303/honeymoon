@@ -177,10 +177,13 @@ class ShoppingCartController {
 		StringBuffer sb = new StringBuffer();
 		
 		int i = 1;
+		int sum = 0;
 		
 		cart.items.each {		
+			sum += it.amount;
 			sb.append("${i++}. ${it.giftItem.name}: Ihr Beitrag: ${it.amount} Franken\n")		
 		}
+		sb.append("\n\nTotal ${sum} Franken\n")
 		
 		sb.append('\n\nIhre Adresse\n')
 		sb.append("${cart.customer.firstName} ${cart.customer.lastName}\n")

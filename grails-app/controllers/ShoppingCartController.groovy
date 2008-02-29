@@ -139,10 +139,25 @@ class ShoppingCartController {
 			
 			if (!cart.customer.hasErrors() && cart.save())
 			{
+				//Sende
+				log.debug("Versuche die Emails zu versenden")
+				
+				def subject = message(code:'mail.cart.checkout.subject', args:[])
+				def body = message(code:'mail.cart.checkout', args:[cart.customer.firstName, cart.customer.lastName, getItemList(cart)])
+				def recepients = []
+				
+				recepients << User.findByNickname('doldeste').email
+				recepients << User.findByNickname('carmen').email
+				recepients << User.findByNickname('daw').email
+				
+				mailService.sendMail("saw@silviowangler.ch", recepients, subject, body)
+				mailService.sendMail("saw@silviowangler.ch", [cart.customer.email], subject, body)
+				
 				log.info("Versuche den Warenkorb ${cart} als verkauft zu markieren.")
 				cart.sold = Boolean.TRUE
 				cart.save(flush:true)
 				log.info("Verkauf für Warenkorb ${cart} erfolgreich durchgeführt.")
+				
 				render(view:'success',model:[cart: cart, total: sumUp(cart)])
 			}
 			else
@@ -157,6 +172,24 @@ class ShoppingCartController {
 			log.warn("Checkout wurde aufgerufen. Für die Session-Id ${session.id} konnte kein Warenkorb ermittelt werden.")
 		}
 	}
+	
+	private String getItemList(ShoppingCart cart) {
+		StringBuffer sb = new StringBuffer();
+		
+		int i = 1;
+		
+		cart.items.each {		
+			sb.append("${i++}. ${it.giftItem.name}: Ihr Beitrag: ${it.amount} Franken\n")		
+		}
+		
+		sb.append('\n\nIhre Adresse\n')
+		sb.append("${cart.customer.firstName} ${cart.customer.lastName}\n")
+		sb.append("${cart.customer.adressLine}\n")
+		sb.append("${cart.customer.postCode} ${cart.customer.city}\n")
+		sb.append("Email: ${cart.customer.email}\n")
+		
+		return sb.toString();
+	}		
 	
 	def changeAmount = {
 		

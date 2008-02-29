@@ -36,18 +36,18 @@ class ContactController {
 			String recepient = ""
 		
 			if (params.redir == 'bestMan') {
-				log.debug('Versuche Mailtexte für den Trauzeugen zu lesen')
-				body = message(code:'mail.contact.bestman', args:[])
+				log.debug('Versuche Mailtexte für den Trauzeugen zu lesen')				
 				subject = message(code:'mail.contact.bestman.subject', args:[cmd.email])				
 				recepient = User.findByNickname('mats').email
 			}
 			else
 			{
-				log.debug('Versuche Mailtexte für die Trauzeugin zu lesen')
-				body = message(code:'mail.contact.witness', args:[])
+				log.debug('Versuche Mailtexte für die Trauzeugin zu lesen')				
 				subject = message(code:'mail.contact.witness.subject', args:[cmd.email])
 				recepient = User.findByNickname('carmen').email
 			}
+			
+			body = cmd.message
 			
 			log.debug("Emailadresse des Trauzeugen ist ${recepient}")
 			log.debug("Subject text ist: ${subject}")
@@ -56,7 +56,7 @@ class ContactController {
 			// send mail to witness/bestman
 			try 
 			{
-				mailService.sendMail("saw@silviowangler.ch", recepient, subject, body)
+				mailService.sendMail("saw@silviowangler.ch", [recepient], subject, body)
 				log.info("Trauzeugen Mail erfolgreich versandt")
 				
 				// send mail to customer
@@ -66,7 +66,7 @@ class ContactController {
 				subject = message(code:'mail.contact.customer.subject', args:[])
 				recepient = cmd.email
 				
-				mailService.sendMail("saw@silviowangler.ch", recepient, subject, body)
+				mailService.sendMail("saw@silviowangler.ch", [recepient], subject, body)
 				log.info("Kontakt Mail erfolgreich versandt")
 				
 				render(view:'success')

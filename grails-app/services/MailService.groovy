@@ -8,9 +8,7 @@ class MailService {
 	
     boolean transactional = false
 
-    public void sendMail(String sender, String recepient, String subject, String message) throws MailException {
-	
-		def recepients = [recepient]
+    public void sendMail(String sender, List recepients, String subject, String message) throws MailException {
 	
 		SimpleMailMessage msg = new SimpleMailMessage()
 		msg.to = recepients

@@ -18,7 +18,7 @@
                 <p><h4>Carmen Tschopp</h4><br/>
                     von Langnau am Albis</p>
                 <p>&nbsp;</p>
-                <p>Carmen und Daniela lernten sich 2004 bei der Arbeit am Flughafen kennen. Und sind von da an treue Wegbegleiterinnen, die  sich nicht scheuen sogar in der sibirischen K&auml;lte des hohen Nordens zusammen  durch Schnee uns Eis zu gehen!</p>
+                <p>Carmen und Daniela lernten sich 2004 bei der Arbeit am Flughafen kennen. Und sind von da an treue Wegbegleiterinnen, die  sich nicht scheuen sogar in der sibirischen K&auml;lte des hohen Nordens zusammen durch Schnee und Eis zu gehen!</p>
                 <p>&nbsp;</p>
                 <p>Als Trauzeugin gibt Carmen gerne Auskunft  bei Fragen &uuml;ber:</p>
                 <ul>
@@ -43,7 +43,7 @@
                 <p>&nbsp;</p>
                 <p>Matthias und Stefan haben sich im 1996 beim Fussballspielen f&uuml;r den FC Glattfelden kennen gelernt. Von diesem Zeitpunkt an haben Stefan und Matthias zusammen H&ouml;hen und Tiefen erlebt, was die Freundschaft st&auml;rkte.</p>
                 <p>&nbsp;</p>
-                <p>Als Trauzeuge gibt Matthias gerne uskunft bei Fragen &uuml;ber:</p>
+                <p>Als Trauzeuge gibt Matthias gerne Auskunft bei Fragen &uuml;ber:</p>
                 <ul>
                     <li>Ablauf am Hochzeitstag</li>
                     <li>Parkierm&ouml;glichkeit und Transport der geladenen G&auml;ste</li>

@@ -13,7 +13,7 @@ class GiftItem
       description(nullable:false, blank:false, length: 1..255)
       image(nullable:true, blank:true, length: 0..255)
 	  active(nullabe:false)
-      price(nullable:false, blank:false, range:0..1000000)	  
+      price(nullable:false, range:0..1000000)	  
   }
 
   String toString ()

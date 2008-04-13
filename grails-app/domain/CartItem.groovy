@@ -5,6 +5,6 @@ class CartItem {
     Integer amount
 
     static constraints = {
-        amount(nullable: false, blank:false)
+        amount(nullable: false)
     }
 }

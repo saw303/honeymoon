@@ -24,13 +24,19 @@ class GuestbookEntryController {
         def guestbookEntry = new GuestbookEntry()
         guestbookEntry.properties = params
 		
-		if(guestbookEntry.save()) {
-			flash.message = "Ihre Nachricht wurde ins Gästebuch eingetragen. Besten Dank"
-			redirect(action:show,id:guestbookEntry.id)
-		}
-		else {
-			render(view:'create',model:[guestbookEntry:guestbookEntry])
-		}
+		if (params.captcha.toUpperCase() == session.captcha) {
+            if(guestbookEntry.save()) {
+				flash.message = "Ihre Nachricht wurde ins Gästebuch eingetragen. Besten Dank"
+				redirect(action:show,id:guestbookEntry.id)
+			}
+			else {
+				render(view:'create',model:[guestbookEntry:guestbookEntry])
+			}
+        }
+        else {
+            flash.message = "Bitte geben Sie den Anti Spam Code ein."
+            render(view:'create',model:[guestbookEntry:guestbookEntry])
+        }
     }
 
     def delete = {

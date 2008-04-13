@@ -54,7 +54,17 @@
                                 <td valign='top' class='value ${hasErrors(bean:guestbookEntry,field:'message','errors')}'>
 									<g:textArea name="message" value="${fieldValue(bean:guestbookEntry,field:'message')}" rows="5" cols="40"/>                                    
                                 </td>
-                            </tr>						
+                            </tr>
+							
+							<tr class='prop'>
+								<td valign='top' class='name'>
+                                    <label for='message'>Anti Spam Code:</label>
+                                </td>
+                                <td valign='top'>
+									<img src="${createLink(controller:'captcha', action:'index')}" alt="Anti Spam Code" title="Anti Spam Code"/> hier eintragen&nbsp;--&gt;&nbsp;
+									<input type="text" id='captcha' name='captcha' value=""/>
+                                </td>
+							</tr>
                         </tbody>
                     </table>
                 </div>

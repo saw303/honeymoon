@@ -17,7 +17,7 @@
         <div class="nav">
             <span class="menuButton"><g:link class="home" action="list" controller="home">Home</g:link></span>
             <span class="menuButton"><g:link action="birdalcouple" controller="home">Daniela & Stefan</g:link></span>
-			<span class="menuButton"><g:link action="wedding" controller="home">Der Blog</g:link></span>
+			<span class="menuButton"><g:link action="wedding" controller="home">Das Logbuch</g:link></span>
             <span class="menuButton"><g:link action="witness" controller="home">Die Trauzeugen</g:link></span>			
             <span class="menuButton"><g:link class="list" controller="giftItem">Wunschbuch</g:link></span>
             <span class="menuButton"><g:link class="list" action="list" controller="guestbookEntry">G&auml;stebuch</g:link></span>

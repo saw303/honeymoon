@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <title><g:layoutTitle default="lebenslänglich.ch - Die Hochzeit von Daniela Wangler und Stefan Dolder" /></title>
+        <link rel="stylesheet" href="${createLinkTo(dir:'css',file:'main.css')}" />
+        <link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
+        <g:layoutHead />
+        <g:javascript library="application" />				
+        <link href="../../../web-app/css/main.css" rel="stylesheet" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+    </style>
+    </head>
+    <body>
+        <div id="spinner" class="spinner" style="display:none;">
+            <img src="${createLinkTo(dir:'images',file:'spinner.gif')}" alt="Spinner" />
+        </div>	
+        <div class="logo">
+          <div align="center"><img src="../../../web-app/images/Homepagebilder/Titelleistenbild_1.jpg" width="513" height="48"></div>
+        </div>
+        <div class="nav">
+            <span class="menuButton"><g:link class="home" action="list" controller="home"><a href="Kopie von main_1.htm">Home</a></g:link>
+            </span>
+            <span class="menuButton"><g:link action="list" controller="home"><a href="Daniela_und_Stefan.html">Daniela & Stefan</a></g:link>
+            </span>
+            <span class="menuButton"><g:link action="list" controller="home"><a href="Die Trauzeugen 1.htm">Die Trauzeugen</a></g:link>
+            </span>
+            <span class="menuButton"><g:link class="list" action="list" controller="giftItem"><a href="Wunschbuch_Einband.html">Wunschbuch</a></g:link>
+            </span>
+          <span class="menuButton"><g:link class="list" action="list" controller="guestbookEntry">Gästebuch</g:link></span>
+            <span class="menuButton"><g:link action="list" controller="guestbookEntry">Warenkorb</g:link>
+            </span>
+            <a href="Die_Trauung.html">Die Trauung</a> </div>
+        <g:layoutBody />
+        <div>
+          <form name="form1" method="post" action="">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="27%" rowspan="4" align="center"><h2>Themenliste / Inhaltsverzewichnis 
+                  </h2>
+                    <p>&nbsp;</p>
+                    <h2><a href="Wunschbuch_Ein_und_Anleitung.html">Einleitung</a></h2>
+                    <h2>&nbsp;</h2>
+                    <h2><a href="Wunschbuch_Flug.html">Flug</a></h2>
+                    <h2>&nbsp;</h2>
+                  <h2><a href="Wunschbuch_Hawaii.html">Hawaii</a></h2>
+                  <h2>&nbsp;</h2>
+                  <h2><a href="Wunschbuch_Las_Vegas.html">Las Vegas</a></h2>
+                  <h2>&nbsp;</h2>
+                  <h2><a href="Wunschbuch_Mietauto.html">Mietauto</a></h2>
+                  </p>
+                    <h2>&nbsp;</h2>
+                  <h2><a href="Wunschbuch_Drinks_and_Game.html" class="style1"></a></h2>
+                  </p></td>
+                  <td align="center"><a href="Wunschbuch_Flug.html">vorherige</a></td>
+                  <td align="center"><div align="right"><a href="Wunschbuch_Las_Vegas.html">n&auml;chste</a></div></td>
+                </tr>
+                <tr>
+                  <td align="center"><h2>Hawaii</h2></td>
+                  <td align="center">&nbsp;</td>
+                </tr>
+              <tr>
+                <td align="center"><p>
+                    <input type="image" name="imageField" src="../../../web-app/images/Homepagebilder/Bilder_fuer_Homepage/Bilder_fuer_Wunschbuch/Hotel Hawaii.jpg"></p>
+                  <h1>Beitrag an das Hotel in Hawaii </h1>
+                <h1>Beitrag
+                  <input type="text" name="textfield">
+                </h1>
+                <p>&nbsp;</p>
+                <p>
+                  <input type="submit" name="Submit" value="Warenkorb">
+                </p>
+                <p>&nbsp;</p></td>
+                <td align="center"><p>
+                  <input type="image" name="imageField2" src="../../../web-app/images/Homepagebilder/Bilder_fuer_Homepage/Bilder_fuer_Wunschbuch/Tagesausflug Hawaii.jpg"></p>
+                  <h1>Tagesausflug auf Hawaii </h1>
+                <h1>Beitrag
+                  <input type="text" name="textfield2">
+                </h1>
+                <p>&nbsp;</p>
+                <p>
+                  <input type="submit" name="Submit2" value="Warenkorb">
+</p></td>
+              </tr>
+              <tr>
+                <td align="center"><p>
+                  <input type="image" name="imageField3" src="../../../web-app/images/Homepagebilder/Bilder_fuer_Homepage/Bilder_fuer_Wunschbuch/Reiten.jpg"></p>
+                  <h1>Reitstunde</h1>
+                <h1>Beitrag
+                  <input type="text" name="textfield3">
+                </h1>
+                <p>&nbsp;</p>
+                <p>
+                  <input type="submit" name="Submit4" value="Warenkorb">
+</p></td>
+                <td align="center"><p>
+                  <input type="image" name="imageField4" src="../../../web-app/images/Homepagebilder/Bilder_fuer_Homepage/Bilder_fuer_Wunschbuch/Surfstunde.jpg"></p>
+                  <h1>Surfstunde</h1>
+                <h1>Beitrag
+                  <input type="text" name="textfield4">
+                </h1>
+                <p>&nbsp;</p>
+                <p>
+                  <input type="submit" name="Submit3" value="Warenkorb">
+</p></td>
+              </tr>
+            </table>
+          </form>
+          <p>Version </p>
+          <g:meta name="app.version"/> on Grails <g:meta name="app.grails.version" /></div>
+        <p>&nbsp;</p>
+    </body>	
+</html>

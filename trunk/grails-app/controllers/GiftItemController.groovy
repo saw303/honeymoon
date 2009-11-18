@@ -11,7 +11,7 @@ class GiftItemController {
     }
 
     // the delete, save and update actions only accept POST requests
-    def allowedMethods = [delete:'POST', save:'POST', update:'POST', addToChart:'POST']
+    def static allowedMethods = [delete:'POST', save:'POST', update:'POST', addToChart:'POST']
 
     def list = {
 

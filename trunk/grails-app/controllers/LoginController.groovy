@@ -1,6 +1,6 @@
 class LoginController {
 
-	def allowedMethods = [index:'GET', login:'POST']	
+	def static allowedMethods = [index:'GET', login:'POST']	
 
     def index = { render(view:'login')}
 	

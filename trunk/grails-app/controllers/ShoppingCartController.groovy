@@ -6,7 +6,7 @@ class ShoppingCartController {
     def index = { redirect(action:list,params:params) }
 
     // the delete, save and update actions only accept POST requests
-    def allowedMethods = [delete:'POST', save:'POST', update:'POST', checkout:'POST', changeAmount:'POST']
+    def static allowedMethods = [delete:'POST', save:'POST', update:'POST', checkout:'POST', changeAmount:'POST']
 	
 
     def list = {

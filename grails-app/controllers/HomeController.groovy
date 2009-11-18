@@ -1,6 +1,6 @@
 class HomeController {
 
-    def allowedMethods = [list:'GET']
+    def static allowedMethods = [list:'GET', birdalcouple:'GET', witness:'GET', wedding:'GET']
 
     def index = { redirect(action:list,params:params) }
 

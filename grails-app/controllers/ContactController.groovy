@@ -2,7 +2,7 @@ class ContactController {
 
     MailService mailService
 	
-	def allowedMethods = [bestMan:'GET', witness:'GET', send:'POST']	
+	def static allowedMethods = [bestMan:'GET', witness:'GET', send:'POST']	
 	
 	def bestMan = {	
 		render( view:'contact', model:[redir:'bestMan'])

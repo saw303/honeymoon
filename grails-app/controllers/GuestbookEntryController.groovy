@@ -2,7 +2,7 @@ class GuestbookEntryController {
 
     def index = { redirect(action:list,params:params) }
 
-    def allowedMethods = [delete:'GET', save:'POST']
+    def static allowedMethods = [delete:'GET', save:'POST']
 
     def list = {
         if(!params.max)params.max = 5

@@ -10,12 +10,12 @@ class GuestbookEntry
         author(nullable:false, blank:false, length: 1..25)
         authorEmail(email:true, length: 1..100)
         title(nullable:false, blank:false, length:1..100)
-        message(nullable:false, blank:false, length:1..255)
+        message(nullable:false, blank:false, length:1..2500)
         entryDate(nullable:false)
     }
 
     String toString()
     {
-        return "GuestbookEntry ${id}"
+        return "GuestbookEntry ${id} written by $author (${authorEmail}) - tile: $title".toString()
     }
 }

@@ -8,41 +8,19 @@ class BootStrap {
 	 
 		log.debug("Grails environment is: ${env}")
 		
-		def userList = []
-        
-		if (! User.findByNickname('saw') )
-		{
-		    println("Saving Silvio")
-		    userList << new User(firstname:"Silvio", lastname:"Wangler", nickname:"saw", email:"silvio.wangler@gmail.com", password:"gravis")
-		}
-
-		if (! User.findByNickname('daw') )
-		{
-		    println("Saving Daniela")
-		    userList << new User(firstname:"Daniela", lastname:"Wangler", nickname:"daw", email:"daniela.wangler@derendinger.ch", password:"dwangler")
-		}
-
-		if (! User.findByNickname('doldeste') )
-		{
-		    println("Saving Stefan")
-		    userList << new User(firstname:"Stefan", lastname:"Dolder", nickname:"doldeste", email:"doldeste@gmail.com", password:"sdolder")
-		}
-
-		if (! User.findByNickname('carmen') )
-		{
-		    println("Saving Carmen")
-		    userList << new User(firstname:"Carmen", lastname:"Tschopp", nickname:"carmen", email:"carmen.tschopp@gmail.com", password:"ctschopp")
-		}
-
-		if (! User.findByNickname('mats') )
-		{
-		    println("Saving Matthias")
-		    userList <<  new User(firstname:"Matthias", lastname:"Fröhlicher", nickname:"mats", email:"mats@glattnet.ch", password:"mfroehlicher")
-		}
+		def userList = [
+			new User(firstname:"Silvio", lastname:"Wangler", nickname:"saw", email:"silvio.wangler@gmail.com", password:"gravis"),
+			new User(firstname:"Matthias", lastname:"Stulz", nickname:"mats", email:"matthiasstulz@hotmail.com", password:"mats2010"), 
+			new User(firstname:"Sonja", lastname:"MÃ¼ller", nickname:"sonja", email:"zuerimuusli@hotmail.com", password:"sonja2010")]
 
 		userList.each {
-		    if (it.validate()) { it.save() }
-		    else { println("Is shit: ${it}")}
+		    if (!User.findByNickname(it.nickname) && it.validate()) {
+				println("Saving ${it.nickname}")
+				assert it.save() : "Cannot save user ${it}".toString()
+			}
+		    else { 
+				println("Cannot save user: ${it}")
+			}
 		}
 		
 		if (env != 'production') 

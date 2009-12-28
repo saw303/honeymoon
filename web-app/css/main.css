@@ -10,7 +10,7 @@ Released for free under a Creative Commons Attribution 2.5 License
 }
 
 body {
-	background: #355379 url(images/img01.jpg) no-repeat center top;
+	background: #355379 url(../images/img01.jpg) no-repeat center top;
 	font: normal small Arial, Helvetica, sans-serif;
 	color: #FFFFFF;
 }
@@ -70,7 +70,7 @@ img {
 .boxed .title {
 	height: 26px;
 	padding: 10px 0 0 10px;
-	background: url(images/img02.gif) repeat-x;
+	background: url(../images/img02.gif) repeat-x;
 	border-bottom: 3px solid #FFFFFF;
 	text-transform: lowercase;
 	font-size: 1em;

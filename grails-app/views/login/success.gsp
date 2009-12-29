@@ -8,7 +8,7 @@
 <div id="welcome" class="post">
    <h2 class="title">Anmeldung erfolgreich durchgef&uuml;hrt</h2>
    <div class="story">
-      <p>Hallo ${session.user.firstname} ${session.user.lastname}. Sch&ouml;n Dich auf dieser Seite begr&uuml;ssen zu k&ouml;nnen.</p>
+      <p>Hallo ${session.user.generateFullName()}. Sch&ouml;n Dich auf dieser Seite begr&uuml;ssen zu k&ouml;nnen.</p>
       <p>Als angemeldeter Benutzer kannst Du folgendes tun:</p>
       <p>
          <ul>

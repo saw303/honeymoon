@@ -20,4 +20,8 @@ class User {
 		return "${firstname} ${lastname} (${email}), Status: ${locked == Boolean.TRUE ? 'locked' : 'unlocked'}";
 	}
 
+   public String generateFullName() {
+      "$firstname $lastname".toString()
+   }
+
 }

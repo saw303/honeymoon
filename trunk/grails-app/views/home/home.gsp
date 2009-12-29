@@ -5,31 +5,13 @@
         <meta name="layout" content="main" />
         <title>Homepage &uuml;ber die Hochzeit von Daniela Wangler und Stefan Dolder</title>         
     </head>
-    <body>        
-        <div class="body">
-            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr height="20%">
-                <td rowspan="2" align="center">
-                  <div align="center">
-					<a href="${createLinkTo(dir:'pdf',file:'Urteil.pdf')}" target="_blank">
-                      <p>Bitte Klicken Sie auf das Bild um es zu vergr&ouml;ssern<br/>&nbsp;</p>
-                    </a>
-                    <p>
-						<a href="${createLinkTo(dir:'pdf',file:'Urteil.pdf')}" target="_blank">
-							<img src="${createLinkTo(dir:'images/Homepagebilder',file:'Startbild_klein.jpg')}" alt="Das Urteil" width="394" height="557" border="0">
-						</a>
-					</p>                    
-                  </div>                  
-                </td>
-                <td align="center">
-					<br/><br/>
-					<img src="${createLinkTo(dir:'images/Homepagebilder',file:'Daniela_Straefling_kleiner_mit Negativrand.jpg')}" alt="Daniela"/>
-				</td>
-              </tr>
-              <tr>
-                <td align="center"><img src="${createLinkTo(dir:'images/Homepagebilder',file:'Stefan_Straefling_kleiner_mit Negativrand.jpg')}" alt="Stefan"/></td>
-              </tr>
-            </table>
-        </div>
+    <body>
+      <div id="welcome" class="post">
+         <h2 class="title">Herzlich Willkommen</h2>
+         <div class="story">
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+         </div>
+      </div>        
     </body>
 </html>

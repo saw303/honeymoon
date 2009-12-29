@@ -23,10 +23,10 @@ http://www.silviowangler.ch
    <ul>
       <li class="active"><a href="${g.createLink(controller: 'home')}" title="">Home</a></li>
       <li><a href="#" title="">Sonja &amp; Matthias</a></li>
-      <li><a href="#" title="">Die Trauzeugen</a></li>
-      <li><a href="#" title="">Das Wunschbuch</a></li>
-      <li><a href="#" title="">Das G&auml;stebuch</a></li>
-      <li><a href="#" title="">Der Warenkorb</a></li>
+      <li><a href="#" title="">Trauzeugen</a></li>
+      <li><a href="#" title="">Wunschbuch</a></li>
+      <li><a href="${g.createLink(controller: 'guestbookEntry')}" title="">G&auml;stebuch</a></li>
+      <li><a href="#" title="">Warenkorb</a></li>
    </ul>
 </div>
 <div id="content">
@@ -50,10 +50,10 @@ http://www.silviowangler.ch
       </g:if>
       <g:else>
          <div id="login" class="boxed">
-            <h2 class="title">Administation</h2>
+            <h2 class="title">Administation (${session.user?.generateFullName()})</h2>
             <div class="content">
                <ul>
-                  <li>G&auml;stebuch verwalten</li>
+                  <li><a href="${g.createLink(controller: 'guestbookEntry')}">G&auml;stebuch verwalten</a></li>
                   <li>Wunschbuch verwalten</li>
                   <li><a href="${g.createLink(controller: 'login', action: 'logout')}">Abmelden</a></li>
                </ul>

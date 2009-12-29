@@ -149,7 +149,7 @@ img {
 	width: 700px;
 	height: 220px;
 	margin: 0 auto;
-	background: url(images/img01.jpg) no-repeat;
+	background: url(../images/img01.jpg) no-repeat;
 }
 
 #logo h1 {
@@ -185,7 +185,7 @@ img {
 	width: 700px;
 	height: 50px;
 	margin: -50px auto 0 auto;
-	background: url(images/img02.jpg) no-repeat;
+	background: url(../images/img02.gif) repeat-x;
 }
 
 #menu ul {
@@ -201,10 +201,10 @@ img {
 #menu a {
 	display: block;
 	float: left;
-	padding: 17px 20px 0 20px;
+	padding: 17px 20px 5px 20px;
 	text-decoration: none;
 	text-transform: lowercase;
-	font-size: .8em;
+	font-size: 11px;
 	font-weight: bold;
 }
 
@@ -360,3 +360,41 @@ img {
 
 #links {
 }
+
+/* Content > Guestbook form */
+
+#addGbEntry {
+}
+
+#addGbEntry form {
+}
+
+#addGbEntry fieldset {
+	border: none;
+}
+
+#addGbEntry legend {
+	display: none;
+}
+
+#addGbEntry label {
+	font-size: x-small;
+	font-weight: bold;
+}
+
+#addGbEntry input {
+	margin-bottom: 5px;
+	padding: 2px 5px;
+	border: 1px solid #385B88;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/*
+#inputtext1, #inputtext2 {
+	color: #385B88;
+}
+
+#inputsubmit1 {
+	background: #385B88;
+	color: #FFFFFF;
+}*/

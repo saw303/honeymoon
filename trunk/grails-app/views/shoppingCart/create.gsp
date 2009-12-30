@@ -1,3 +1,4 @@
+<%@ page import="ch.matsonja.Customer" %>
 
 
 <html>

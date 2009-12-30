@@ -1,3 +1,4 @@
+package ch.matssonja
 class ShoppingCart
 {
    String sessionId

@@ -1,3 +1,8 @@
+import ch.matsonja.GiftItem
+import ch.matsonja.ShoppingCart
+import ch.matsonja.Category
+import ch.matsonja.CartItem
+
 class ShoppingCartTests extends GroovyTestCase {
 
     void testAddItemsToShoppingCart() {

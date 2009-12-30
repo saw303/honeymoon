@@ -1,4 +1,5 @@
-class User { 
+package ch.matssonja
+class User {
 
 	String firstname
 	String lastname

@@ -1,3 +1,5 @@
+package ch.matssonja
+
 class Customer {
 
 	static belongsTo = [cart: ShoppingCart]

@@ -1,5 +1,6 @@
-            
-class CategoryController {
+import ch.matssonja.GiftItemCategory
+
+class GiftItemCategoryController {
     
     def index = { redirect(action:list,params:params) }
 
@@ -8,15 +9,15 @@ class CategoryController {
 
     def list = {
         if(!params.max) params.max = 10
-        [ categoryList: Category.list( params ) ]
+        [ categoryList: GiftItemCategory.list( params ) ]
     }
 
     def show = {
-        [ category : Category.get( params.id ) ]
+        [ category : GiftItemCategory.get( params.id ) ]
     }
 
     def delete = {
-        def category = Category.get( params.id )
+        def category = GiftItemCategory.get( params.id )
         if(category) {
             category.delete()
             flash.message = "Category ${params.id} deleted"
@@ -29,7 +30,7 @@ class CategoryController {
     }
 
     def edit = {
-        def category = Category.get( params.id )
+        def category = GiftItemCategory.get( params.id )
 
         if(!category) {
             flash.message = "Category not found with id ${params.id}"
@@ -41,7 +42,7 @@ class CategoryController {
     }
 
     def update = {
-        def category = Category.get( params.id )
+        def category = GiftItemCategory.get( params.id )
         if(category) {
             category.properties = params
             if(!category.hasErrors() && category.save()) {
@@ -59,13 +60,13 @@ class CategoryController {
     }
 
     def create = {
-        def category = new Category()
+        def category = new GiftItemCategory()
         category.properties = params
         return ['category':category]
     }
 
     def save = {
-        def category = new Category(params)
+        def category = new GiftItemCategory(params)
         if(!category.hasErrors() && category.save()) {
             flash.message = "Category ${category.id} created"
             redirect(action:show,id:category.id)

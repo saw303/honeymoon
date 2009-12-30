@@ -16,7 +16,7 @@ http://www.silviowangler.ch
    <link href="${createLinkTo(dir: 'css', file: 'main.css')}" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<div id="logo"/>
+<div id="logo">&nbsp;</div>
 <div id="menu">
    <ul>
       <li class="active"><a href="${g.createLink(controller: 'home')}" title="">Home</a></li>

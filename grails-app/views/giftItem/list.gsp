@@ -22,15 +22,20 @@
       <span class="menuButton"><g:link class="create" action="create" controller="category">Neue Kategorie eintragen</g:link></span>
    </div>
 </g:if>
-<div id="main" class="post">
-   <g:each in="${resultMap.keySet()}" var="key">
-      <h2 class="title">${key}</h2>
+<g:each in="${resultMap.keySet()}" var="key">
+   <div id="welcome1" class="post">
+      <h2 class="title">Kategorie: ${key}</h2>
       <div class="story">
-         <g:each in="${resultMap.get(key)}" var="giftItem">
-            <p>${giftItem.name}</p>
-         </g:each>
+         <ul>
+            <g:each in="${resultMap.get(key)}" var="giftItem">
+               <li>
+                  <p>${giftItem.name}</p>
+                  <p>${giftItem.description}</p>
+               </li>
+            </g:each>
+         </ul>
       </div>
-   </g:each>
-</div>
+   </div>
+</g:each>
 </body>
 </html>

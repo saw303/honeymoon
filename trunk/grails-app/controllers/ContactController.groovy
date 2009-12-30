@@ -1,3 +1,5 @@
+import ch.matssonja.User
+
 class ContactController
 {
    def static allowedMethods = [bestMan: 'GET', witness: 'GET', send: 'POST']

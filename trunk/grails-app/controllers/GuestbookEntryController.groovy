@@ -1,3 +1,5 @@
+import ch.matssonja.GuestbookEntry
+
 class GuestbookEntryController
 {
 

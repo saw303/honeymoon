@@ -1,3 +1,4 @@
+package ch.matssonja
 class GuestbookEntry
 {
     String author

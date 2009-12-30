@@ -1,3 +1,5 @@
+package ch.matssonja
+
 class CartItem {
 
     static belongsTo = [giftItem: GiftItem]

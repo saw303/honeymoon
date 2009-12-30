@@ -1,4 +1,6 @@
-class Category {
+package ch.matssonja
+
+class GiftItemCategory {
 
 	static hasMany = [ giftItems : GiftItem ]
 	

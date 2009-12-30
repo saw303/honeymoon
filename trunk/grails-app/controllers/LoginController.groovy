@@ -1,3 +1,5 @@
+import ch.matssonja.User
+
 class LoginController
 {
 

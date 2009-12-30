@@ -1,3 +1,8 @@
+import ch.matssonja.CartItem
+import ch.matssonja.Customer
+import ch.matssonja.ShoppingCart
+import ch.matssonja.User
+
 class ShoppingCartController
 {
 

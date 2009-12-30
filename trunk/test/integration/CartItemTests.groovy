@@ -1,3 +1,7 @@
+import ch.matsonja.CartItem
+import ch.matsonja.GiftItem
+import ch.matsonja.Category
+
 class CartItemTests extends GroovyTestCase {
 
     void testSave() {

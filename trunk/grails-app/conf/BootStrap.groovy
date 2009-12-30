@@ -1,4 +1,8 @@
 import grails.util.GrailsUtil
+import ch.matssonja.GiftItemCategory
+import ch.matssonja.User
+import ch.matssonja.GiftItem
+import ch.matssonja.GuestbookEntry
 
 class BootStrap {
 
@@ -26,10 +30,10 @@ class BootStrap {
 		if (env != 'production') 
 		{
 			log.debug("Erstelle Dummy Kategorien...")
-			Category cat = new Category(name:'Flug', alignment: 1)
+			GiftItemCategory cat = new GiftItemCategory(name:'Flug', alignment: 1)
 			cat.save(flush:true)
 
-			Category cat2 = new Category(name:'Drinx', alignment: 2)
+			GiftItemCategory cat2 = new GiftItemCategory(name:'Drinx', alignment: 2)
 			cat2.save(flush:true)
 
 	        5.times {

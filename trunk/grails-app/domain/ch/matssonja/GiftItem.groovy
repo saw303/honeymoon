@@ -1,6 +1,8 @@
+package ch.matssonja
+
 class GiftItem
 {	
-  static belongsTo = [category: Category]
+  static belongsTo = [category: GiftItemCategory]
   
   String name
   String description

@@ -54,7 +54,7 @@ http://www.silviowangler.ch
             <div class="content">
                <ul>
                   <li><a href="${g.createLink(controller: 'guestbookEntry')}">G&auml;stebuch verwalten</a></li>
-                  <li>Wunschbuch verwalten</li>
+                  <li><a href="${g.createLink(controller: 'giftItem')}">Wunschbuch verwalten</a></li>
                   <li><a href="${g.createLink(controller: 'login', action: 'logout')}">Abmelden</a></li>
                </ul>
             </div>

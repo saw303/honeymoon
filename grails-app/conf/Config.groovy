@@ -46,9 +46,32 @@ grails.spring.bean.packages = []
 environments {
    production {
       grails.serverURL = "http://www.sonja-matt?hias.ch/${appName}"
+
+      grails {
+         mail {
+            host = "smtp.gmail.com"
+            port = 465
+            username = "silvio.wangler@gmail.com"
+            password = "xxxxx"
+            props = ["mail.smtp.auth": "true",
+               "mail.smtp.socketFactory.port": "465",
+               "mail.smtp.socketFactory.class": "javax.net.ssl.SSLSocketFactory",
+               "mail.smtp.socketFactory.fallback": "false"]
+         }
+      }
    }
    development {
       grails.serverURL = "http://localhost:8080/${appName}"
+
+      grails {
+         mail {
+            host = "localhost"
+            port = 25
+            /*username = "silvio"
+            password = "gravis"
+            props = ["mail.smtp.auth": "true"]*/
+         }
+      }
    }
    test {
       grails.serverURL = "http://localhost:8080/${appName}"
@@ -80,18 +103,7 @@ log4j = {
    warn 'org.mortbay.log'
 }
 
-grails {
-   mail {
-      host = "smtp.gmail.com"
-      port = 465
-      username = "silvio.wangler@gmail.com"
-      password = "*One+minute*"
-      props = ["mail.smtp.auth": "true",
-         "mail.smtp.socketFactory.port": "465",
-         "mail.smtp.socketFactory.class": "javax.net.ssl.SSLSocketFactory",
-         "mail.smtp.socketFactory.fallback": "false"]
-   }
-}
+
 
 grails.mail.default.from = "saw@silviowangler.ch"
 

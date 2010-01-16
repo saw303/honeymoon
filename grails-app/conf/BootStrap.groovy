@@ -13,7 +13,7 @@ class BootStrap {
 		log.debug("Grails environment is: ${env}")
 		
 		def userList = [
-			new User(firstname:"Silvio", lastname:"Wangler", nickname:"saw", email:"silvio.wangler@gmail.com", password:"gravis"),
+			new User(firstname:"Silvio", lastname:"Wangler", nickname:"saw", email:"silvio@silviowangler.ch", password:"gravis"),
 			new User(firstname:"Matthias", lastname:"Stulz", nickname:"mats", email:"matthiasstulz@hotmail.com", password:"mats2010"), 
 			new User(firstname:"Sonja", lastname:"Müller", nickname:"sonja", email:"zuerimuusli@hotmail.com", password:"sonja2010")]
 

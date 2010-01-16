@@ -64,7 +64,7 @@ class ContactController
             log.info("Trauzeugen Mail erfolgreich versandt")
 
             // send mail to customer
-            log.info("Versuche Mail an den Kontakt zu schicken")
+            log.info("Versuche Mail an den Kontakt (${cmd.email}) zu schicken")
 
             messageBody = message(code: 'mail.contact.customer', args: [cmd.name])
             messageSubject = message(code: 'mail.contact.customer.subject', args: [])
@@ -72,8 +72,8 @@ class ContactController
 
             sendMail {               
                to ([recepient].toArray())
-               messageSubject messageSubject
-               messageBody messageBody
+               subject messageSubject
+               body messageBody
             }
 
             log.info("Kontakt Mail erfolgreich versandt")
@@ -82,7 +82,7 @@ class ContactController
          }
          catch (Exception e)
          {
-            log.error("Mail konnte nicht versandt werden. ${e.getMessage()}")
+            log.error("Mail konnte nicht versandt werden. ${e.getMessage()}", e)
             render(view: 'failed')
          }
       }

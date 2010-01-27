@@ -22,6 +22,7 @@ http://www.silviowangler.ch
       <li class="active"><a href="${g.createLink(controller: 'home')}" title="">Home</a></li>
       <li><a href="${g.createLink(controller: 'home', action:'birdalcouple')}" title="">Sonja &amp; Matthias</a></li>
       <li><a href="${g.createLink(controller: 'home', action: 'witness')}" title="">Trauzeugen</a></li>
+      <li><a href="#" title="">Flitterwochen</a></li>
       <li><a href="${g.createLink(controller: 'giftItem')}" title="">Wunschbuch</a></li>
       <li><a href="${g.createLink(controller: 'guestbookEntry')}" title="">G&auml;stebuch</a></li>
       <li><a href="${g.createLink(controller: 'shoppingCart')}" title="">Warenkorb</a></li>

@@ -67,7 +67,7 @@ http://www.silviowangler.ch
   <div id="extra" style="clear: both;">&nbsp;</div>
 </div>
 <div id="footer">
-  <p id="legal">Designed by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>. Version <g:meta name="app.version"/> powered by <a href="http://www.grails.org/">Grails</a> <g:meta name="app.grails.version"/></p>
+  <p id="legal">Designed by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>. Version <g:meta name="app.version"/> powered by <a href="http://www.grails.org/" target="_blank">Grails</a> <g:meta name="app.grails.version"/></p>
 </div>
 <script type="text/javascript" src="${createLinkTo(dir: 'js', file: 'prototype.js')}"></script>
 <script type="text/javascript" src="${createLinkTo(dir: 'js', file: 'scriptaculous.js?load=effects,builder')}"></script>

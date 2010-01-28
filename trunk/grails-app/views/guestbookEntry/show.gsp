@@ -16,28 +16,28 @@
          <tr class="prop">
             <td valign="top" class="name">Autor:</td>
 
-            <td valign="top" class="value">${guestbookEntry.author}</td>
+            <td valign="top" class="value">${guestbookEntry.author.encodeAsHTML()}</td>
 
          </tr>
 
          <tr class="prop">
             <td valign="top" class="name">Email:</td>
 
-            <td valign="top" class="value">${guestbookEntry.authorEmail}</td>
+            <td valign="top" class="value">${guestbookEntry.authorEmail.encodeAsHTML()}</td>
 
          </tr>
 
          <tr class="prop">
             <td valign="top" class="name">Titel:</td>
 
-            <td valign="top" class="value">${guestbookEntry.title}</td>
+            <td valign="top" class="value">${guestbookEntry.title.encodeAsHTML()}</td>
 
          </tr>
 
          <tr class="prop">
             <td valign="top" class="name">Nachricht:</td>
 
-            <td valign="top" class="value">${guestbookEntry.message}</td>
+            <td valign="top" class="value">${guestbookEntry.message.encodeAsHTML()}</td>
 
          </tr>
 

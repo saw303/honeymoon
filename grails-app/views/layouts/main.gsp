@@ -14,6 +14,7 @@ http://www.silviowangler.ch
   <meta name="keywords" content="Matthias Stulz Sonja Müller Hochzeit"/>
   <meta name="description" content="Hochzeit von Sonja Stulz-Müller und Matthias Stulz"/>
   <link href="${createLinkTo(dir: 'css', file: 'main.css')}" rel="stylesheet" type="text/css"/>
+  <link href="${createLinkTo(dir: 'css', file: 'lightbox.css')}" rel="stylesheet" type="text/css" media="screen"/>
 </head>
 <body>
 <div id="logo">&nbsp;</div>
@@ -68,5 +69,8 @@ http://www.silviowangler.ch
 <div id="footer">
   <p id="legal">Designed by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>. Version <g:meta name="app.version"/> powered by <a href="http://www.grails.org/">Grails</a> <g:meta name="app.grails.version"/></p>
 </div>
+<script type="text/javascript" src="${createLinkTo(dir: 'js', file: 'prototype.js')}"></script>
+<script type="text/javascript" src="${createLinkTo(dir: 'js', file: 'scriptaculous.js?load=effects,builder')}"></script>
+<script type="text/javascript" src="${createLinkTo(dir: 'js', file: 'lightbox.js')}"></script>
 </body>
 </html>

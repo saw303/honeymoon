@@ -158,8 +158,7 @@ class GiftItemController
                if (cart.save())
                {
                   log.debug('Warenkorb erfolgreich gespeichert')
-                  render {
-                     p item.description?.encodeAsHTML()
+                  render {                     
                      p "Ihr Beitrag von ${params.amount} Franken wurde in den Warenkorb gelegt."?.encodeAsHTML()
                   }
                }

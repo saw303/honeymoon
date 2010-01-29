@@ -44,7 +44,6 @@
    }
 
    function isThisNumeric(value) {
-      alert(value)
       return !isNaN(value) && value.length > 0;
    }
 

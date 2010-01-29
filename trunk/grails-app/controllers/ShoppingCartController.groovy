@@ -2,6 +2,7 @@ import ch.matssonja.CartItem
 import ch.matssonja.Customer
 import ch.matssonja.ShoppingCart
 import ch.matssonja.User
+import java.text.NumberFormat
 
 class ShoppingCartController
 {
@@ -173,7 +174,7 @@ class ShoppingCartController
                body messageBody
             }
 
-            sendMail {               
+            sendMail {
                to cart.customer.email
                subject messageSubject
                body messageBody
@@ -233,16 +234,21 @@ class ShoppingCartController
 
          if (item)
          {
-            log.info("Versuche CartItem Amount von ${item.amount} Franken auf ${params.value} Franken zu setzen.")
-            item.amount = params.value.toInteger()
-            item.save(flush: true)
-            log.info("CartItem erfolgreich gespeichert.")
+            log.info("Versuche CartItem Amount von ${item.amount} Franken auf '${params.value}' Franken zu setzen.")
+            if (params.value.isNumber())
+            {
+               item.amount = params.value.toInteger()
+               item.save(flush: true)
+               log.info("CartItem erfolgreich gespeichert.")
+            }
          }
          else
          {
             log.error("CartItem ${params.id} existiert nicht")
          }
-         render("Total: ${sumUp(cart)} Franken")
+
+         def format = NumberFormat.getCurrencyInstance(new Locale('de', 'CH'))         
+         render("Total: ${format.format(sumUp(cart))}")
       }
       else
       {

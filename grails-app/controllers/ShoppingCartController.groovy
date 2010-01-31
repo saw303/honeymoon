@@ -144,7 +144,7 @@ class ShoppingCartController {
 
         recepients << User.findByNickname('mats').email
         recepients << User.findByNickname('sonja').email
-        recepients << User.findByNickname('debora').email
+        recepients << User.findByNickname('elena').email
 
         sendMail {
           to recepients.toArray()

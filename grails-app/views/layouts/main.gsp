@@ -27,6 +27,9 @@ http://www.silviowangler.ch
     <li><a href="${g.createLink(controller: 'giftItem')}" title="Das Wunschbuch">Wunschbuch</a></li>
     <li><a href="${g.createLink(controller: 'guestbookEntry')}" title="Das G&auml;stebuch">G&auml;stebuch</a></li>
     <li><a href="${g.createLink(controller: 'shoppingCart')}" title="Der Warenkorb">Warenkorb</a></li>
+    <g:if test="${session.user}">
+      <li><a href="${g.createLink(controller: 'login', action: 'logout')}" title="Abmelden">Logout</a></li>
+    </g:if>
   </ul>
 </div>
 <div id="content">

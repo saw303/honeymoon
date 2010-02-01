@@ -1,3 +1,4 @@
+<%@ page import="ch.matssonja.GiftItemCategory" %>
 
 <html>
     <head>
@@ -6,7 +7,7 @@
     </head>
     <body>        
         <div class="body">
-            <h1>Etwas in Wunschbuch schreiben...</h1>
+            <h1>Etwas ins Wunschbuch schreiben...</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -22,7 +23,7 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for='name'>Titel / Überschrift:</label>
+                                    <label for='name'>Titel / &Uuml;berschrift:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:giftItem,field:'name','errors')}">
                                     <input type="text" id="name" name="name" value="${fieldValue(bean:giftItem,field:'name')}"/>
@@ -70,7 +71,7 @@
                                     <label for="category">Category:</label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean:giftItem,field:'category','errors')}">
-                                    <g:select optionKey="id" from="${Category.list()}" name="category.id" value="${giftItem?.category?.id}" ></g:select>
+                                    <g:select optionKey="id" from="${GiftItemCategory.list()}" name="category.id" value="${giftItem?.category?.id}" ></g:select>
                                 </td>
                             </tr> 
                         

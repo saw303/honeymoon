@@ -41,10 +41,10 @@ class BootStrap {
         new GuestbookEntry(author: "Silvio Wangler-${it}", authorEmail: 'silvio@silviowangler.ch', title: "hello you-${it}", message: 'wicked stuff').save();
 
         if (it % 2 == 0) {
-          new GiftItem(name: "Wunsch-${it}", description: 'Irgendein Wunsch', price: it * 3, active: true, image: 'images/pix/placeholder_480x360.gif', category: cat).save(flush: true);
+          new GiftItem(name: "Wunsch-${it}", description: 'Irgendein Wunsch', active: true, image: 'images/pix/placeholder_480x360.gif', category: cat).save(flush: true);
         }
         else {
-          new GiftItem(name: "Wunsch-${it}", description: 'Irgendein Wunsch', price: it * 5, active: true, image: 'images/pix/placeholder_480x360.gif', category: cat2).save(flush: true);
+          new GiftItem(name: "Wunsch-${it}", description: 'Irgendein Wunsch', active: true, image: 'images/pix/placeholder_480x360.gif', category: cat2).save(flush: true);
         }
       }
     }

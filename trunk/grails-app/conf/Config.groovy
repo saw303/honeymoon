@@ -49,14 +49,11 @@ environments {
 
     grails {
       mail {
-        host = "smtp.gmail.com"
-        port = 465
-        username = "silvio.wangler@gmail.com"
-        password = "xxxxx"
-        props = ["mail.smtp.auth": "true",
-                "mail.smtp.socketFactory.port": "465",
-                "mail.smtp.socketFactory.class": "javax.net.ssl.SSLSocketFactory",
-                "mail.smtp.socketFactory.fallback": "false"]
+        host = "xxxxx" // start to use java system property
+        port = 25
+        username = "xxx"
+        password = "xxx"
+        props = ["mail.smtp.auth": "true"]
       }
     }
   }
@@ -67,14 +64,24 @@ environments {
       mail {
         host = "localhost"
         port = 25
-        /*username = "silvio"
-     password = "gravis"
-     props = ["mail.smtp.auth": "true"]*/
       }
     }
   }
   test {
     grails.serverURL = "http://localhost:8080/${appName}"
+
+    grails {
+      mail {
+        host = "smtp.gmail.com"
+        port = 465
+        username = "xxx.yyy@gmail.com"
+        password = "xxxxx"
+        props = ["mail.smtp.auth": "true",
+                "mail.smtp.socketFactory.port": "465",
+                "mail.smtp.socketFactory.class": "javax.net.ssl.SSLSocketFactory",
+                "mail.smtp.socketFactory.fallback": "false"]
+      }
+    }
   }
 
 }
@@ -106,4 +113,3 @@ log4j = {
 
 
 grails.mail.default.from = "saw@silviowangler.ch"
-

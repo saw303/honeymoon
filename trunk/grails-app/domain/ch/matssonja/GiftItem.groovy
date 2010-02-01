@@ -1,25 +1,21 @@
 package ch.matssonja
 
-class GiftItem
-{	
+class GiftItem {
   static belongsTo = [category: GiftItemCategory]
-  
+
   String name
   String description
   String image
-  Integer price
   Boolean active = Boolean.TRUE;
 
   static constraints = {
-      name(nullable:false, blank:false, length:1..50)
-      description(nullable:false, blank:false, length: 1..255)
-      image(nullable:true, blank:true, length: 0..255)
-	  active(nullabe:false)
-      price(nullable:false, range:0..1000000)	  
+    name(nullable: false, blank: false, length: 1..50)
+    description(nullable: false, blank: false, length: 1..255)
+    image(nullable: true, blank: true, length: 0..255)
+    active(nullabe: false)
   }
 
-  String toString ()
-  {
-    return "Wunscheintrag: ${name}, ${price} Franken. Status: ${active ? 'aktiv' : 'inaktiv'}"
+  String toString() {
+    return "Wunscheintrag: ${name}, Status: ${active ? 'aktiv' : 'inaktiv'}"
   }
 }

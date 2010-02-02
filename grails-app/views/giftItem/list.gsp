@@ -11,11 +11,11 @@
     <span class="menuButton"><g:link class="create" action="create" controller="giftItemCategory">Neue Kategorie eintragen</g:link></span>
   </div>
 </g:if>
-<div id="abc"></div>
+<div id="notice"></div>
 <g:each in="${resultMap.keySet()}" var="cat">
   <div id="outer-wrapper-${cat.id}" class="post" style="overflow:auto">
     <h2 class="title">${cat.name.encodeAsHTML()}
-    <g:if test="session.user">
+    <g:if test="${session.user}">
       <g:link action="edit" controller="giftItemCategory" id="${cat.id}">&lt;Kategorie bearbeiten&gt;</g:link>
     </g:if>
     </h2>
@@ -26,7 +26,7 @@
             <div id="d1-${giftItem.id}" style="float:left;width:400px">
               <g:if test="${giftItem.image}"><a href="../${giftItem.image}" rel="lightbox" title="${giftItem.name}" style="text-decoration:none"><h4>${giftItem.name}</h4></a></g:if>
               <g:else><h4>${giftItem.name}</h4></g:else>
-              <g:if test="session.user">
+              <g:if test="${session.user}">
                 <g:link action="edit" controller="giftItem" id="${giftItem.id}">&lt;Wunsch bearbeiten&gt;</g:link>
               </g:if>
               <br/><span style="text-align:justify;">${giftItem.description}</span>
@@ -34,7 +34,7 @@
             </div>
             <div id="d2-${giftItem.id}" style="float:right;">
               <g:formRemote url="[controller:'giftItem', action:'addToChart']" name="form${giftItem.id}"
-                      update="xxx" before="toggleSpinner('spinner-${giftItem.id}', true);" after="toggleSpinner('spinner-${giftItem.id}', false);">
+                      update="notice" before="toggleSpinner('spinner-${giftItem.id}', true);" after="toggleSpinner('spinner-${giftItem.id}', false);">
                 <input type="hidden" name="id" value="${giftItem.id}"/>
                 <input type="text" name="amount" value="" size="5" maxlength="10"/>&nbsp;Franken
                 <input type="submit" value="In den Warenkorb legen"/>

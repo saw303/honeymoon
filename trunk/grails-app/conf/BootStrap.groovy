@@ -25,7 +25,8 @@ class BootStrap {
         assert it.save(): "Cannot save user ${it}".toString()
       }
       else {
-        println("Cannot save user: ${it}")
+        it.validate() ? println("user: ${it.nickname} already exists in database") : println("Cannot save user: ${it}")
+
       }
     }
 

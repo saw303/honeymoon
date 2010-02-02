@@ -152,7 +152,7 @@ class GiftItemController {
         else {
           log.warn("Der Betrag ist ungültig (Usereingabe: ${params.amount})")
           render {
-            p "Bitte geben Sie einen Betrag groesser Null an."
+            p 'Bitte geben Sie einen Betrag groesser Null und ohne Rappen an.'
           }
         }
       }

@@ -49,10 +49,10 @@ environments {
 
     grails {
       mail {
-        host = "xxxxx" // start to use java system property
-        port = 25
-        username = "xxx"
-        password = "xxx"
+        host = System.properties['mats.mail.host']
+        port = System.properties['mats.mail.port']
+        username = System.properties['mats.mail.username']
+        password = System.properties['mats.mail.password']
         props = ["mail.smtp.auth": "true"]
       }
     }
@@ -62,8 +62,11 @@ environments {
 
     grails {
       mail {
-        host = "localhost"
-        port = 25
+        host = System.properties['mats.mail.host']
+        port = System.properties['mats.mail.port']
+        username = System.properties['mats.mail.username']
+        password = System.properties['mats.mail.password']
+        props = ["mail.smtp.auth": "true"]
       }
     }
   }

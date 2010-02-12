@@ -14,9 +14,9 @@ class BootStrap {
 
     def userList = [
             new User(firstname: "Silvio", lastname: "Wangler", nickname: "saw", email: "silvio@silviowangler.ch", password: "gravis"),
-            new User(firstname: "Matthias", lastname: "Stulz", nickname: "mats", email: "matthiasstulz@hotmail.com", password: "mats2010"),
+            new User(firstname: "Matthias", lastname: "Stulz", nickname: "mats", email: "stulz.m@hotmail.com", password: "mats2010"),
             new User(firstname: "Sonja", lastname: "Müller", nickname: "sonja", email: "zuerimuusli@hotmail.com", password: "sonja2010"),
-            new User(firstname: "Debora", lastname: "Müller", nickname: "debora", email: "debora@heise.de", password: "debora2010"),
+            new User(firstname: "Debora", lastname: "Müller", nickname: "debora", email: "arobed_m@hotmail.com", password: "debora2010"),
             new User(firstname: "Elena", lastname: "Stulz", nickname: "elena", email: "elena.stulz@bluewin.ch", password: "elena2010")]
 
     userList.each {

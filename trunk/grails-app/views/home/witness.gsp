@@ -13,7 +13,7 @@
             <a href="${createLinkTo(dir: 'images/pix', file: 'demu_480x720.png')}" rel="lightbox" title="Die Trauzeugin - Debora M&uuml;ller">
                <img src="${createLinkTo(dir: 'images/pix', file: 'demu_140x210.png')}" alt="Die Trauzeugin" title="Die Trauzeugin" class="imageRight"/>
             </a>Sonja und Debora zanken, vers&ouml;hnen und lieben sich seit 23 Jahren da sie Schwestern sind.
-         Sie sind auf einem Bauernhof in Bonstetten aufgewachsen und was sie alles zusammen erlebt haben fragt ihr am besten die beiden, denn die Seite ist zu kurz um alles zu erz&auml;hlen.</p>
+         Sie sind auf einem Bauernhof in Bonstetten aufgewachsen. Falls ihr wissen m&ouml;chten was die beiden alles zusammen erlebt haben fragt ihr sie besten gleich selbst.</p>
          <p><a href="${g.createLink(controller: 'contact', action: 'witness')}">Kontaktiere Trauzeugin</a></p>
       </div>
    </div>

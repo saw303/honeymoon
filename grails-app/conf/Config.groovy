@@ -49,11 +49,14 @@ environments {
 
     grails {
       mail {
-        host = System.properties['mats.mail.host']
-        port = System.properties['mats.mail.port']
+        host = "smtp.gmail.com"
+        port = 465
         username = System.properties['mats.mail.username']
         password = System.properties['mats.mail.password']
-        props = ["mail.smtp.auth": "true"]
+        props = ["mail.smtp.auth": "true",
+                "mail.smtp.socketFactory.port": "465",
+                "mail.smtp.socketFactory.class": "javax.net.ssl.SSLSocketFactory",
+                "mail.smtp.socketFactory.fallback": "false"]
       }
     }
   }
@@ -62,11 +65,14 @@ environments {
 
     grails {
       mail {
-        host = System.properties['mats.mail.host']
-        port = System.properties['mats.mail.port']
+        host = "smtp.gmail.com"
+        port = 465
         username = System.properties['mats.mail.username']
         password = System.properties['mats.mail.password']
-        props = ["mail.smtp.auth": "true"]
+        props = ["mail.smtp.auth": "true",
+                "mail.smtp.socketFactory.port": "465",
+                "mail.smtp.socketFactory.class": "javax.net.ssl.SSLSocketFactory",
+                "mail.smtp.socketFactory.fallback": "false"]
       }
     }
   }
@@ -77,8 +83,8 @@ environments {
       mail {
         host = "smtp.gmail.com"
         port = 465
-        username = "xxx.yyy@gmail.com"
-        password = "xxxxx"
+        username = System.properties['mats.mail.username']
+        password = System.properties['mats.mail.password']
         props = ["mail.smtp.auth": "true",
                 "mail.smtp.socketFactory.port": "465",
                 "mail.smtp.socketFactory.class": "javax.net.ssl.SSLSocketFactory",
@@ -94,12 +100,12 @@ log4j = {
   // Example of changing the log pattern for the default console
   // appender:
   //
-  //appenders {
-  //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
-  //}
+  appenders {
+    console name: 'stdout', layout: pattern(conversionPattern: '%c{2} %m%n')
+  }
 
-
-  error 'org.codehaus.groovy.grails.web.servlet',  //  controllers'org.codehaus.groovy.grails.web.pages', //  GSP
+  error 'org.codehaus.groovy.grails.web.servlet',
+          'org.codehaus.groovy.grails.web.pages', //  GSP
           'org.codehaus.groovy.grails.web.sitemesh', //  layouts
           'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
           'org.codehaus.groovy.grails.web.mapping', // URL mapping
@@ -112,7 +118,5 @@ log4j = {
 
   warn 'org.mortbay.log'
 }
-
-
 
 grails.mail.default.from = "saw@silviowangler.ch"

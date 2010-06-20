@@ -37,7 +37,7 @@ class ContactController {
       else {
         log.debug('Versuche Mailtexte für die Trauzeugin zu lesen')
         messageSubject = message(code: 'mail.contact.witness.subject', args: [cmd.email])
-        recepient = User.findByNickname('saw').email
+        recepient = User.findByNickname('debora').email
       }
 
       messageBody = cmd.message

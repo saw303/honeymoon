@@ -1,4 +1,4 @@
-import ch.matssonja.GiftItemCategory
+import ch.silviowangler.honeymoon.GiftItemCategory
 
 class GiftItemCategoryController {
     

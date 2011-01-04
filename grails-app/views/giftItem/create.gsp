@@ -1,4 +1,4 @@
-<%@ page import="ch.matssonja.GiftItemCategory" %>
+<%@ page import="ch.silviowangler.honeymoon.GiftItemCategory" %>
 
 <html>
 <head>

@@ -1,4 +1,4 @@
-<%@ page import="ch.matssonja.Customer" %>
+<%@ page import="ch.silviowangler.honeymoon.Customer" %>
 
 
 <html>
@@ -66,7 +66,7 @@
             <label for="customer">Customer:</label>
           </td>
           <td valign="top" class="value ${hasErrors(bean: shoppingCart, field: 'customer', 'errors')}">
-            <g:select optionKey="id" from="${Customer.list()}" name="customer.id" value="${shoppingCart?.customer?.id}" noSelection="['null':'']"></g:select>
+            <g:select optionKey="id" from="${ch.silviowangler.honeymoon.Customer.list()}" name="customer.id" value="${shoppingCart?.customer?.id}" noSelection="['null':'']"></g:select>
           </td>
         </tr>
 

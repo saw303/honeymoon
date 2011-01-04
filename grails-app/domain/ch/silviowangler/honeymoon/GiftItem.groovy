@@ -1,4 +1,5 @@
-package ch.matssonja
+package ch.silviowangler.honeymoon
+
 
 class GiftItem {
   static belongsTo = [category: GiftItemCategory]

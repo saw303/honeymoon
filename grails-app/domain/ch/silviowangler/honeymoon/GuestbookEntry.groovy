@@ -1,4 +1,4 @@
-package ch.matssonja
+package ch.silviowangler.honeymoon
 class GuestbookEntry
 {
     String author

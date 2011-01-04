@@ -82,8 +82,8 @@
                      <td valign="top" class="name">
                         <label for="adressLine">Strasse:</label>
                      </td>
-                     <td valign="top" class="value ${hasErrors(bean: customer, field: 'adressLine', 'errors')}">
-                        <input type="text" maxlength="50" id="adressLine" name="adressLine" value="${fieldValue(bean: customer, field: 'adressLine')}"/>
+                     <td valign="top" class="value ${hasErrors(bean: customer, field: 'addressLinee', 'errors')}">
+                        <input type="text" maxlength="50" id="adressLine" name="adressLine" value="${fieldValue(bean: customer, field: 'addressLine')}"/>
                      </td>
                   </tr>
 

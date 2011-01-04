@@ -1,4 +1,4 @@
-<%@ page import="ch.matssonja.GuestbookEntry" %>
+<%@ page import="ch.silviowangler.honeymoon.GuestbookEntry" %>
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>

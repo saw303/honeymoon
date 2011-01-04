@@ -1,4 +1,4 @@
-import ch.matssonja.User
+import ch.silviowangler.honeymoon.User
 
 class ContactController {
   def static allowedMethods = [bestMan: 'GET', witness: 'GET', send: 'POST']
@@ -27,29 +27,29 @@ class ContactController {
     else {
       String messageSubject = ""
       String messageBody = ""
-      String recepient = ""
+      String recipient = ""
 
       if (params.redir == 'bestMan') {
-        log.debug('Versuche Mailtexte für den Trauzeugen zu lesen')
+        log.debug('Versuche Mailtexte fÃ¼r den Trauzeugen zu lesen')
         messageSubject = message(code: 'mail.contact.bestman.subject', args: [cmd.email])
-        recepient = User.findByNickname('saw').email
+        recipient = User.findByNickname(grailsApplication.config.honeymoon.bestman).email
       }
       else {
-        log.debug('Versuche Mailtexte für die Trauzeugin zu lesen')
+        log.debug('Versuche Mailtexte fÃ¼r die Trauzeugin zu lesen')
         messageSubject = message(code: 'mail.contact.witness.subject', args: [cmd.email])
-        recepient = User.findByNickname('debora').email
+        recipient = User.findByNickname(grailsApplication.config.honeymoon.bridesmaid).email
       }
 
       messageBody = cmd.message
 
-      log.debug("Emailadresse des Trauzeugen ist ${recepient}")
+      log.debug("Emailadresse des Trauzeugen ist ${recipient}")
       log.debug("Subject text ist: ${messageSubject}")
       log.debug("Mailbody ist: ${messageBody}")
 
       // send mail to witness/bestman
       try {
         sendMail {
-          to([recepient].toArray())
+          to([recipient].toArray())
           bcc 'silvio.wangler@gmail.com'
           subject messageSubject
           body messageBody
@@ -61,10 +61,10 @@ class ContactController {
 
         messageBody = message(code: 'mail.contact.customer', args: [cmd.name])
         messageSubject = message(code: 'mail.contact.customer.subject', args: [])
-        recepient = cmd.email
+        recipient = cmd.email
 
         sendMail {
-          to([recepient].toArray())
+          to([recipient].toArray())
           bcc 'silvio.wangler@gmail.com'
           subject messageSubject
           body messageBody

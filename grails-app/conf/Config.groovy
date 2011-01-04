@@ -120,3 +120,8 @@ log4j = {
 }
 
 grails.mail.default.from = "saw@silviowangler.ch"
+honeymoon.bride='sabine'
+honeymoon.groom='maese'
+honeymoon.bestman='abc'
+honeymoon.bridesmaid='efg'
+honeymoon.admin='saw'

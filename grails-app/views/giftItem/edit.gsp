@@ -1,4 +1,4 @@
-<%@ page import="ch.matssonja.GiftItemCategory" %>
+<%@ page import="ch.silviowangler.honeymoon.GiftItemCategory" %>
 
 <html>
 <head>
@@ -68,7 +68,7 @@
             <label for="category">Kategorie:</label>
           </td>
           <td valign="top" class="value ${hasErrors(bean: giftItem, field: 'category', 'errors')}">
-            <g:select optionKey="id" from="${GiftItemCategory.list()}" name="category.id" value="${giftItem?.category?.id}"></g:select>
+            <g:select optionKey="id" from="${ch.silviowangler.honeymoon.GiftItemCategory.list()}" name="category.id" value="${giftItem?.category?.id}"></g:select>
           </td>
         </tr>
 

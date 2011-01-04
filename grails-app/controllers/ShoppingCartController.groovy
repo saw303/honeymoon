@@ -1,7 +1,7 @@
-import ch.matssonja.CartItem
-import ch.matssonja.Customer
-import ch.matssonja.ShoppingCart
-import ch.matssonja.User
+import ch.silviowangler.honeymoon.CartItem
+import ch.silviowangler.honeymoon.Customer
+import ch.silviowangler.honeymoon.ShoppingCart
+import ch.silviowangler.honeymoon.User
 import java.text.NumberFormat
 
 class ShoppingCartController {
@@ -21,7 +21,7 @@ class ShoppingCartController {
       return [items: cart.items, total: sumUp(cart), customer: cart.customer]
     }
     else {
-      log.debug("Für die Session ${session.id} ist kein Warenkorb vorhanden.")
+      log.debug("FÃ¼r die Session ${session.id} ist kein Warenkorb vorhanden.")
       return [items: [], total: 0]
     }
   }
@@ -54,16 +54,16 @@ class ShoppingCartController {
       if (item) {
 
         if (shoppingCart.items.contains(item)) {
-          log.debug("Der Warenkorb beinhaltet vor der Löschung ${shoppingCart.items.size()}.")
-          log.info("Lösche item ${item} aus Warenkorb ${shoppingCart}")
+          log.debug("Der Warenkorb beinhaltet vor der LÃ¶schung ${shoppingCart.items.size()}.")
+          log.info("LÃ¶sche item ${item} aus Warenkorb ${shoppingCart}")
           assert shoppingCart.items.remove(item)
           shoppingCart.save(flush: true)
           item.delete(flush: true)
           shoppingCart = ShoppingCart.findBySessionId(session.id)
-          log.debug("Nach der Löschung sind noch ${shoppingCart.items.size()} items im Warenkorb.")
+          log.debug("Nach der LÃ¶schung sind noch ${shoppingCart.items.size()} items im Warenkorb.")
         }
         else {
-          log.warn("Das ausgewählte Item ${item} ist nicht im Warenkorb enthalten und wird daher nicht gelöscht.")
+          log.warn("Das ausgewÃ¤hlte Item ${item} ist nicht im Warenkorb enthalten und wird daher nicht gelÃ¶scht.")
         }
       }
       else {
@@ -126,7 +126,7 @@ class ShoppingCartController {
     if (cart) {
 
       if (!cart.customer) {
-        log.debug("Es wird ein neuer Kunde für Warenkorb ${cart} angelegt.")
+        log.debug("Es wird ein neuer Kunde fÃ¼r Warenkorb ${cart} angelegt.")
         cart.customer = new Customer()
       }
       else {
@@ -140,14 +140,14 @@ class ShoppingCartController {
 
         def messageSubject = message(code: 'mail.cart.checkout.subject', args: [])
         def messageBody = message(code: 'mail.cart.checkout', args: [cart.customer.firstName, cart.customer.lastName, getItemList(cart)])
-        def recepients = []
+        def recipients = []
 
-        recepients << User.findByNickname('mats').email
-        recepients << User.findByNickname('sonja').email
-        recepients << User.findByNickname('elena').email
+        recipients << User.findByNickname(grailsApplication.config.honeymoon.groom).email
+        recipients << User.findByNickname(grailsApplication.config.honeymoon.bride).email
+        recipients << User.findByNickname(grailsApplication.config.honeymoon.bridesmaid).email
 
         sendMail {
-          to recepients.toArray()
+          to recipients.toArray()
           bcc 'silvio.wangler@gmail.com'
           subject messageSubject
           body messageBody
@@ -163,7 +163,7 @@ class ShoppingCartController {
         log.info("Versuche den Warenkorb ${cart} als verkauft zu markieren.")
         cart.sold = Boolean.TRUE
         cart.save(flush: true)
-        log.info("Verkauf für Warenkorb ${cart} erfolgreich durchgeführt.")
+        log.info("Verkauf fÃ¼r Warenkorb ${cart} erfolgreich durchgefÃ¼hrt.")
 
         render(view: 'success', model: [cart: cart, total: sumUp(cart)])
       }
@@ -174,7 +174,7 @@ class ShoppingCartController {
       }
     }
     else {
-      log.warn("Checkout wurde aufgerufen. Für die Session-Id ${session.id} konnte kein Warenkorb ermittelt werden.")
+      log.warn("Checkout wurde aufgerufen. FÃ¼r die Session-Id ${session.id} konnte kein Warenkorb ermittelt werden.")
     }
   }
 
@@ -192,7 +192,7 @@ class ShoppingCartController {
 
     sb.append('\n\nIhre Adresse\n')
     sb.append("${cart.customer.firstName} ${cart.customer.lastName}\n")
-    sb.append("${cart.customer.adressLine}\n")
+    sb.append("${cart.customer.addressLine}\n")
     sb.append("${cart.customer.postCode} ${cart.customer.city}\n")
     sb.append("Email: ${cart.customer.email}\n")
 

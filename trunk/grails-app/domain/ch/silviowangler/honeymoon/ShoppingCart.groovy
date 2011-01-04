@@ -1,4 +1,4 @@
-package ch.matssonja
+package ch.silviowangler.honeymoon
 class ShoppingCart
 {
    String sessionId
@@ -17,6 +17,6 @@ class ShoppingCart
 
    public String toString()
    {
-      return "Warenkorb von Session ${sessionId}, ${items.size()} Eintr‰ge, ${sold ? 'Verkauft' : 'noch in Bearbeitung'}, Kunde: ${customer != null ? customer : 'unbekannt'}";
+      return "Warenkorb von Session ${sessionId}, ${items.size()} Eintr√ºge, ${sold ? 'Verkauft' : 'noch in Bearbeitung'}, Kunde: ${customer != null ? customer : 'unbekannt'}";
    }
 }

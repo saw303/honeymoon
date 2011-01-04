@@ -1,4 +1,4 @@
-import ch.matssonja.User
+import ch.silviowangler.honeymoon.User
 
 class LoginController {
 

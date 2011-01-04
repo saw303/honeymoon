@@ -1,4 +1,4 @@
-import ch.matssonja.GuestbookEntry
+import ch.silviowangler.honeymoon.GuestbookEntry
 
 class GuestbookEntryController
 {
@@ -57,7 +57,7 @@ class GuestbookEntryController
       }
       else
       {
-         flash.message = "Es konnte keine Gästebucheintrag mit der ID ${params.id} gefunden werden."
+         flash.message = "Es konnte keine GÃ¤stebucheintrag mit der ID ${params.id} gefunden werden."
          redirect(action: list)
       }
    }

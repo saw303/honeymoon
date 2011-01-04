@@ -1,7 +1,7 @@
-import ch.matssonja.CartItem
-import ch.matssonja.GiftItem
-import ch.matssonja.GiftItemCategory
-import ch.matssonja.ShoppingCart
+import ch.silviowangler.honeymoon.CartItem
+import ch.silviowangler.honeymoon.GiftItem
+import ch.silviowangler.honeymoon.GiftItemCategory
+import ch.silviowangler.honeymoon.ShoppingCart
 import javax.servlet.ServletContext
 
 class GiftItemController {
@@ -109,7 +109,7 @@ class GiftItemController {
   def addToChart = {
 
     if (!params.id && params.id.isInteger()) {
-      log.error('beim hinzufügen in den warenkorb war keine Id vorhanden oder es war keine zahl :(')
+      log.error('beim hinzufÃ¼gen in den warenkorb war keine Id vorhanden oder es war keine zahl :(')
       render {
         p "Leider konnte ihr Beitrag nicht gespeichert werden."
       }
@@ -127,7 +127,7 @@ class GiftItemController {
           log.info("Warenkorb wurde aus der Datenbank geholt (${cart})")
         }
         else {
-          log.info("Warenkorb wird neu für session id ${session.id} angelegt")
+          log.info("Warenkorb wird neu fÃ¼r session id ${session.id} angelegt")
           cart = new ShoppingCart(sessionId: session.id, items: [])
         }
 
@@ -150,7 +150,7 @@ class GiftItemController {
           }
         }
         else {
-          log.warn("Der Betrag ist ungültig (Usereingabe: ${params.amount})")
+          log.warn("Der Betrag ist ungÃ¼ltig (Usereingabe: ${params.amount})")
           render {
             p 'Bitte geben Sie einen Betrag groesser Null und ohne Rappen an.'
           }

@@ -1,23 +1,27 @@
+import ch.silviowangler.honeymoon.GiftItem
+import ch.silviowangler.honeymoon.GiftItemCategory
+import ch.silviowangler.honeymoon.GuestbookEntry
+import ch.silviowangler.honeymoon.User
 import grails.util.GrailsUtil
-import ch.matssonja.GiftItemCategory
-import ch.matssonja.User
-import ch.matssonja.GiftItem
-import ch.matssonja.GuestbookEntry
+import ch.silviowangler.honeymoon.User
+import ch.silviowangler.honeymoon.GiftItemCategory
 
 class BootStrap {
 
   String env = GrailsUtil.getEnvironment();
+
+  def grailsApplication
 
   def init = {servletContext ->
 
     log.debug("Grails environment is: ${env}")
 
     def userList = [
-            new User(firstname: "Silvio", lastname: "Wangler", nickname: "saw", email: "silvio@silviowangler.ch", password: "gravis"),
-            new User(firstname: "Matthias", lastname: "Stulz", nickname: "mats", email: "stulz.m@hotmail.com", password: "mats2010"),
-            new User(firstname: "Sonja", lastname: "Müller", nickname: "sonja", email: "zuerimuusli@hotmail.com", password: "sonja2010"),
-            new User(firstname: "Debora", lastname: "Müller", nickname: "debora", email: "arobed_m@hotmail.com", password: "debora2010"),
-            new User(firstname: "Elena", lastname: "Stulz", nickname: "elena", email: "elena.stulz@bluewin.ch", password: "elena2010")]
+            new User(firstname: "Silvio", lastname: "Wangler", nickname: grailsApplication.config.honeymoon.admin, email: "silvio@silviowangler.ch", password: "gravis"),
+            new User(firstname: "Marcel", lastname: "Weber", nickname: grailsApplication.config.honeymoon.groom, email: "maese.weber@gmail.com", password: "maese2011"),
+            new User(firstname: "Sabine", lastname: "Berger", nickname: grailsApplication.config.honeymoon.bride, email: "a@b.ch", password: "sabine2011"),
+            new User(firstname: "A", lastname: "B", nickname: grailsApplication.config.honeymoon.bestman, email: "a@b.ch", password: "abcdef"),
+            new User(firstname: "C", lastname: "D", nickname: grailsApplication.config.honeymoon.bridesmaid, email: "c@d.ch", password: "abcdef")]
 
     userList.each {
       if (!User.findByNickname(it.nickname) && it.validate()) {
@@ -25,8 +29,13 @@ class BootStrap {
         assert it.save(): "Cannot save user ${it}".toString()
       }
       else {
-        it.validate() ? println("user: ${it.nickname} already exists in database") : println("Cannot save user: ${it}")
-
+        if (it.validate()) {
+          println("user: ${it.nickname} already exists in database")
+        } else {
+          it.errors.allErrors.each {
+            println it
+          }
+        }
       }
     }
 
@@ -52,4 +61,4 @@ class BootStrap {
   }
   def destroy = {
   }
-} 
+}

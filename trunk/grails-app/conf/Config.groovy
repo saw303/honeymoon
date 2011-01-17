@@ -45,7 +45,7 @@ grails.spring.bean.packages = []
 // set per-environment serverURL stem for creating absolute links
 environments {
   production {
-    grails.serverURL = "http://www.sonja-matthias.ch/${appName}"
+    grails.serverURL = "http://www.sabineundmarcel.ch/${appName}"
 
     grails {
       mail {
@@ -119,9 +119,13 @@ log4j = {
   warn 'org.mortbay.log'
 }
 
-grails.mail.default.from = "saw@silviowangler.ch"
-honeymoon.bride='sabine'
-honeymoon.groom='maese'
-honeymoon.bestman='abc'
-honeymoon.bridesmaid='efg'
-honeymoon.admin='saw'
+grails.mail.default.from = 'saw@silviowangler.ch'
+honeymoon.bride = 'sabine'
+honeymoon.groom = 'maese'
+honeymoon.bestman = 'abc'
+honeymoon.bridesmaid = 'efg'
+honeymoon.admin = 'saw'
+def appHome = "${System.properties['user.home']}/.honeymoon"
+
+honeymoon.app.dir = appHome
+honeymoon.upload.dir = "$appHome/files"

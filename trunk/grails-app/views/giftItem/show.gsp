@@ -43,7 +43,7 @@
       <tr class="prop">
         <td valign="top" class="name">Bild:</td>
 
-        <td valign="top" class="value"><img src="../../${giftItem.image}" alt="${giftItem.name}"/></td>
+        <td valign="top" class="value"><img src="${g.createLink(action: 'image', id: giftItem.id)}" alt="${giftItem.name}"/></td>
 
       </tr>
 

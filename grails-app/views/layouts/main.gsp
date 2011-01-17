@@ -11,8 +11,8 @@ http://www.silviowangler.ch
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
   <title>Hochzeit von Sonja und Matthias</title>
-  <meta name="keywords" content="Matthias Stulz Sonja Müller Hochzeit"/>
-  <meta name="description" content="Hochzeit von Sonja Stulz-Müller und Matthias Stulz"/>
+  <meta name="keywords" content="Sabine Berger Marcel Weber Hochzeit"/>
+  <meta name="description" content="Hochzeit von Sabine Berger und Marcel Weber"/>
   <link href="${createLinkTo(dir: 'css', file: 'main.css')}" rel="stylesheet" type="text/css"/>
   <link href="${createLinkTo(dir: 'css', file: 'lightbox.css')}" rel="stylesheet" type="text/css" media="screen"/>
 </head>
@@ -21,9 +21,9 @@ http://www.silviowangler.ch
 <div id="menu">
   <ul>
     <li class="active"><a href="${g.createLink(controller: 'home')}" title="Home">Home</a></li>
-    <li><a href="${g.createLink(controller: 'home', action: 'birdalcouple')}" title="Sonja und Matthias">Sonja &amp; Matthias</a></li>
+    <li><a href="${g.createLink(controller: 'home', action: 'birdalcouple')}" title="Sabine und Marcel">Brautpaar</a></li>
     <li><a href="${g.createLink(controller: 'home', action: 'witness')}" title="Die Trauzeugen">Trauzeugen</a></li>
-    <li><a href="${g.createLink(controller: 'home', action: 'honeymoon')}" title="Die Flitterwochen">Flitterwochen</a></li>
+    <li><a href="${g.createLink(controller: 'home', action: 'honeymoon')}" title="Die Hochzeit">Hochzeit</a></li>
     <li><a href="${g.createLink(controller: 'giftItem')}" title="Das Wunschbuch">Wunschbuch</a></li>
     <li><a href="${g.createLink(controller: 'guestbookEntry')}" title="Das G&auml;stebuch">G&auml;stebuch</a></li>
     <li><a href="${g.createLink(controller: 'shoppingCart')}" title="Der Warenkorb">Warenkorb</a></li>

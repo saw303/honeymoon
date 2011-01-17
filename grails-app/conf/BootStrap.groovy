@@ -3,8 +3,6 @@ import ch.silviowangler.honeymoon.GiftItemCategory
 import ch.silviowangler.honeymoon.GuestbookEntry
 import ch.silviowangler.honeymoon.User
 import grails.util.GrailsUtil
-import ch.silviowangler.honeymoon.User
-import ch.silviowangler.honeymoon.GiftItemCategory
 
 class BootStrap {
 
@@ -58,6 +56,24 @@ class BootStrap {
         }
       }
     }
+
+    def appDir = new File(grailsApplication.config.honeymoon.app.dir)
+
+    if (!appDir.exists()) {
+      println "Creating directory to app dir on ${appDir}"
+      assert appDir.mkdir()
+    }
+    assert appDir.canWrite()
+    assert appDir.canRead()
+
+    def uploadDir = new File(grailsApplication.config.honeymoon.upload.dir)
+
+    if (!uploadDir.exists()) {
+      println "Creating directory to upload files on ${uploadDir}"
+      assert uploadDir.mkdir()
+    }
+    assert uploadDir.canWrite()
+    assert uploadDir.canRead()
   }
   def destroy = {
   }

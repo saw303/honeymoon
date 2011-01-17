@@ -24,7 +24,7 @@
         <g:each in="${resultMap.get(cat)}" var="giftItem">
           <div style="width:700px;float:left;margin-bottom:10px;">
             <div id="d1-${giftItem.id}" style="float:left;width:400px">
-              <g:if test="${giftItem.image}"><a href="../${giftItem.image}" rel="lightbox" title="${giftItem.name}" style="text-decoration:none"><h4>${giftItem.name}</h4></a></g:if>
+              <g:if test="${giftItem.image}"><a href="${g.createLink(action: 'image', id: giftItem.id)}" rel="lightbox" title="${giftItem.name}" style="text-decoration:none"><h4>${giftItem.name}</h4></a></g:if>
               <g:else><h4>${giftItem.name}</h4></g:else>
               <g:if test="${session.user}">
                 <g:link action="edit" controller="giftItem" id="${giftItem.id}">&lt;Wunsch bearbeiten&gt;</g:link>

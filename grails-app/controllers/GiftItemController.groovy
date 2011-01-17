@@ -2,11 +2,23 @@ import ch.silviowangler.honeymoon.CartItem
 import ch.silviowangler.honeymoon.GiftItem
 import ch.silviowangler.honeymoon.GiftItemCategory
 import ch.silviowangler.honeymoon.ShoppingCart
-import javax.servlet.ServletContext
+import javax.annotation.Resource
+import org.springframework.beans.factory.InitializingBean
+import org.springframework.http.HttpStatus
+import org.springframework.util.Assert
 
-class GiftItemController {
+class GiftItemController implements InitializingBean {
+
+  @Resource(name = "imageMimeTypes")
+  Map<String, String> mimeTypes
 
   def static allowedMethods = [index: 'GET', list: 'GET', show: 'GET', delete: 'POST', save: 'POST', update: 'POST', addToChart: 'POST']
+
+  void afterPropertiesSet() {
+    Assert.notNull(mimeTypes)
+  }
+
+
 
   def index = {
     redirect(action: list, params: params)
@@ -31,6 +43,12 @@ class GiftItemController {
   def delete = {
     def giftItem = GiftItem.get(params.id)
     if (giftItem) {
+      def file = new File(giftItem?.image)
+
+      if (file.exists()) {
+        file.delete()
+      }
+
       giftItem.delete()
       flash.message = "GiftItem ${params.id} deleted."
       redirect(action: list)
@@ -82,20 +100,17 @@ class GiftItemController {
 
     def file = request.getFile('image');
 
-    ServletContext ctx = request.getSession().getServletContext()
-    def path = ctx.getRealPath('/images/items')
+    def absolutePath = "${grailsApplication.config.honeymoon.upload.dir}"
 
-    def absolutePath = "${path}${File.separator}${file.originalFilename}"
-
-    def ioFile = new File(absolutePath)
+    def ioFile = new File("$absolutePath/${file.originalFilename}")
 
     if (ioFile.exists()) {
-      println "deleting file ${ioFile.absolutePath}"
+      log.warn("deleting file ${ioFile.absolutePath}")
       ioFile.delete()
     }
     file.transferTo(ioFile)
 
-    giftItem.image = "images/items/${file.originalFilename}"
+    giftItem.image = ioFile.absolutePath
 
     if (!giftItem.hasErrors() && giftItem.save()) {
       flash.message = "Wunsch (Interne ID: ${giftItem.id}) wurde ins Wunschbuch eingetragen."
@@ -162,6 +177,25 @@ class GiftItemController {
         render(view: 'show')
       }
 
+    }
+  }
+
+  def image = {
+    def file = new File(GiftItem.load(params.id)?.image)
+
+    if (file.exists()) {
+      assert file.canRead()
+      def name = file.absolutePath
+      final fileExtension = name.substring(name.lastIndexOf('.') + 1, name.length())
+      response.contentLength = file.length()
+      response.contentType = mimeTypes.get(fileExtension)
+      response.outputStream << file.getBytes()
+      response.outputStream.flush()
+      response.outputStream.close()
+    }
+    else {
+      log.warn("Unable to find file ${file.absolutePath}")
+      render(status: HttpStatus.NOT_FOUND, text: 'Not found')
     }
   }
 }

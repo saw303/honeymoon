@@ -1,18 +1,15 @@
 <html>
 <head>
-   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-   <meta name="layout" content="main"/>
-   <title>Homepage &uuml;ber die Hochzeit von Daniela Wangler und Stefan Dolder</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="layout" content="main"/>
 </head>
 <body>
 <div id="welcome" class="post">
-   <h2 class="title">Herzlich Willkommen</h2>
-   <div class="story">
-      <p>Herzlich Willkommen auf der Seite von Sonja und Matthias. Hier findet ihr s&auml;mtliche Informationen &uuml;ber das Brautpaar, die Trauzeugen, Geschenke und den Honeymoon (Flitterwochen). Falls Fragen aufkommen oder es Unklarheiten geben sollte, wendet euch bitte an die Trauzeugen. Debora M&uuml;ller ist die Trauzeugin von Sonja und Silvio Wangler der Trauzeuge von Matthias.
-      Die Hochzeit findet am 24. Juli 2010 um 13:00 Uhr in der Kirche Maur statt. Anschliessend an die Trauung begeben wir uns alle zur Schiffsstation Maur. Von dort nimmt uns das Schiff &lsquo;Stadt User&lsquo; zu einer Ap&eacute;rofahrt mit. Die Hochzeitsgesellschaft verbringt den Abend dann mit dem Brautpaar im Schloss Greifensee.
-      Nun w&uuml;nschen wir euch viel Spass und Erfolg beim Herumst&ouml;bern auf unserer Hochzeitswebsite.
-      </p>
-   </div>
+  <h2 class="title">Herzlich Willkommen</h2>
+  <div class="story">
+    <p>Sch&ouml;n seit ihr auf unserer Homepage! Wir freuen uns unheimlich auf einen unvergesslichen Tag mit euch Freunden.
+    </p>
+  </div>
 </div>
 </body>
 </html>

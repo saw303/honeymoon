@@ -18,8 +18,8 @@ class BootStrap {
             new User(firstname: "Silvio", lastname: "Wangler", nickname: grailsApplication.config.honeymoon.admin, email: "silvio@silviowangler.ch", password: "gravis"),
             new User(firstname: "Marcel", lastname: "Weber", nickname: grailsApplication.config.honeymoon.groom, email: "maese.weber@gmail.com", password: "maese2011"),
             new User(firstname: "Sabine", lastname: "Berger", nickname: grailsApplication.config.honeymoon.bride, email: "a@b.ch", password: "sabine2011"),
-            new User(firstname: "A", lastname: "B", nickname: grailsApplication.config.honeymoon.bestman, email: "a@b.ch", password: "abcdef"),
-            new User(firstname: "C", lastname: "D", nickname: grailsApplication.config.honeymoon.bridesmaid, email: "c@d.ch", password: "abcdef")]
+            new User(firstname: "Michael", lastname: "Lerch", nickname: grailsApplication.config.honeymoon.bestman, email: "a@b.ch", password: "michael2011"),
+            new User(firstname: "Martina", lastname: "Berger", nickname: grailsApplication.config.honeymoon.bridesmaid, email: "c@d.ch", password: "martina2011")]
 
     userList.each {
       if (!User.findByNickname(it.nickname) && it.validate()) {
@@ -75,6 +75,8 @@ class BootStrap {
     assert uploadDir.canWrite()
     assert uploadDir.canRead()
   }
+
+
   def destroy = {
   }
 }

@@ -12,6 +12,18 @@
   </div>
 </g:if>
 <div id="notice"></div>
+<div class="post">
+  <h2 class="title">Unser Wunschbuch</h2>
+  <div class="story">
+    <p>Wir pflegen seit längerer Zeit einen gemeinsamen Haushalt und sind fast vollständig eingerichtet. Mit einem Eigenheim möchten wir uns in näherer Zukunft einen Traum verwirklichen.</p>
+    <p>Wir bereisen oft und viel die Welt. Wir besuchen gerne Freunde in New Zealand oder geniessen schönste Familienabende in Florida. Auch würden wir gerne wieder zurück nach Fremantle gehen.</p>
+    <p>Liebe Freunde ihr seht, an Ideen fehlt es uns nicht. Höchstens die Zeit wird knapp. Untenstehen dürft ihr einen Beitrag an unsere Ideen leisten. Wir werden alle realisieren, vielleicht nur nicht alle miteinander. Wir werden es euch aber auf jeden Fall wissen lassen.</p>
+    <p>Möchtet ihr uns lieber etwas persönliches schenken, wendet euch bitte an unsere <g:link controller="home" action="witness">Trauzeugen</g:link>.</p>
+    <p>Wir freuen uns über alles aber vergesst nie, dass ihr auch ohne Geschenke herzlich Willkommen seit.</p>
+  </div>
+
+</div>
+
 <g:each in="${resultMap.keySet()}" var="cat">
   <div id="outer-wrapper-${cat.id}" class="post" style="overflow:auto">
     <h2 class="title">${cat.name.encodeAsHTML()}
@@ -24,7 +36,7 @@
         <g:each in="${resultMap.get(cat)}" var="giftItem">
           <div style="width:700px;float:left;margin-bottom:10px;">
             <div id="d1-${giftItem.id}" style="float:left;width:400px">
-              <g:if test="${giftItem.image}"><a href="${g.createLink(action: 'image', id: giftItem.id)}" rel="lightbox" title="${giftItem.name}" style="text-decoration:none"><h4>${giftItem.name}</h4></a></g:if>
+              <g:if test="${giftItem.image?.trim().length() > 0}"><a href="${g.createLink(action: 'image', id: giftItem.id)}" rel="lightbox" title="${giftItem.name}" style="text-decoration:none"><h4>${giftItem.name}</h4></a></g:if>
               <g:else><h4>${giftItem.name}</h4></g:else>
               <g:if test="${session.user}">
                 <g:link action="edit" controller="giftItem" id="${giftItem.id}">&lt;Wunsch bearbeiten&gt;</g:link>

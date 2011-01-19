@@ -10,11 +10,12 @@ http://www.silviowangler.ch
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-  <title>Hochzeit von Sonja und Matthias</title>
+  <title>Hochzeit von Sabine Berger und Marcel Weber</title>
   <meta name="keywords" content="Sabine Berger Marcel Weber Hochzeit"/>
   <meta name="description" content="Hochzeit von Sabine Berger und Marcel Weber"/>
   <link href="${createLinkTo(dir: 'css', file: 'main.css')}" rel="stylesheet" type="text/css"/>
   <link href="${createLinkTo(dir: 'css', file: 'lightbox.css')}" rel="stylesheet" type="text/css" media="screen"/>
+  <link rel="shortcut icon" href="${createLinkTo(dir: 'images', file: 'favicon.ico')}">
 </head>
 <body>
 <div id="logo">&nbsp;</div>

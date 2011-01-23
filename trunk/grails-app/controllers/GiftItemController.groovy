@@ -100,17 +100,20 @@ class GiftItemController implements InitializingBean {
 
     def file = request.getFile('image');
 
-    def absolutePath = "${grailsApplication.config.honeymoon.upload.dir}"
+    if (!file.isEmpty()) {
 
-    def ioFile = new File("$absolutePath/${file.originalFilename}")
+      def absolutePath = "${grailsApplication.config.honeymoon.upload.dir}"
 
-    if (ioFile.exists()) {
-      log.warn("deleting file ${ioFile.absolutePath}")
-      ioFile.delete()
+      def ioFile = new File("$absolutePath/${file.originalFilename}")
+
+      if (ioFile.exists()) {
+        log.warn("deleting file ${ioFile.absolutePath}")
+        ioFile.delete()
+      }
+      file.transferTo(ioFile)
+
+      giftItem.image = ioFile.absolutePath
     }
-    file.transferTo(ioFile)
-
-    giftItem.image = ioFile.absolutePath
 
     if (!giftItem.hasErrors() && giftItem.save()) {
       flash.message = "Wunsch (Interne ID: ${giftItem.id}) wurde ins Wunschbuch eingetragen."

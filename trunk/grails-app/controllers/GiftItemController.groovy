@@ -139,7 +139,7 @@ class GiftItemController implements InitializingBean {
       if (item) {
         log.debug("Item gefunden --> ${item}")
         log.info("Suche Warenkorb mit Session ID ${session.id}")
-        ShoppingCart cart = ShoppingCart.findBySessionId(session.id)
+        ShoppingCart cart = ShoppingCart.findBySessionIdAndSold(session.id, Boolean.FALSE)
 
         if (cart) {
           log.info("Warenkorb wurde aus der Datenbank geholt (${cart})")

@@ -16,7 +16,7 @@
   <h2 class="title">Unser Wunschbuch</h2>
   <div class="story">
     <p>Wir pflegen seit l&auml;ngerer Zeit einen gemeinsamen Haushalt und sind fast vollst&auml;ndig eingerichtet. Mit einem Eigenheim m&ouml;chten wir uns in n&auml;herer Zukunft einen Traum verwirklichen.</p>
-    <p>Wir bereisen oft und viel die Welt. Wir besuchen gerne Freunde in New Zealand oder geniessen sch&ouml;nste Familienabende in Florida. Auch w&uuml;rden wir gerne wieder zur&uuml;ck nach Fremantle gehen.</p>
+    <p>Wir bereisen oft und viel die Welt. Wir besuchen gerne Freunde in New Zealand oder geniessen sch&ouml;ne Familienabende in Florida. Auch w&uuml;rden wir gerne wieder zur&uuml;ck nach Fremantle gehen.</p>
     <p>Liebe Freunde ihr seht, an Ideen fehlt es uns nicht. H&ouml;chstens die Zeit wird knapp. Untenstehen d&uuml;rft ihr einen Beitrag an unsere Ideen leisten. Wir werden alle realisieren, vielleicht nur nicht alle miteinander. Wir werden es euch aber auf jeden Fall wissen lassen.</p>
     <p>M&ouml;chtet ihr uns lieber etwas pers&ouml;nliches schenken, wendet euch bitte an unsere <g:link controller="contact" action="witness">Trauzeugen</g:link>.</p>
     <p>Wir freuen uns &uuml;ber alles aber vergesst nie, dass ihr auch ohne Geschenke herzlich Willkommen seit.</p>
@@ -41,7 +41,7 @@
               <g:if test="${session.user}">
                 <g:link action="edit" controller="giftItem" id="${giftItem.id}">&lt;Wunsch bearbeiten&gt;</g:link>
               </g:if>
-              <br/><span style="text-align:justify;">${giftItem.description}</span>
+              <br/><span style="text-align:justify;">${giftItem.description.encodeAsHTML().replace('\r\n', '<br/>')}</span>
 
             </div>
             <div id="d2-${giftItem.id}" style="float:right;">

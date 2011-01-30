@@ -36,7 +36,7 @@
       <tr class="prop">
         <td valign="top" class="name">Bezeichnung:</td>
 
-        <td valign="top" class="value">${giftItem.description}</td>
+        <td valign="top" class="value">${giftItem.description.encodeAsHTML().replace('\r\n', '<br/>')}</td>
 
       </tr>
 

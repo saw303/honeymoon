@@ -1,8 +1,8 @@
 dataSource {
   pooled = false
-  username = "mats"
-  password = "UYf9vZ7J4afg6D2EhjMlrg=="
-  url = "jdbc:mysql://127.0.0.1/mats"
+  username = "maese"
+  password = "maese"
+  url = "jdbc:mysql://127.0.0.1/maese"
   driverClassName = "com.mysql.jdbc.Driver"
 }
 hibernate {
@@ -25,13 +25,13 @@ environments {
     dataSource {
       dbCreate = "create-drop"
       dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
-      passwordEncryptionCodec = "des"
     }
   }
   production {
     dataSource {
       dbCreate = "update"
       jndiName = "jdbc/maese"
+      dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
     }
   }
 }

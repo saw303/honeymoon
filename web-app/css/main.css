@@ -211,7 +211,7 @@ img {
 }
 
 #menu a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 #menu .active a {

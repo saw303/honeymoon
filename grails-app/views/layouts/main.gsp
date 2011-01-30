@@ -21,16 +21,18 @@ http://www.silviowangler.ch
 <div id="logo">&nbsp;</div>
 <div id="menu">
   <ul>
-    <li class="active"><a href="${g.createLink(controller: 'home')}" title="Home">Home</a></li>
-    <li><a href="${g.createLink(controller: 'home', action: 'birdalcouple')}" title="Sabine und Marcel">Brautpaar</a></li>
-    <li><a href="${g.createLink(controller: 'home', action: 'witness')}" title="Die Trauzeugen">Trauzeugen</a></li>
-    <li><a href="${g.createLink(controller: 'home', action: 'honeymoon')}" title="Die Hochzeit">Hochzeit</a></li>
-    <li><a href="${g.createLink(controller: 'giftItem')}" title="Das Wunschbuch">Wunschbuch</a></li>
-    <li><a href="${g.createLink(controller: 'guestbookEntry')}" title="Das G&auml;stebuch">G&auml;stebuch</a></li>
-    <li><a href="${g.createLink(controller: 'shoppingCart')}" title="Der Warenkorb">Warenkorb</a></li>
+    <li class="${params['controller'] == 'home' && params['action'] == 'list' ? 'active' : ''}"><a href="${g.createLink(controller: 'home')}" title="Home">Home</a></li>
+    <li class="${params['controller'] == 'home' && params['action'] == 'birdalcouple' ? 'active' : ''}"><a href="${g.createLink(controller: 'home', action: 'birdalcouple')}" title="Sabine und Marcel">Brautpaar</a></li>
+    <li class="${params['controller'] == 'home' && params['action'] == 'witness' ? 'active' : ''}"><a href="${g.createLink(controller: 'home', action: 'witness')}" title="Die Trauzeugen">Trauzeugen</a></li>
+    <li class="${params['controller'] == 'home' && params['action'] == 'honeymoon' ? 'active' : ''}"><a href="${g.createLink(controller: 'home', action: 'honeymoon')}" title="Die Hochzeit">Hochzeit</a></li>
+    <li class="${params['controller'] == 'giftItem'? 'active' : ''}"><a href="${g.createLink(controller: 'giftItem')}" title="Das Wunschbuch">Wunschbuch</a></li>
+    <li class="${params['controller'] == 'guestbookEntry'? 'active' : ''}"><a href="${g.createLink(controller: 'guestbookEntry')}" title="Das G&auml;stebuch">G&auml;stebuch</a></li>
+    <li class="${params['controller'] == 'shoppingCart'? 'active' : ''}"><a href="${g.createLink(controller: 'shoppingCart')}" title="Der Warenkorb">Warenkorb</a></li>
     <g:if test="${session.user}">
       <li><a href="${g.createLink(controller: 'login', action: 'logout')}" title="Abmelden">Logout</a></li>
     </g:if>
+    <li><a href="#">&nbsp;</a></li>
+    <li><a href="#">&nbsp;</a></li>
   </ul>
 </div>
 <div id="content">

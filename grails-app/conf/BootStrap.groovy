@@ -18,13 +18,8 @@ class BootStrap {
             new User(firstname: "Silvio", lastname: "Wangler", nickname: grailsApplication.config.honeymoon.admin, email: "silvio.wangler@gmail.com", password: "gravis"),
             new User(firstname: "Marcel", lastname: "Weber", nickname: grailsApplication.config.honeymoon.groom, email: "weber.berger@gmail.com", password: "maese2011"),
             new User(firstname: "Sabine", lastname: "Berger", nickname: grailsApplication.config.honeymoon.bride, email: "weber.berger@gmail.com", password: "sabine2011"),
-            new User(firstname: "Michael", lastname: "Lerch", nickname: grailsApplication.config.honeymoon.bestman, email: "maese.weber@gmail.com", password: "michael2011"),
-            new User(firstname: "Martina", lastname: "Berger", nickname: grailsApplication.config.honeymoon.bridesmaid, email: "maese.weber@gmail.com", password: "martina2011")]
-
-    /*
-    mlerch@swissonline.ch
-    martina.berger@gmx.ch
-     */
+            new User(firstname: "Michael", lastname: "Lerch", nickname: grailsApplication.config.honeymoon.bestman, email: "mlerch@swissonline.ch", password: "michael2011"),
+            new User(firstname: "Martina", lastname: "Berger", nickname: grailsApplication.config.honeymoon.bridesmaid, email: "martina.berger@gmx.ch", password: "martina2011")]
 
     userList.each {
       if (!User.findByNickname(it.nickname) && it.validate()) {

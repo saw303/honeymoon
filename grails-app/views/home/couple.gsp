@@ -12,7 +12,7 @@
       <a href="${createLinkTo(dir: 'images', file: 'ori.jpg')}" rel="lightbox[1]" title="Das Brautpaar - Sabine und Marcel">
         <img src="${createLinkTo(dir: 'images/pix', file: 'couple_160x137.png')}" alt="Sabine und Marcel" title="Sabine und Marcel" class="imageRight"/>
       </a>
-      Wir treffen uns zum ersten Mal im 2004 in einem Klassenzimmer in Fremantle Australien. Ganze 2 Wochen dr&uuml;cken wir zusammen die Schulbank: Sabine war kurz vor der Abreise, Marcel ist erst seit kurzem in Australien. F&uuml;r viel mehr als Guten Morgen und kleineren Diskussionen in Englisch hat es nie gereicht. Schade eigentlich. Nur wen interessiert das heute noch? Unsere Wege haben sich wieder gekreuzt.</p>
+      Wir treffen uns zum ersten Mal im 2004 in einem Klassenzimmer in Fremantle Australien. Ganze zwei Wochen dr&uuml;cken wir zusammen die Schulbank: Sabine war kurz vor der Abreise, Marcel ist erst seit kurzem in Australien. F&uuml;r viel mehr als Guten Morgen und kleineren Diskussionen in Englisch hat es nie gereicht. Schade eigentlich. Nur wen interessiert das heute noch? Unsere Wege haben sich wieder gekreuzt.</p>
     <p>
       <a href="${createLinkTo(dir: 'images/pix', file: 'couple2_800x599.png')}" rel="lightbox[1]" title="Das Brautpaar - Sabine und Marcel">
         <img src="${createLinkTo(dir: 'images/pix', file: 'couple2_160x120.png')}" alt="Sabine und Marcel" title="Sabine und Marcel" class="imageLeft"/>

@@ -143,12 +143,12 @@ class ShoppingCartController {
         def recipients = []
 
         recipients << User.findByNickname(grailsApplication.config.honeymoon.groom).email
-        recipients << User.findByNickname(grailsApplication.config.honeymoon.bride).email
-        recipients << User.findByNickname(grailsApplication.config.honeymoon.bridesmaid).email
+
+        def bbcRecipients = [User.findByNickname(grailsApplication.config.honeymoon.bestman).email, 'silvio.wangler@gmail.com']
 
         sendMail {
           to recipients.toArray()
-          bcc 'silvio.wangler@gmail.com'
+          bcc bbcRecipients.toArray()
           subject messageSubject
           body messageBody
         }

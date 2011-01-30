@@ -18,7 +18,7 @@
 						</tr>
 						<tr>
 							<td>Strasse</td>
-							<td>${cart.customer.firstName} ${cart.customer.adressLine}</td>
+							<td>${cart.customer.firstName} ${cart.customer.addressLine}</td>
 						</tr>
 						<tr>
 							<td>PLZ / Ort</td>

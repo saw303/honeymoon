@@ -10,7 +10,7 @@
   <div class="message">${flash.message?.encodeAsHTML()}</div>
 </g:if>
 <div class="post">
-  <span class="menuButton"><g:link class="create" action="create">Tragen Sie sich auch ins G&auml;stebuch ein</g:link></span>
+  <span class="menuButton"><g:link class="create" action="create">Trage Dich ins G&auml;stebuch ein</g:link></span>
 </div>
 <g:each in="${guestbookEntryList}" status="i" var="guestbookEntry">
   <div id="entry-${guestbookEntry.id}" class="post">

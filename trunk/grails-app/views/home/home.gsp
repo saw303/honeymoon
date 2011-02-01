@@ -7,7 +7,7 @@
 <div id="welcome" class="post">
   <h2 class="title">Herzlich Willkommen</h2>
   <div class="story">
-    <p>Sch&ouml;n seit ihr auf unserer Homepage! Wir freuen uns unheimlich auf einen unvergesslichen Tag mit euch Freunden.
+    <p>Sch&ouml;n seid ihr auf unserer Homepage! Wir freuen uns unheimlich auf einen unvergesslichen Tag mit euch Freunden.
     </p>
   </div>
 </div>

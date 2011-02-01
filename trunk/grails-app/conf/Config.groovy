@@ -122,8 +122,8 @@ log4j = {
 grails.mail.default.from = 'saw@silviowangler.ch'
 honeymoon.bride = 'sabine'
 honeymoon.groom = 'maese'
-honeymoon.bestman = 'abc'
-honeymoon.bridesmaid = 'efg'
+honeymoon.bestman = 'michael'
+honeymoon.bridesmaid = 'martina'
 honeymoon.admin = 'saw'
 def appHome = "${System.properties['user.home']}/.honeymoon"
 
